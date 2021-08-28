@@ -1,0 +1,88 @@
+.registrations-top {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.left-contents {
+  width: 50%;
+  height: 100%;
+  background-color: blanchedalmond;
+}
+
+.registrations-image {
+  height: 100%;
+  width: 100%;
+}
+
+.right-contents {
+  width: 50%;
+  height: 100%;
+  background: #eadfca;
+}
+
+.right-title {
+  color: #ffffff;
+  font-family: "Arial Black";
+  font-size: 48px;
+  font-weight: 900;
+  height: auto;
+  line-height: 1.4;
+  text-align: center;
+  width: auto;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.right-contents > p {
+  color: #aa998a;
+  font-family: "Noto Sans JP";
+  font-size: 28px;
+  font-weight: 700;
+  height: auto;
+  line-height: 1.4;
+  text-align: center;
+  width: auto;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+button {
+  align-content: center;
+  align-items: center;
+  background: #9ec3bc;
+  border-radius: 4px;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 50px;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+  width: 50%;
+  max-width: 50%;
+}
+
+.email-button {
+  background: #9ec3bc;
+  color: white;
+  text-align: center;
+}
+
+.google-button {
+  background: white;
+  color: black;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  border-radius: 4px;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  text-align: center;
+}
+
+.facebook-button {
+  background: #6261cc;
+  color: white;
+  text-align: center;
+}
