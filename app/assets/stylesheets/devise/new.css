@@ -35,7 +35,7 @@
   margin-top: 80px;
 }
 
-.right-contents > p {
+.right-sub-title {
   color: #aa998a;
   font-family: "Noto Sans JP";
   font-size: 28px;
@@ -46,43 +46,60 @@
   width: auto;
   max-width: 100%;
   justify-content: center;
-  margin-top: 90px;
+  margin: 90px 0 70px 0;
 }
 
-button {
-  align-content: center;
-  align-items: center;
-  background: #9ec3bc;
-  border-radius: 4px;
-  flex: none;
-  flex-direction: row;
-  flex-wrap: nowrap;
+.registrations-button {
+  width: 100%;
+}
+
+.registrations-button > a {
+  text-align: center;
   height: 50px;
-  justify-content: center;
-  margin: 20px 0px 20px 0px;
-  width: 50%;
-  max-width: 50%;
+  line-height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .email-button {
+  margin: auto;
   background: #9ec3bc;
-  color: white;
-  text-align: center;
+  border-radius: 4px;
+  width: 50%;
+  color: #ffffff;
+  display: block;
 }
 
 .google-button {
-  background: white;
-  color: black;
+  display: block;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 4px;
+  width: 50%;
   border-bottom: 1px solid #000;
   border-left: 1px solid #000;
-  border-radius: 4px;
   border-right: 1px solid #000;
   border-top: 1px solid #000;
-  text-align: center;
 }
 
 .facebook-button {
   background: #6261cc;
-  color: white;
+  margin: auto;
+  border-radius: 4px;
+  width: 50%;
+  color: #ffffff;
+  display: block;
+}
+
+.right-text {
+  margin-top: 40px;
   text-align: center;
+  font-size: 14px;
+  color: #aa998a;
+}
+
+.login-text {
+  color: #9ec3bc;
+  height: 60px;
+  line-height: 60px;
 }
