@@ -5,11 +5,8 @@
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | name               | string | null: false |
-| nickname           | string | null: false |
-| account_id         | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| birthday           | date   | null: false |
 
 ### Association
 
@@ -21,6 +18,8 @@
 - has_many :shop_reviews
 - has_many :calendars
 - has_many :medicine_record
+<!-- ウィザード -->
+- has_one :account
 <!-- フォロー機能 -->
 - has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed", dependent: :destroy
 - has_many :followers, through: :reverse_of_relationships, source: :follower
@@ -57,6 +56,18 @@
 | type     | string     |                               |
 | birthday | date       | null: false                   |
 | user     | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## accounts テーブル
+
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| nickname   | string | null: false |
+| account_id | string | null: false |
+| birthday   | date   | null: false |
 
 ### Association
 
