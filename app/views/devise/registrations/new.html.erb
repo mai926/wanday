@@ -3,9 +3,18 @@
   <section>
     <form class="new-contents">
       <h2 class="form-title">アカウント作成</h2>
-      <input type="text" placeholder="名前" class="small-field">
-      <input type="text" placeholder="メールアドレス" class="small-field">
-      <input type="text" placeholder="パスワード" class="small-field">
+      <div class="new-content">
+        <label for="name">名前</label>
+        <input type="text" placeholder="例）鈴木太郎" class="small-field" id="name">
+      </div>
+      <div class="new-content">
+        <label for="email">メールアドレス</label>
+        <input type="text" placeholder="携帯/PC" class="small-field" id="email">
+      </div>
+      <div class="new-content">
+        <label for="password">パスワード</label>
+        <input type="text" placeholder="半角英数混合" class="small-field" id="password">
+      </div>
       <input type="submit" value="次へ" class="send">
     </form>
   </section>
