@@ -95,3 +95,18 @@
   cursor: pointer;
   margin-bottom: 30px;
 }
+
+.field_with_errors {
+  display: contents;
+}
+
+.field_with_errors > select {
+  width: 26%;
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}

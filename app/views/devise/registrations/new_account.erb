@@ -18,9 +18,7 @@
       </div>
       <div class="new-content">
         <%= f.label :birthday,'生年月日' %>
-        <%# f.text_area :birthday, class:"small-field", id:"birthday"%>
-
-      <%= f.date_select(:birthday,
+        <%= f.date_select(:birthday,
             class:'input-birth-wrap', 
             id:"birthday",
             use_month_numbers: true,
@@ -28,9 +26,8 @@
             start_year: 1950,
             end_year: (Time.now.year - 5),
             date_separator: '/') %>
-        <%# <input type="text" placeholder="例）20000101" class="small-field" id="password"> %>
       </div>
-      <input type="submit" value="登録する" class="send">
+      <%= f.submit "登録する" ,class:"send" %>
       <%end%>
     </div>
   </section>
