@@ -16,9 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       return
      end
     session["regist_data"] = {user: @user.attributes}
-    # binding.pry
     session["regist_data"][:user]["password"] = params[:user][:password]
-    # binding.pry
 
     @account = @user.build_account
     render :new_account
