@@ -42,3 +42,22 @@
   color: #ffffff;
   margin-top: 2px;
 }
+
+.regist-create-button {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.regist-top-link {
+  margin: auto;
+  background: #9ec3bc;
+  border-radius: 4px;
+  width: 15%;
+  color: #ffffff;
+  display: block;
+  font-size: 20px;
+  margin-top: 70px;
+  font-weight: bold;
+}
