@@ -21,6 +21,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @account = @user.build_account
     render :new_account
   end
+
+  def create_account
+    @user = User.new(session["regist_data"]["user"])
+    @account = Account.new(account_params)
+      unless @account.valid?
+        render :new_account
+        return
+      end
+    @user.build_account(@account.attributes)
+    @user.save
+    session["regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
+ 
+  private
+ 
+  def account_params
+    params.require(:account).permit(:nickname, :account_id, :birthday)
+  end
  
   # GET /resource/sign_up
   # def new
