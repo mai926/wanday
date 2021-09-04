@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.string :nickname,               null: false
       t.string :account_id,               null: false
       t.date :birthday,               null: false
-      t.references :user, foreign_key: true
+      t.references :user
       t.timestamps
     end
   end
