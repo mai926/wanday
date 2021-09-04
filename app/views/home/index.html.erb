@@ -10,12 +10,14 @@
       <p>アカウント作成</p>
     </div>
     <div class="registrations-button">
-      <a class="email-button" href="#">メールアドレスで登録</a>
-      <a class="google-button" href="#">Googleアカウントで登録</a>
-      <a class="facebook-button" href="#">Facebookアカウントで登録</a>
+      <%= link_to "メールアドレスで登録", new_user_registration_path, class: "email-button" %>
+      <%= link_to "Googleアカウントで登録", "#", class: "google-button" %>
+      <%= link_to "Facebookアカウントで登録", "#", class: "facebook-button" %>
     </div>
     <div class="right-text">
-      <p><a class="login-text" href="#">ログイン</a>のかたはこちら</p>
+      <p><%= link_to "ログイン", new_user_session_path, class: "login-text" %>のかたはこちら</p>
+      <p><%= link_to '（仮）実装挙動確認ログアウトボタン', destroy_user_session_path, method: :delete %></p>
+
     </div>
     <footer>
       <p class="footer-title">wanday!</p>

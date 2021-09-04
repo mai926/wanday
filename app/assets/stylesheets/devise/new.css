@@ -96,3 +96,7 @@
   font-size: 12px;
   color: #aa998a;
 }
+
+.login-flash-message {
+  color: brown;
+}
