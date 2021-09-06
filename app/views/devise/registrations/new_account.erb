@@ -1,11 +1,13 @@
 <main class="registrations-new">
   <h1 class="new-title">wanday!へようこそ！</h1>
+
   <section>
     <div class="new-contents">
       <h2 class="form-title">アカウント作成</h2>
 
       <%= form_with model: @account, url: account_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", model: f.object %>
+      <%= flash[:recaptcha_error] %>
 
       <div class="new-content">
         <%= f.label :nickname,'ユーザー名' %>
@@ -27,6 +29,7 @@
             end_year: (Time.now.year - 5),
             date_separator: '/') %>
       </div>
+      <%= recaptcha_tags %>
       <%= f.submit "登録する" ,class:"send" %>
       <%end%>
     </div>
