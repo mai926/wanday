@@ -16,15 +16,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new 
       return
      end
-    session["regist_data"] = {user: @user.attributes}
-    session["regist_data"][:user]["password"] = params[:user][:password]
+    session["devise.regist_data"] = {user: @user.attributes}
+    session["devise.regist_data"][:user]["password"] = params[:user][:password]
 
     @account = @user.build_account
     render :new_account
   end
 
   def create_account
-    @user = User.new(session["regist_data"]["user"])
+    @user = User.new(session["devise.regist_data"]["user"])
     @account = Account.new(account_params)
       unless @account.valid?
         render :new_account
@@ -32,7 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     @user.build_account(@account.attributes)
     @user.save
-    session["regist_data"]["user"].clear
+    session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
   end
  
