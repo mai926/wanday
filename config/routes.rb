@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'account', to: 'users/registrations#create_account'
   end
 
-  root to: "home#index"
+  root to: "posts#new"
   resources :home, only: :index
   resources :posts, only: [:new, :create]
 end

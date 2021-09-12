@@ -18,6 +18,7 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
 }
 
 .new-content {
@@ -74,7 +75,7 @@
 .footer-title {
   color: #ffffff;
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   font: 700 30px "Caveat", cursive;
 }
 

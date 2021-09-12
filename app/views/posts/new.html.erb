@@ -1,0 +1,32 @@
+<main class="posts-new">
+  <section>
+    <header class='top-page-header'>
+      <p class="header-title">wanday!</p>
+    </header>
+  </section>
+  <section>
+    <div class="posts-new-contents">
+      <h1 class="form-title">写真を投稿する</h1>
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%# render "devise/shared/error_messages", model: f.object %>
+      <div class="img-field">
+        <p>
+          クリックして写真をアップロード
+        </p>
+        <%= f.file_field :images, name: 'item[images][]',id:"item-image" %>
+        <div id="image-list"></div>
+      </div>
+        <div class="posts-new-content">
+          <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く", maxlength:"250" %>
+        </div>
+        <%= f.submit "投稿する" ,class:"posts-new-send" %>
+      <%end%>
+    </div>
+  </section>
+  <section>
+    <footer class="top-page-header">
+      <p class="footer-title">wanday!</p>
+      <p class="footer-text">Copyright © 2021 wanday! All rights reserved.</p>
+    </footer>
+  </section>
+</main>
