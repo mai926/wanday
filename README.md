@@ -33,10 +33,10 @@
 
 ## posts テーブル (※画像は active_storage を使用)
 
-| Column | Type       | Options                       |
-| ------ | ---------- | ----------------------------- |
-| text   | text       | null: false                   |
-| user   | references | null: false,foreign_key: true |
+| Column  | Type       | Options                       |
+| ------- | ---------- | ----------------------------- |
+| caption | text       | null: false                   |
+| user    | references | null: false,foreign_key: true |
 
 ### Association
 
