@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   end
 
   root to: "home#index"
-  resources :home
+  resources :home, only: :index
+  resources :posts, only: [:new, :create]
 end
