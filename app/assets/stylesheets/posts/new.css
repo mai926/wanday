@@ -24,11 +24,31 @@
   margin-bottom: 50px;
   padding: 0px 100px 0px 100px;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
+
+.hidden {
+  display: none;
+}
+
+.fa-images {
+  color: #aa998a;
+}
+/* 
+.img-field > p {
+  margin: auto;
+}
+
+.img-field > input {
+  display: block;
+
+  margin: auto;
+} */
 
 .preview-image {
   height: auto;
-  width: 180px;
+  max-width: 180px;
 }
 
 .click-upload {
