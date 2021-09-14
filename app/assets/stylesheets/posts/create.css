@@ -1,0 +1,16 @@
+.regist-button {
+  background: #9ec3bc;
+  border-radius: 4px;
+  height: 50px;
+  line-height: 50px;
+  width: 15%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.regist-create-button {
+  margin-bottom: 20px;
+}
