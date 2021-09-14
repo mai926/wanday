@@ -26,6 +26,11 @@
   text-align: center;
 }
 
+.preview-image {
+  height: 180px;
+  width: auto;
+}
+
 .click-upload {
   margin: 15px 0;
   min-width: 250px;
