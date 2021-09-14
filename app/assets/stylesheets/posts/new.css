@@ -27,8 +27,8 @@
 }
 
 .preview-image {
-  height: 180px;
-  width: auto;
+  height: auto;
+  width: 180px;
 }
 
 .click-upload {
