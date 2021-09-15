@@ -20,12 +20,11 @@
 
 
     <label class="form-image">
-            <p>
-          クリックして写真をアップロード
-        </p>
-      <%# <span class="image-file">画像</span> %>
-        <i class="fas fa-images fa-2x "></i>
-        <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true%>
+      <p>
+        クリックして写真をアップロード
+      </p>
+      <i class="fas fa-images fa-2x "></i>
+      <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true%>
     </label>
 
 
