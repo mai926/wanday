@@ -1,5 +1,6 @@
 .posts-new {
   height: 100vh;
+  width: 100%;
 }
 
 .top-page-header {
@@ -18,6 +19,12 @@
   color: #aa998a;
 }
 
+.img-explanation {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #aa998a;
+}
+
 /* 画像 */
 .img-field {
   height: 200px;
@@ -26,25 +33,20 @@
   text-align: center;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .hidden {
   display: none;
 }
 
+.form-image {
+  margin: auto;
+}
+
 .fa-images {
   color: #aa998a;
 }
-/* 
-.img-field > p {
-  margin: auto;
-}
-
-.img-field > input {
-  display: block;
-
-  margin: auto;
-} */
 
 .preview-image {
   height: auto;

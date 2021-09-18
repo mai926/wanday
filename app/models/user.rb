@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_one :account
   has_many :posts, dependent: :destroy
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze}
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze }
   validates :name, presence: true
 end

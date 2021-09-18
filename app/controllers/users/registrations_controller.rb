@@ -5,49 +5,46 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-
   def new
     @user = User.new
   end
- 
+
   def create
     @user = User.new(sign_up_params)
-     unless @user.valid?
-      render :new 
+    unless @user.valid?
+      render :new
       return
-     end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    end
+    session['devise.regist_data'] = { user: @user.attributes }
+    session['devise.regist_data'][:user]['password'] = params[:user][:password]
 
     @account = @user.build_account
     render :new_account
   end
 
   def create_account
-    @user = User.new(session["devise.regist_data"]["user"])
+    @user = User.new(session['devise.regist_data']['user'])
     @account = Account.new(account_params)
-      unless @account.valid?
-        render :new_account
-        return
-      end
+    unless @account.valid?
+      render :new_account
+      return
+    end
     @user.build_account(@account.attributes)
     @user.save
-    session["devise.regist_data"]["user"].clear
+    session['devise.regist_data']['user'].clear
     sign_in(:user, @user)
   end
- 
+
   private
- 
+
   def account_params
     params.require(:account).permit(:nickname, :account_id, :birthday)
   end
- 
+
   def check_captcha
-      @account = Account.new(account_params)
-      @account.validate # Look for any other validation errors besides reCAPTCHA
-      unless verify_recaptcha(model: @account)
-      respond_with_navigational(@account) { render :new_account }
-    end 
+    @account = Account.new(account_params)
+    @account.validate # Look for any other validation errors besides reCAPTCHA
+    respond_with_navigational(@account) { render :new_account } unless verify_recaptcha(model: @account)
   end
 
   # GET /resource/sign_up

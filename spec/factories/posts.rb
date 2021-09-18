@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    caption {'test'}
+    caption { 'test' }
     association :user
 
     after(:build) do |post|

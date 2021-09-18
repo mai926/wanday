@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
       it 'user:必須' do
         @post.user = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("User must exist")
+        expect(@post.errors.full_messages).to include('User must exist')
       end
     end
   end

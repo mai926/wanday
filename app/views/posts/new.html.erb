@@ -7,28 +7,25 @@
   <section>
     <div class="posts-new-contents">
       <h1 class="form-title">写真を投稿する</h1>
+
       <%= form_with model: @post, local: true do |f| %>
       <%= render "devise/shared/error_messages", model: f.object %>
-
       <div class="img-field" id="image-list">
-
-
         <%# <div id="image-list"></div> %>
           <% @post.images.each do |image| %>
             <%= image_tag image, class: 'images' %>
           <% end %>
 
-
     <label class="form-image">
-      <p>
-        クリックして写真をアップロード
-      </p>
       <i class="fas fa-images fa-2x "></i>
       <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true%>
     </label>
 
 
       </div>
+      <p class="img-explanation">
+        クリックして写真をアップロード
+      </p>
         <div class="posts-new-content">
           <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く", maxlength:"250" %>
         </div>

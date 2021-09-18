@@ -12,11 +12,12 @@ class PostsController < ApplicationController
       render 'create'
     else
       render 'new'
-    end  
+    end
   end
 
   private
+
   def post_params
-    params.require(:post).permit(:caption,images: []).merge(user_id: current_user.id)
+    params.require(:post).permit(:caption, images: []).merge(user_id: current_user.id)
   end
 end

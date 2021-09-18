@@ -26,18 +26,18 @@ RSpec.describe Account, type: :model do
       it 'account_id:6文字以上' do
         @account.account_id = 'aA1'
         @account.valid?
-        expect(@account.errors.full_messages).to include("Account is too short (minimum is 6 characters)")
+        expect(@account.errors.full_messages).to include('Account is too short (minimum is 6 characters)')
       end
       it 'account_id:半角英数' do
         @account.account_id = 'ＡＡＡＡＡ１１'
         @account.valid?
-        expect(@account.errors.full_messages).to include("Account is invalid")
+        expect(@account.errors.full_messages).to include('Account is invalid')
       end
       it 'account_id:一意性' do
         first_user = FactoryBot.create(:account, account_id: 'testtest')
         second_user = FactoryBot.build(:account, account_id: 'testtest')
         second_user.valid?
-        expect(second_user.errors.full_messages).to include("Account has already been taken")
+        expect(second_user.errors.full_messages).to include('Account has already been taken')
       end
       it 'birthday:必須' do
         @account.birthday = ''
