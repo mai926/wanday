@@ -12,6 +12,15 @@
   color: #aa998a;
 }
 
+.show-lists {
+  width: 200px;
+  /* position: absolute;
+  right: 370px;
+  top: 70px; */
+  background-color: #ffffff;
+  position: relative;
+}
+
 .show-contents {
   height: calc(100vh - 20vh);
   width: 100%;
@@ -51,4 +60,21 @@
 .show-contents > p {
   margin-top: 30px;
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.pull-down-list {
+  padding: 15px 20px;
+  border: 1px solid #aa998a;
+  color: #aa998a;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+}
+
+.show-lists > li {
+  height: 47px;
 }

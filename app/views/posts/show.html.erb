@@ -7,9 +7,11 @@
   <section>
     <div class="show-contents">
       <% if user_signed_in? && current_user.id == @post.user_id %>
-        <%= link_to(edit_post_path(@post), method: :get) do%>
-        <i class="fas fa-edit"></i>
-        <% end %>
+        <i class="fas fa-edit" id="lists"></i>
+        <ul class="show-lists hidden" id="pull-down">
+          <li><%= link_to '編集する', edit_post_path(@post), method: :get,class: "pull-down-list" %></li>
+          <li><%= link_to '削除する', "#", method: :get,class: "pull-down-list" %></li>
+        </ul>
       <% end %>
 
       <div class="show-img-field">
