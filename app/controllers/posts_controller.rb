@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :select_post, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_show, only: [:edit, :update, :destroy]
+  # before_action :redirect_to_show, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.save
+    if @post.update(post_params)
       render 'update'
     else
       render 'edit'

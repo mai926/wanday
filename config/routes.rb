@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   root to: "posts#new"
   resources :home, only: :index
-  resources :posts
+  resources :posts, only: [:new, :create, :edit, :update]
 end
