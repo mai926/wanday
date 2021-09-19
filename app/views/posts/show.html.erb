@@ -7,7 +7,9 @@
   <section>
     <div class="show-contents">
       <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to(edit_post_path(@post), method: :get) do%>
         <i class="fas fa-edit"></i>
+        <% end %>
       <% end %>
 
       <div class="show-img-field">
