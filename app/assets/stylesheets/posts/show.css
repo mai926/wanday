@@ -84,3 +84,33 @@
 .show-lists > li {
   height: 47px;
 }
+
+#comments {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.user-info {
+  color: #aa998a;
+  margin-right: 10px;
+}
+
+.user-info:after {
+  content: ":";
+  display: inline-block;
+  color: #aa998a;
+}
+
+.comment-box {
+  width: 40vw;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+  min-width: 500px; /* 追加 */
+  padding: 30px; /* 追加 */
+}
