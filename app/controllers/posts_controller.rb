@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :select_post, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_show, only: [:edit, :update, :destroy]
+
   def index
   end
 
@@ -15,9 +19,25 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @post.save
+      render 'update'
+    else
+      render 'edit'
+    end
+  end
+
+
   private
 
   def post_params
     params.require(:post).permit(:caption, images: []).merge(user_id: current_user.id)
+  end
+
+  def select_post
+    @post = Post.find(params[:id])
   end
 end
