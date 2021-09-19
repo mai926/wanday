@@ -19,6 +19,9 @@
           <%= image_tag image, class: 'show-img' %>
         <% end %>
       </div>
+      <div class="show-data">
+       <%= @post.updated_at.to_s(:datetime) %>
+      </div>
       <div class="show-caption-field">
         <p><%= @post.caption %></p>
       </div>

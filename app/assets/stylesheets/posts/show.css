@@ -35,6 +35,12 @@
   align-items: center;
 }
 
+.show-data {
+  font-size: 10px;
+  color: #aa998a;
+  text-align: end;
+}
+
 .show-sub-content {
   height: 10%;
   width: 100%;
