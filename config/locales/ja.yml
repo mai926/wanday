@@ -40,3 +40,6 @@ ja:
         nickname: ユーザー名
         account_id: ユーザーID
         birthday: 生年月日
+      post:
+        images: 写真
+        caption: キャプション
