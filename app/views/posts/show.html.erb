@@ -1,0 +1,35 @@
+<main class="show-new">
+  <section>
+    <header class='top-page-header'>
+      <p class="header-title">wanday!</p>
+    </header>
+  </section>
+  <section>
+    <div class="show-contents">
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+
+      <div class="show-img-field">
+        <% @post.images.each do |image| %>
+          <%= image_tag image, class: 'show-img' %>
+        <% end %>
+      </div>
+      <div class="show-caption-field">
+        <p><%= @post.caption %></p>
+      </div>
+      <div class="show-sub-content">
+        <i class="far fa-comment fa-2x"></i>
+        <p>コメント 5件</p>
+        <i class="far fa-heart fa-2x"></i>
+        <p>いいね 10件</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <footer class="top-page-header">
+      <p class="footer-title">wanday!</p>
+      <p class="footer-text">Copyright © 2021 wanday! All rights reserved.</p>
+    </footer>
+  </section>
+</main>

@@ -36,6 +36,12 @@
   width: 100%;
 }
 
+.edit-images,
+.new-images {
+  height: auto;
+  max-width: 180px;
+}
+
 .hidden {
   display: none;
 }
