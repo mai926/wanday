@@ -41,6 +41,12 @@
           </div>
         </div>
       </div>
+      <% if user_signed_in? %>
+        <%= form_with model: [@post, @comment], id: "comment_form" do |f| %>
+          <%= f.text_area :comment , class: "comment-text"%>
+        <%= f.submit "コメントする", type: 'submit', class: "comment-btn"%>
+        <% end %>
+      <% end %>
     </div>
   </section>
   <section>
