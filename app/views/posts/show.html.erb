@@ -10,7 +10,7 @@
         <i class="fas fa-edit" id="lists"></i>
         <ul class="show-lists hidden" id="pull-down">
           <li><%= link_to '編集する', edit_post_path(@post), method: :get,class: "pull-down-list" %></li>
-          <li><%= link_to '削除する', "#", method: :get,class: "pull-down-list" %></li>
+          <li><%= link_to '削除する', post_path(@post), method: :delete,class: "pull-down-list" %></li>
         </ul>
       <% end %>
 

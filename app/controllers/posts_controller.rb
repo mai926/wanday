@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :select_post, only: [:show, :edit, :update, :destroy]
-  # before_action :redirect_to_show, only: [:edit, :update, :destroy]
+  before_action :redirect_to_show, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -30,6 +30,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    if @post.destroy
+      return redirect_to root_path
+    else
+      render 'show'
+    end
+  end
 
   private
 
@@ -39,5 +46,9 @@ class PostsController < ApplicationController
 
   def select_post
     @post = Post.find(params[:id])
+  end
+
+  def redirect_to_show
+    return redirect_to root_path if current_user.id != @post.user.id
   end
 end

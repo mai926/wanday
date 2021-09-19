@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
   const pullDownParents = document.getElementById("pull-down");
   // const pullDownChild = document.getElementsByClassName("pull-down-list");
 
-  console.log(pullDownChild);
+  // console.log(pullDownChild);
   pullDownButton.addEventListener("mouseover", function () {
     this.setAttribute("style", "color:#eadfca");
   });
