@@ -1,5 +1,5 @@
 import consumer from "./consumer";
-if (location.pathname.match(/items/) && location.pathname.match(/\d+/)) {
+if (location.pathname.match(/posts/) && location.pathname.match(/\d+/)) {
   consumer.subscriptions.create("CommentsChannel", {
     connected() {},
 
