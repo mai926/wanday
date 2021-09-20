@@ -35,18 +35,22 @@
       <%# コメントがあれば %>
       <div class="comment-box" id="comment-box">  <%# idを追加する %>
         <div id="comments">
-          <div class="comment">
-            <div class="user-info">テストユーザー</div>
-            <p>テストコメント</p>
-          </div>
+          <% @post.comments.each do |comment| %>
+            <div class="comment">
+              <div class="user-info"><%= comment.account.nickname %></div>
+              <p><%= comment.comment%></p>
+            </div>
+          <% end %>
         </div>
       </div>
-      <% if user_signed_in? %>
-        <%= form_with model: [@post, @comment], id: "comment_form" do |f| %>
-          <%= f.text_area :comment , class: "comment-text"%>
-        <%= f.submit "コメントする", type: 'submit', class: "comment-btn"%>
+      <div class="comment-field">
+        <% if user_signed_in? %>
+          <%= form_with model: [@post, @comment], id: "comment_form" do |f| %>
+            <%= f.text_area :comment , class: "comment-text"%>
+          <%= f.submit "コメントする", type: 'submit', class: "comment-btn"%>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </section>
   <section>

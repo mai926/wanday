@@ -30,6 +30,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @comments = @post.comments.includes(:account)
+    @comment = Comment.new
+  end
+
   def destroy
     if @post.destroy
       return redirect_to root_path

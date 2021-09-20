@@ -24,11 +24,11 @@
 .show-contents {
   height: calc(100vh - 20vh);
   width: 100%;
-  padding: 50px 100px 0 100px;
+  padding: 20px 100px 0 100px;
 }
 
 .show-img-field {
-  height: 60%;
+  height: 40%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 .show-sub-content {
-  height: 10%;
+  height: 5%;
   width: 100%;
   text-align: center;
   font-size: 15px;
@@ -58,7 +58,7 @@
 }
 
 .show-caption-field {
-  height: 15%;
+  height: 12%;
   width: 100%;
   text-align: center;
 }
@@ -86,7 +86,7 @@
 }
 
 #comments {
-  max-height: 300px;
+  max-height: 100%;
   overflow-y: auto;
 }
 
@@ -107,10 +107,44 @@
 }
 
 .comment-box {
+  height: 20%;
   width: 40vw;
   background-color: #fff;
-  margin: 5vh 0;
+  margin: auto;
   text-align: center;
-  min-width: 500px; /* 追加 */
-  padding: 30px; /* 追加 */
+  min-width: 500px;
+  padding: 20px;
+}
+
+.comment-field {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-btn {
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #9ec3bc;
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+}
+
+.comment-text {
+  background-color: #ffffff;
+  border-radius: 4px;
+  height: 10%;
+  width: 100%;
+  border: solid 1px #aa998a;
+  margin-bottom: 10px;
+}
+
+#comment_form {
+  width: 50%;
 }

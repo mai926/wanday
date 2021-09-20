@@ -1,15 +1,24 @@
-import consumer from "./consumer"
+import consumer from "./consumer";
+if (location.pathname.match(/items/) && location.pathname.match(/\d+/)) {
+  consumer.subscriptions.create("CommentsChannel", {
+    connected() {},
 
-consumer.subscriptions.create("CommentsChannel", {
-  connected() {
-    // Called when the subscription is ready for use on the server
-  },
+    disconnected() {
+      // Called when the subscription has been terminated by the server
+    },
 
-  disconnected() {
-    // Called when the subscription has been terminated by the server
-  },
-
-  received(data) {
-    // Called when there's incoming data on the websocket for this channel
-  }
-});
+    received(data) {
+      const html = `
+      <div class="comment">
+        <div class="user-info">${data.account.nickname}</div>
+        <p>${data.comment.comment}</p>
+      </div>
+    `;
+      const comments = document.getElementById("comments");
+      comments.insertAdjacentHTML("beforeend", html);
+      comments.scrollTop = comments.scrollHeight;
+      const commentForm = document.getElementById("comment_form");
+      commentForm.reset();
+    },
+  });
+}
