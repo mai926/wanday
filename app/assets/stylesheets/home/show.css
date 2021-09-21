@@ -1,0 +1,65 @@
+.mypage {
+  height: 100vh;
+  width: 100%;
+}
+
+.mypage-contents {
+  height: calc(100vh - 20vh);
+}
+
+.mypage-top {
+  height: 40vh;
+  padding: 50px 250px 50px 250px;
+  width: 100%;
+  display: flex;
+}
+
+.mypage-user-icon {
+  height: 100%;
+  background-color: burlywood;
+  width: 22%;
+  border-radius: 50%;
+}
+
+.mypage-user-detail {
+  height: 100%;
+  width: 50%;
+  padding: 30px 80px;
+}
+
+.mypage-nickname {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.mypage-account-id {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.mypage-account-detail {
+  font-size: 15px;
+}
+.mypage-user-follow {
+  height: 100%;
+  width: calc(100% - 72%);
+  padding: 30px 50px;
+}
+
+.mypage-user-follow > button {
+  background-color: #9ec3bc;
+  color: white;
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+.mypage-user-follow > p {
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+}
