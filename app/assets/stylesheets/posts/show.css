@@ -14,9 +14,6 @@
 
 .show-lists {
   width: 200px;
-  /* position: absolute;
-  right: 370px;
-  top: 70px; */
   background-color: #ffffff;
   position: relative;
 }
@@ -53,14 +50,15 @@
 }
 
 .show-sub-content > i {
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin: 0 0 10px 20px;
 }
 
 .show-caption-field {
   height: 12%;
   width: 100%;
   text-align: center;
+  overflow-wrap: break-word;
+  padding: 0 100px;
 }
 
 .show-contents > p {
@@ -95,13 +93,17 @@
   margin-bottom: 30px;
 }
 
+.comment > p {
+  width: 40vw;
+  overflow-wrap: break-word;
+}
+
 .user-info {
   color: #aa998a;
   margin-right: 10px;
 }
 
 .user-info:after {
-  content: ":";
   display: inline-block;
   color: #aa998a;
 }
