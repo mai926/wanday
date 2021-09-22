@@ -6,6 +6,7 @@
   </section>
   <section>
     <div class="mypage-contents">
+    <%# ユーザー情報 %>
       <div class="mypage-top">
         <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png" ,class: "mypage-user-icon"%>
         <div class="mypage-user-detail">
@@ -24,7 +25,42 @@
           <p>フォロワー 30</p>
         </div>
       </div>
+    <%# 画像一覧 %>
       <div class="mypage-middle">
+        <ul class="img-lists">
+        <%# .each do |post|%>
+          <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>          
+          <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>
+           <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>
+           <li>
+            <%= link_to "#" do %>
+              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
+            <% end %>
+          </li>
+          <%# end %>
+        </ul>
       </div>
 
     </div>

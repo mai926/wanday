@@ -3,10 +3,7 @@
   width: 100%;
 }
 
-.mypage-contents {
-  height: calc(100vh - 20vh);
-}
-
+/* ユーザー情報 */
 .mypage-top {
   height: 40vh;
   padding: 50px 250px 50px 250px;
@@ -24,7 +21,7 @@
 .mypage-user-detail {
   height: 100%;
   width: 50%;
-  padding: 30px 80px;
+  padding: 30px 0 30px 80px;
 }
 
 .mypage-nickname {
@@ -36,11 +33,14 @@
 .mypage-account-id {
   font-size: 12px;
   margin-bottom: 10px;
+  color: #aa998a;
 }
 
 .mypage-account-detail {
   font-size: 15px;
+  line-height: normal;
 }
+
 .mypage-user-follow {
   height: 100%;
   width: calc(100% - 72%);
@@ -62,4 +62,31 @@
   font-size: 12px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+/* 画像一覧 */
+.mypage-middle {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 200px;
+  width: 100vw;
+}
+
+.img-lists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img-lists > li {
+  width: 37vh;
+  padding: 1vw;
+  flex-wrap: wrap;
+}
+
+.mypage-img {
+  width: 33vh;
+  height: 33vh;
+  background-color: cadetblue;
 }
