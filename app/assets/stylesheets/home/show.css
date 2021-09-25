@@ -90,3 +90,25 @@
   height: 33vh;
   background-color: cadetblue;
 }
+
+/* ヘッダー */
+.top-page-header1 {
+  background-color: #eadfca;
+  height: 10vh;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.header-title1 {
+  text-align: center;
+  color: white;
+  font: 700 50px "Caveat", cursive;
+  height: 100%;
+  line-height: 70px;
+  color: #aa998a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
