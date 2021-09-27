@@ -113,23 +113,3 @@
   justify-content: center;
   margin-bottom: 50px;
 }
-
-.top-page-footer {
-  background-color: #eadfca;
-  height: 10vh;
-  width: 100%;
-  max-width: 100%;
-}
-
-.footer-title {
-  color: #ffffff;
-  text-align: center;
-  font: 700 30px "Caveat", cursive;
-}
-
-.footer-text {
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 2px;
-}

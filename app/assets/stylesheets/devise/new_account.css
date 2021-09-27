@@ -71,20 +71,6 @@
   margin-bottom: 50px;
 }
 
-.footer-title {
-  color: #ffffff;
-  text-align: center;
-  /* margin-top: 50px; */
-  font: 700 30px "Caveat", cursive;
-}
-
-.footer-text {
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 2px;
-}
-
 .new-content > select {
   width: 26%;
   height: 50px;

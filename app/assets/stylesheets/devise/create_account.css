@@ -29,20 +29,6 @@
   text-align: center;
 }
 
-.footer-title {
-  color: #ffffff;
-  text-align: center;
-  /* margin-top: 50px; */
-  font: 700 30px "Caveat", cursive;
-}
-
-.footer-text {
-  font-size: 10px;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 2px;
-}
-
 .regist-create-button {
   width: 100%;
   text-align: center;
