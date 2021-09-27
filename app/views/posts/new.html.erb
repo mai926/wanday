@@ -1,9 +1,5 @@
 <main class="posts-new">
-  <section>
-    <header class='top-page-header'>
-      <p class="header-title">wanday!</p>
-    </header>
-  </section>
+  <%= render 'shared/header' %>
   <section>
     <div class="posts-new-contents">
       <h1 class="form-title">写真を投稿する</h1>
@@ -18,7 +14,7 @@
 
     <label class="form-image">
       <i class="fas fa-images fa-2x "></i>
-      <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true%>
+      <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
     </label>
 
 

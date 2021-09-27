@@ -1,9 +1,5 @@
 <main class="show-new">
-  <section>
-    <header class='top-page-header'>
-      <p class="header-title">wanday!</p>
-    </header>
-  </section>
+  <%= render 'shared/header' %>
   <section>
     <div class="show-contents">
       <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -31,7 +27,7 @@
         <i class="far fa-heart fa-2x"></i>
         <p>いいね 10件</p>
       </div>
-      
+
       <%# コメント一覧 %>
       <div class="comment-box" id="comment-box">
         <div id="comments">

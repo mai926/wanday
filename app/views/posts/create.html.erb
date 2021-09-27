@@ -1,14 +1,10 @@
 <main class="posts-new">
-  <section>
-    <header class='top-page-header'>
-      <p class="header-title">wanday!</p>
-    </header>
-  </section>
+  <%= render 'shared/header' %>
   <section>
     <div class="posts-new-contents">
       <h1 class="form-title">投稿が完了しました。</h1>
       <div class="regist-create-button">
-      <%= link_to "編集する", "#", class: "regist-button" %>
+      <%= link_to "編集する", edit_post_path(@post), class: "regist-button" %>
     </div>
     <div class="regist-create-button">
       <%= link_to "HOMEへ戻る", root_path, class: "regist-button" %>
