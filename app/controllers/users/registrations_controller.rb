@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :check_captcha, only: [:create_account]
+  # before_action :user_select, only: [:edit, :update]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -35,6 +36,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
+  def edit
+    @user = current_user
+    @account = @user.account
+    # return redirect_to root_path unless current_user !=
+  end
+
+  def update
+    @user = current_user
+    @account = @user.account
+    if @user.update(user_params)
+      return redirect_to home_path(@user)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def account_params
@@ -46,6 +63,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @account.validate # Look for any other validation errors besides reCAPTCHA
     respond_with_navigational(@account) { render :new_account } unless verify_recaptcha(model: @account)
   end
+
+  # def user_select
+  #   @user = current_user
+  # end
+
+  # def account_select
+  #   @account = Account.find(params[:id])
+  # end
 
   # GET /resource/sign_up
   # def new

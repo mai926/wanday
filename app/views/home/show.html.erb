@@ -1,27 +1,15 @@
+        <%= link_to 'ユーザー編集テスト（仮リンク）',edit_user_registration_path(@user)  %>
+
 <main class="mypage">
-  <section>
-    <header class='top-page-header1'>
-      <p class="header-title1">wanday!</p>
-      <nav>
-        <i class="fas fa-home fa-lg user-icon"></i>
-        <i class="fas fa-search fa-lg user-icon"></i>
-        <i class="far fa-envelope fa-lg user-icon"></i>
-        <i class="far fa-bell fa-lg user-icon"></i>
-        <%= link_to new_post_path do %>
-          <i class="far fa-images fa-lg user-icon"></i>
-        <% end %>
-        <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png" ,class: "header-user-icon"%>
-      </nav>
-    </header>
-  </section>
+  <%= render 'shared/header' %>
   <section>
     <div class="mypage-contents">
     <%# ユーザー情報 %>
       <div class="mypage-top">
         <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png" ,class: "mypage-user-icon"%>
         <div class="mypage-user-detail">
-          <p class="mypage-nickname">ニックネーム</p>
-          <p class="mypage-account-id">アカウントID</p>
+          <p class="mypage-nickname"><%=  @user.account.nickname%></p>
+          <p class="mypage-account-id"><%=  @user.account.account_id%></p>
           <p class="mypage-account-detail">
           自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
           自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
@@ -38,47 +26,17 @@
     <%# 画像一覧 %>
       <div class="mypage-middle">
         <ul class="img-lists">
-        <%# .each do |post|%>
-          <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>          
-          <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>
-           <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>
-           <li>
-            <%= link_to "#" do %>
-              <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png", class: "mypage-img" %>
-            <% end %>
-          </li>
-          <%# end %>
+          <% @user.posts.each do |post|%>
+            <li>
+              <%= link_to post_path(post) do %>
+                <%= image_tag post.images[0], class: "mypage-img" %>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
 
     </div>
   </section>
-  <section>
-    <footer class="top-page-header">
-      <p class="footer-title">wanday!</p>
-      <p class="footer-text">Copyright © 2021 wanday! All rights reserved.</p>
-    </footer>
-  </section>
+  <%= render 'shared/footer' %>
 </main>
