@@ -31,13 +31,13 @@
         <i class="far fa-heart fa-2x"></i>
         <p>いいね 10件</p>
       </div>
-
-      <%# コメントがあれば %>
-      <div class="comment-box" id="comment-box">  <%# idを追加する %>
+      
+      <%# コメント一覧 %>
+      <div class="comment-box" id="comment-box">
         <div id="comments">
           <% @post.comments.each do |comment| %>
             <div class="comment">
-              <div class="user-info"><%= comment.account.nickname %></div>
+              <%=link_to "#{comment.account.nickname}", home_path(comment.account), class:"user-info" %>
               <p><%= comment.comment%></p>
             </div>
           <% end %>

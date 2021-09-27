@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'account', to: 'users/registrations#create_account'
   end
 
-  root to: "home#show"
+  root to: "home#index"
   resources :home, only: [:index, :show]
   resources :posts do 
     resources :comments, only: :create 
