@@ -1,7 +1,22 @@
-        <%= link_to 'ユーザー編集テスト（仮リンク）',edit_user_registration_path(@user)  %>
-
 <main class="mypage">
-  <%= render 'shared/header' %>
+  <header class='top-page-header1'>
+    <p class="header-title1">wanday!</p>
+    <nav>
+      <i class="fas fa-home fa-lg user-icon"></i>
+      <i class="fas fa-search fa-lg user-icon"></i>
+      <i class="far fa-envelope fa-lg user-icon"></i>
+      <i class="far fa-bell fa-lg user-icon"></i>
+      <%= link_to new_post_path do %>
+        <i class="far fa-images fa-lg user-icon"></i>
+      <% end %>
+      <%= image_tag '34a08c028c70f36dbfafc205d16db1ff.png', class: "header-user-icon", id: "edit-lists"%>
+      <ul class="edit-lists hidden" id="edit-pull-down">
+        <li class="pull-down-edit-list">ユーザー情報を編集</li>
+        <li class="pull-down-edit-list">アカウント情報を編集</li>
+      </ul>
+    </nav>
+  </header>
+
   <section>
     <div class="mypage-contents">
     <%# ユーザー情報 %>
@@ -16,7 +31,7 @@
           自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
           自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
           </p>
-        </div>
+        </div>`
         <div class="mypage-user-follow">
           <button>フォローする</button>
           <p>フォロー 10</p>
@@ -36,7 +51,7 @@
         </ul>
       </div>
 
-    </div>
+`    </div>
   </section>
   <%= render 'shared/footer' %>
 </main>
