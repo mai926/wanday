@@ -1,4 +1,5 @@
 <main class="mypage">
+<% console%>
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
     <nav>
@@ -12,7 +13,7 @@
       <%= image_tag '34a08c028c70f36dbfafc205d16db1ff.png', class: "header-user-icon", id: "edit-lists"%>
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
-        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集","#"%></li>
+        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
       </ul>
     </nav>
   </header>
@@ -26,12 +27,9 @@
           <p class="mypage-nickname"><%=  @user.account.nickname%></p>
           <p class="mypage-account-id"><%=  @user.account.account_id%></p>
           <p class="mypage-account-detail">
-          自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
-          自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
-          自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
-          自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文
+          <%=  @user.account.introduction %>
           </p>
-        </div>`
+        </div>
         <div class="mypage-user-follow">
           <button>フォローする</button>
           <p>フォロー 10</p>

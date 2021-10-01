@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_215317) do
     t.string "nickname", null: false
     t.string "account_id", null: false
     t.date "birthday", null: false
+    t.text "introduction"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

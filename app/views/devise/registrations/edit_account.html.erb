@@ -1,0 +1,33 @@
+<main class="user-edit">
+  <section>
+    <div class="user-edit-contents">
+      <h1 class="form-title">アカウント情報編集</h1>
+
+      <%= form_with model: @account, url: update_account_path, local: true do |f| %>
+      <%# render "devise/shared/error_messages", model: f.object %>
+        <div class="new-content">
+          <%= f.label :nickname,'ニックネーム' %>
+          <%= f.text_field :nickname, class:"small-field", id:"name", placeholder:"例）スズキ", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :account_id,'アカウントID' %>
+          <%= f.text_field :account_id, class:"small-field", id:"name", placeholder:"例）suzuki1234", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :birthday,'誕生日' %>
+          <%= f.text_field :birthday, class:"small-field", id:"name", placeholder:"例）20000101", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :introduction,'自己紹介' %>
+          <%= f.text_area :introduction, class:"small-field intro", id:"name", placeholder:"例）250文字以内", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :images,'プロフィール画像' %>
+          <%= f.file_field :images, id:"name", placeholder:"例）鈴木太郎", maxlength:"40", autofocus: true  %>
+        </div>
+        <%= f.submit "次へ" ,class:"send" %>
+      <%end%>
+    </div>
+  </section>
+  <%= render 'shared/footer' %>
+</main>
