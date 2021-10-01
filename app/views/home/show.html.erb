@@ -11,7 +11,7 @@
       <% end %>
       <%= image_tag '34a08c028c70f36dbfafc205d16db1ff.png', class: "header-user-icon", id: "edit-lists"%>
       <ul class="edit-lists hidden" id="edit-pull-down">
-        <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集","#"%></li>
+        <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
         <li class="pull-down-edit-list"><%= link_to "アカウント情報編集","#"%></li>
       </ul>
     </nav>
