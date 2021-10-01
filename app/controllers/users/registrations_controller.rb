@@ -4,7 +4,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_action :check_captcha, only: [:create_account]
   before_action :user_select, only: [:edit, :update, :edit_account, :update_account]
   before_action :account_select, only: [:edit_account, :update_account]
-
+  before_action :move_to_show, only: [:edit, :update, :edit_account, :update_account]
+  
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -38,12 +39,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
-  def edit
-    return redirect_to root_path unless @user
-  end
-
   def update
-    # @account = @user.account
     if @user.update(account_update_params)
       return redirect_to home_path(@user)
     else
@@ -51,16 +47,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def edit_account
-    # @user = current_user
-    # @account = @user.account
-    return redirect_to root_path unless @user
-  end
-
   def update_account
-    # @user = current_user
-    # @account = @user.account
-    # binding.pry
     if @account.update(account_params)
       return redirect_to home_path(@user)
     else
@@ -71,7 +58,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def account_params
-    params.require(:account).permit(:nickname, :account_id, :birthday, :introduction, :icon_img)
+    params.require(:account).permit(:nickname, :account_id, :birthday, :introduction, :images)
   end
 
   def check_captcha
@@ -92,6 +79,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def account_select
     @account = @user.account
+  end
+
+  def move_to_show
+    return redirect_to root_path unless @user
   end
 
   # def account_select
