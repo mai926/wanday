@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  belongs_to :account
+  # belongs_to :account
 
   has_many_attached :images
   has_many :comments
