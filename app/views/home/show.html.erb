@@ -1,5 +1,5 @@
 <main class="mypage">
-<% console%>
+<%# console%>
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
     <nav>
@@ -10,7 +10,7 @@
       <%= link_to new_post_path do %>
         <i class="far fa-images fa-lg user-icon"></i>
       <% end %>
-      <%= image_tag '34a08c028c70f36dbfafc205d16db1ff.png', class: "header-user-icon", id: "edit-lists"%>
+      <%= image_tag @user.account.images[0], class: "header-user-icon", id: "edit-lists"%>
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
         <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
@@ -23,6 +23,9 @@
     <%# ユーザー情報 %>
       <div class="mypage-top">
         <%= image_tag @user.account.images[0] ,class: "mypage-user-icon" if @user.account.images.attached?%>
+        <% if @user.account.images.length == 0%>
+          <%= image_tag "34a08c028c70f36dbfafc205d16db1ff.png" ,class: "mypage-user-icon" %>
+        <% end %>
         <div class="mypage-user-detail">
           <p class="mypage-nickname"><%=  @user.account.nickname%></p>
           <p class="mypage-account-id"><%=  @user.account.account_id%></p>
