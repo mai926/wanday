@@ -22,4 +22,8 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  def liked?(post_id)
+    likes.where(post_id: post_id).present?
+  end
 end

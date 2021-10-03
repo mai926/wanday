@@ -21,12 +21,26 @@
       <div class="show-caption-field">
         <p><%= @post.caption %></p>
       </div>
-      <div class="show-sub-content">
-        <i class="far fa-comment fa-2x"></i>
-        <p>コメント 5件</p>
-        <i class="far fa-heart fa-2x"></i>
-        <p>いいね 10件</p>
+
+      <%# いいね機能練習 %>
+      <div class='show-sub-content' id='post_<%= @post.id %>'>
+        <% if current_user.liked?(@post.id) %>
+          <%= link_to post_like_path(@post), method: :delete, remote: true do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to post_likes_path(@post), method: :post, remote: true do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+        <p>いいね<span class="good-count"><%= @post.likes.count %></span>件</p>
       </div>
+      
+      <div class="show-sub-content">
+        <i class="far fa-comment"></i>
+        <p>コメント<%= @post.comments.count %>件</p>
+      </div>
+
 
       <%# コメント一覧 %>
       <div class="comment-box" id="comment-box">

@@ -1,0 +1,1 @@
+document.getElementById('post_<%= @like.post_id %>').innerHTML = '<%= link_to post_likes_path(@post.id), method: :post, remote: true do %><i class="far fa-heart"></i><% end %><p>いいね<span class="good-count"><%= @post.likes.count %></span>件</p>'
