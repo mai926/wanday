@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
-      return redirect_to home_path(current_user)
+      redirect_to home_path(current_user)
     else
       render 'show'
     end

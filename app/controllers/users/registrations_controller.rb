@@ -5,7 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :user_select, only: [:edit, :update, :edit_account, :update_account]
   before_action :account_select, only: [:edit_account, :update_account]
   before_action :move_to_show, only: [:edit, :update, :edit_account, :update_account]
-  
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -41,7 +41,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     if @user.update(account_update_params)
-      return redirect_to home_path(@user)
+      redirect_to home_path(@user)
     else
       render 'edit'
     end
@@ -49,12 +49,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update_account
     if @account.update(account_params)
-      return redirect_to home_path(@user)
+      redirect_to home_path(@user)
     else
       render 'edit_account'
     end
   end
-  
+
   private
 
   def account_params
