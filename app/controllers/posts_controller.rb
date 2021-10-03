@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   def show
     @comments = @post.comments.includes(:account)
     @comment = Comment.new
+    @account = Account.find(params[:id])
   end
 
   def destroy

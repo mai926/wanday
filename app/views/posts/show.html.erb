@@ -16,11 +16,13 @@
         <% end %>
       </div>
       <div class="show-data">
-       <%= @post.updated_at.to_s(:datetime) %>
+        <%=link_to "#{@account.nickname}/#{@account.account_id}", home_path%>
+        <%= @post.updated_at.to_s(:datetime) %>
       </div>
       <div class="show-caption-field">
         <p><%= @post.caption %></p>
       </div>
+
 
       <div class="show-sub-contents">
         <%# いいね機能練習 %>
