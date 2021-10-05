@@ -1,9 +1,10 @@
 <main class="posts-index">
   <%= render 'shared/header' %>
-  <section>
+  <section class="index-main-contents">
+    <%# 投稿一覧 %>
     <div class="main-left">
       <div class="post-title">
-        <div class="title-icon"></div>
+        <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "title-icon"%>
         <div class="title-content">
           <p class="title-content-nickname">投稿者ニックネーム</p>
           <p class="title-content-id">投稿者アカウントID</p>
@@ -20,8 +21,24 @@
         <p>ここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプション</p>
       </div>
     </div>
-    <div class="main-right">
-    </div>
+
+    <%# ユーザー情報 %>
+    <section class="main-right">
+      <%# ログインユーザープロフィール %>
+      <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "index-user-icon"%>
+      <div class="index-user-show">
+       <p class="user-show-nickname">ログイン中ユーザーのニックネーム</p>
+       <p class="user-show-id">ログイン中ユーザーアカウントID</p>
+       <p class="user-show-birthday">ログイン中ユーザー誕生日</p>
+       <p class="user-show-info">自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文</p>
+      </div>
+
+      <%# ペットプロフィール %>
+      <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "index-pet-icon"%>
+      <div class="index-pet-show"></div>
+
+
+    </section>
     <div></div>
     <div></div>
   </section>
