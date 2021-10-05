@@ -4,7 +4,7 @@
     <%# 投稿一覧 %>
     <div class="main-left">
       <div class="post-title">
-        <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "title-icon"%>
+        <%= image_tag "profile-user.png" ,class: "title-icon"%>
         <div class="title-content">
           <p class="title-content-nickname">投稿者ニックネーム</p>
           <p class="title-content-id">投稿者アカウントID</p>
@@ -25,7 +25,7 @@
     <%# ユーザー情報 %>
     <section class="main-right">
       <%# ログインユーザープロフィール %>
-      <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "index-user-icon"%>
+      <%= image_tag "profile-user.png" ,class: "index-user-icon"%>
       <div class="index-user-show">
        <p class="user-show-nickname">ログイン中ユーザーのニックネーム</p>
        <p class="user-show-id">ログイン中ユーザーアカウントID</p>
@@ -34,8 +34,20 @@
       </div>
 
       <%# ペットプロフィール %>
-      <%= image_tag "ux-store-jJT2r2n7lYA-unsplash.png" ,class: "index-pet-icon"%>
-      <div class="index-pet-show"></div>
+      <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
+      <div class="index-pet-show">
+        <p class="pet-name">ペットの名前</p>
+          <dl class="pet-lists">
+            <dt>誕生日</dt>
+            <dd>2021年12月12日<dd>
+            <dt>種類</dt>
+            <dd>チワックス<dd>
+            <dt>好きなもの</dt>
+            <dd>お散歩<dd>
+            <dt>性格</dt>
+            <dd>おちゃめ<dd>
+          </dl>
+      </div>
 
 
     </section>

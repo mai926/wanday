@@ -22,7 +22,6 @@
   height: 100%;
   width: 7vw;
   border-radius: 50%;
-  background-color: chocolate;
 }
 
 .title-content {
@@ -127,7 +126,8 @@
   max-width: 100%;
   margin: 20px 0 100px 0;
 }
-.user-show-nickname {
+.user-show-nickname,
+.pet-name {
   font-size: 17px;
   font-weight: 400;
   height: auto;
@@ -167,6 +167,7 @@
   font-size: 13px;
 }
 
+/* ペットプロフィール */
 .index-pet-icon {
   border-radius: 50%;
   flex: none;
@@ -175,4 +176,18 @@
   max-width: 100%;
   display: block;
   margin: auto;
+}
+
+.pet-lists {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.pet-lists > dt {
+  font-size: 13px;
+}
+
+.pet-lists > dd {
+  font-size: 13px;
+  margin-bottom: 10px;
 }
