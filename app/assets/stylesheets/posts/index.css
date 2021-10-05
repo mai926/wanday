@@ -19,9 +19,11 @@
 }
 
 .title-icon {
-  height: 100%;
-  width: 7vw;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
+  display: block;
+  margin: auto;
 }
 
 .title-content {
@@ -39,6 +41,7 @@
 
 .title-content-id {
   font-size: 14px;
+  color: #aa998a;
 }
 
 /* 投稿画像 */
@@ -126,6 +129,7 @@
   max-width: 100%;
   margin: 20px 0 100px 0;
 }
+
 .user-show-nickname,
 .pet-name {
   font-size: 17px;
@@ -157,7 +161,6 @@
 
 .user-show-info {
   align-content: center;
-  align-items: ceffffff;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
