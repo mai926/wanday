@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }  
@@ -10,7 +9,7 @@ Rails.application.routes.draw do
     patch 'account/:id', to: 'users/registrations#update_account', as: 'update_account'
   end
 
-  root to: "home#index"
+  root to: "posts#index"
   resources :home, only: [:index, :show]
   resources :posts do 
     resources :comments, only: :create 
