@@ -25,12 +25,12 @@
     <%# ユーザー情報 %>
     <section class="main-right">
       <%# ログインユーザープロフィール %>
-      <%= image_tag "profile-user.png" ,class: "index-user-icon"%>
+      <%= image_tag current_user.account.images[0] ,class: "index-user-icon"%>
       <div class="index-user-show">
-       <p class="user-show-nickname">ログイン中ユーザーのニックネーム</p>
-       <p class="user-show-id">ログイン中ユーザーアカウントID</p>
-       <p class="user-show-birthday">ログイン中ユーザー誕生日</p>
-       <p class="user-show-info">自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文自己紹介文</p>
+       <p class="user-show-nickname"><%= current_user.account.nickname %></p>
+       <p class="user-show-id"><%= current_user.account.account_id %></p>
+       <p class="user-show-birthday"><%= current_user.account.birthday %></p>
+       <p class="user-show-info"><%=  current_user.account.introduction %></p>
       </div>
 
       <%# ペットプロフィール %>
