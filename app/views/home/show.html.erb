@@ -1,5 +1,5 @@
 <main class="mypage">
-<%# console%>
+<% console%>
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
     <nav>
@@ -10,7 +10,7 @@
       <%= link_to new_post_path do %>
         <i class="far fa-images fa-lg user-icon"></i>
       <% end %>
-      <%= image_tag @user.account.images[0], class: "header-user-icon", id: "edit-lists" if @user.account.images.attached?%>
+      <%= image_tag current_user.account.images[0], class: "header-user-icon", id: "edit-lists" if @user.account.images.attached?%>
       <% if @user.account.images.length == 0%>
         <%= image_tag "profile-user.png" ,class:"header-user-icon" ,id: "edit-lists" %>
       <% end %>
@@ -41,6 +41,14 @@
           <button>フォローする</button>
           <p>フォロー 10</p>
           <p>フォロワー 30</p>
+
+
+          <% if current_user.following?(@user) %>
+            <%= link_to "Unfollow", relationships_path(@user.id), method: :delete %>
+          <% else %>
+            <%= link_to "Follow", relationships_path(@user.id), method: :post %>
+          <% end %>
+          
         </div>
       </div>
     <%# 画像一覧 %>
