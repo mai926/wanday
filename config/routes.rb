@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
   resources :home, only: [:index, :show]
+  get 'home/likes/:id', to: 'home#like_list', as: 'home_likes'
   resources :posts do 
     resources :comments, only: :create 
     resources :likes, only: [:create, :destroy]

@@ -63,6 +63,35 @@
   text-align: center;
 }
 
+/* いいね・一覧画面切り替え */
+.mypage-icon-lists {
+  border-top: solid 1px #eadfca;
+  width: 100%;
+  height: 10vh;
+  padding: 0 200px;
+}
+
+.mypage-icon-list {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+
+.icon-select {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.icon-select > p {
+  color: #aa998a;
+  font-size: 13px;
+}
+
+.far {
+  color: #aa998a;
+}
+
 /* 画像一覧 */
 .mypage-middle {
   display: flex;
