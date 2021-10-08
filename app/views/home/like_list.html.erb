@@ -1,0 +1,72 @@
+<main class="mypage">
+<% console%>
+  <header class='top-page-header1'>
+    <p class="header-title1">wanday!</p>
+    <nav>
+      <%= link_to posts_path do %><i class="fas fa-home fa-lg user-icon"></i><% end %>
+      <i class="fas fa-search fa-lg user-icon"></i>
+      <i class="far fa-envelope fa-lg user-icon"></i>
+      <i class="far fa-bell fa-lg user-icon"></i>
+      <%= link_to new_post_path do %>
+        <i class="far fa-images fa-lg user-icon"></i>
+      <% end %>
+      <%= image_tag @user.account.images[0], class: "header-user-icon", id: "edit-lists" if @user.account.images.attached?%>
+      <% if @user.account.images.length == 0%>
+        <%= image_tag "profile-user.png" ,class:"header-user-icon" ,id: "edit-lists" %>
+      <% end %>
+      <ul class="edit-lists hidden" id="edit-pull-down">
+        <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
+        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
+        <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="mypage-contents">
+    <%# ユーザー情報 %>
+      <div class="mypage-top">
+        <%= image_tag @user.account.images[0] ,class: "mypage-user-icon" if @user.account.images.attached?%>
+        <% if @user.account.images.length == 0%>
+          <%= image_tag "profile-user.png" ,class: "mypage-user-icon" %>
+        <% end %>
+        <div class="mypage-user-detail">
+          <p class="mypage-nickname"><%=  @user.account.nickname%></p>
+          <p class="mypage-account-id"><%=  @user.account.account_id%></p>
+          <p class="mypage-account-detail">
+          <%=  @user.account.introduction %>
+          </p>
+        </div>
+        <div class="mypage-user-follow">
+          <button>フォローする</button>
+          <p>フォロー 10</p>
+          <p>フォロワー 30</p>
+        </div>
+      </div>
+
+    <%# いいね・一覧画面切り替え %>
+    <div class="mypage-icon-lists">
+      <ul class="mypage-icon-list">
+        <li><i class="fas fa-image fa-2x"></i></li>
+        <li><i class="fas fa-heart fa-2x"></i></li>
+      </ul>
+    </div>
+
+    <%# 画像一覧 %>
+    いいね一覧
+      <div class="mypage-middle">
+        <ul class="img-lists">
+          <% @user.posts.each do |post|%>
+            <li>
+              <%= link_to post_path(post) do %>
+                <%= image_tag post.images[0], class: "mypage-img" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+`    </div>
+  </section>
+  <%= render 'shared/footer' %>
+</main>
