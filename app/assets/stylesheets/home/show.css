@@ -77,10 +77,19 @@
   height: 100%;
 }
 
-.mypage-icon-list > li {
+.icon-select {
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.icon-select > p {
+  color: #aa998a;
+  font-size: 13px;
+}
+
+.far {
+  color: #aa998a;
 }
 
 /* 画像一覧 */
