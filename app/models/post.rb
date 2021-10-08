@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes
+
   # belongs_to :account
 
   has_many_attached :images
