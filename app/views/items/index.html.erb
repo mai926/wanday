@@ -1,0 +1,55 @@
+<main class="posts-index">
+  <%= render 'shared/header' %>
+  <section class="index-main-contents">
+    <%# レビュー一覧 %>
+    <section class="main-left">
+      <h1 class="item-review-title">Item Review</h1>
+      <ul class="item-lists">
+        <li class="item-list">
+          <div class="item-image"></div>
+          <div class="item-contents">
+            <div class="item-title">ここに商品名が入る</div>
+            <div class="item-evaluation">
+              <div class="star-icon">
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star-half-alt s-color"></i>
+                <i class="far fa-star s-color"></i>
+              </div>
+              <div class="item-date"><p>レビュー12件</p><p>2020/10/10</p></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <%# ユーザー情報 %>
+    <section class="main-right">
+      <%# ログインユーザープロフィール %>
+      <%= image_tag current_user.account.images[0] ,class: "index-user-icon"%>
+      <div class="index-user-show">
+       <p class="user-show-nickname"><%= current_user.account.nickname %></p>
+       <p class="user-show-id"><%= current_user.account.account_id %></p>
+       <p class="user-show-birthday"><%= current_user.account.birthday %></p>
+       <p class="user-show-info"><%=  current_user.account.introduction %></p>
+      </div>
+
+      <%# ペットプロフィール %>
+      <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
+      <div class="index-pet-show">
+        <p class="pet-name">ペットの名前</p>
+        <dl class="pet-lists">
+          <dt>誕生日</dt>
+          <dd>2021年12月12日<dd>
+          <dt>種類</dt>
+          <dd>チワックス<dd>
+          <dt>好きなもの</dt>
+          <dd>お散歩<dd>
+          <dt>性格</dt>
+          <dd>おちゃめ<dd>
+        </dl>
+      </div>
+    </section>
+  </section>
+</main>

@@ -29,7 +29,7 @@
         <div class='show-sub-content' id='post_<%= @post.id %>'>
           <% if current_user.liked?(@post.id) %>
             <%= link_to post_like_path(@post), method: :delete, remote: true do %>
-              <i class="fas fa-heart"></i>
+              <i class="fas fa-heart fas-color"></i>
             <% end %>
           <% else %>
             <%= link_to post_likes_path(@post), method: :post, remote: true do %>

@@ -1,0 +1,65 @@
+.item-review-title {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 110px;
+  width: 100%;
+  max-width: 100%;
+  color: #aa998a;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 110px;
+}
+
+/* 商品リスト */
+.item-lists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-list {
+  margin-top: 10px;
+  padding: 20px;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+}
+
+.item-image {
+  background-color: cadetblue;
+  height: 110px;
+  width: 120px;
+  border-radius: 4px;
+}
+
+.item-contents {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.item-title {
+  flex-wrap: nowrap;
+  height: 80px;
+  width: 100%;
+  max-width: 100%;
+  font-size: 25px;
+  line-height: 80px;
+}
+
+.item-evaluation {
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.s-color {
+  color: #9ec3bc;
+}
+
+.item-date {
+  font-size: 12px;
+  color: #aa998a;
+}
