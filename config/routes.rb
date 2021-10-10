@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     post 'account', to: 'users/registrations#create_account'
     get 'account/:id', to: 'users/registrations#edit_account', as: 'edit_account'
     patch 'account/:id', to: 'users/registrations#update_account', as: 'update_account'
+    
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
   end
 
   root to: "home#index"

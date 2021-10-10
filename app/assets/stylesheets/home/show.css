@@ -46,14 +46,29 @@
   padding: 30px 50px;
 }
 
-.mypage-user-follow > button {
+.follow-button {
   background-color: #9ec3bc;
   color: white;
-  height: 20%;
+  height: 30px;
+  line-height: 30px;
   width: 100%;
   text-align: center;
   border-radius: 16px;
   font-size: 15px;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.unfollow-button {
+  border: solid 1px;
+  color: #9ec3bc;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 15px;
+  display: block;
   margin-bottom: 50px;
 }
 
