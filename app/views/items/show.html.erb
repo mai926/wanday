@@ -1,0 +1,79 @@
+<main class="posts-index">
+  <%= render 'shared/header' %>
+  <section class="index-main-contents">
+    <%# 商品名 %>
+    <section class="main-left">
+      <h1 class="item-review-title">商品名</h1>
+      <div class="star-icon">
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star-half-alt s-color"></i>
+        <i class="far fa-star s-color"></i>
+        <p>（10）</P>
+      </div>
+
+      <%# 商品詳細情報 %>
+      <div class="item-detail">
+        <div class="item-detail-image"></div>
+        <div class="item-datail-main">
+          <p>商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)</p>
+        </div>
+      </div>
+
+      <%# レビュー一覧 %>
+      <ul class="item-reviews">
+        <li class="item-review">
+          <div class="item-review-top">
+            <div class="item-review-icon"></div>
+            <div class="item-review-info">
+              <div class="item-reviwer-name">レビュワー名</div>
+              <div class="star-icon item-review-bottom">
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star-half-alt s-color"></i>
+                <i class="far fa-star s-color"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item-review-conrtent">
+            <p>レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容</p>
+          </div>
+          <div class="item-review-data">
+            <p>投稿日時</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <%# ユーザー情報 %>
+    <section class="main-right">
+      <%# ログインユーザープロフィール %>
+      <%= image_tag current_user.account.images[0] ,class: "index-user-icon"%>
+      <div class="index-user-show">
+       <p class="user-show-nickname"><%= current_user.account.nickname %></p>
+       <p class="user-show-id"><%= current_user.account.account_id %></p>
+       <p class="user-show-birthday"><%= current_user.account.birthday %></p>
+       <p class="user-show-info"><%=  current_user.account.introduction %></p>
+      </div>
+
+      <%# ペットプロフィール %>
+      <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
+      <div class="index-pet-show">
+        <p class="pet-name">ペットの名前</p>
+        <dl class="pet-lists">
+          <dt>誕生日</dt>
+          <dd>2021年12月12日<dd>
+          <dt>種類</dt>
+          <dd>チワックス<dd>
+          <dt>好きなもの</dt>
+          <dd>お散歩<dd>
+          <dt>性格</dt>
+          <dd>おちゃめ<dd>
+        </dl>
+      </div>
+    </section>
+  </section>
+  <%= render 'shared/footer' %>
+</main>
