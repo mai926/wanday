@@ -21,10 +21,10 @@
         クリックして商品写真をアップロード
       </p>
         <div class="item-new-content">
-          <%= f.text_field :title, class:"item-field", id:"title", placeholder:"商品名", maxlength:"250" %>
+          <%= f.text_field :name, class:"item-field", id:"name", placeholder:"商品名", maxlength:"100" %>
         </div>
         <div class="item-new-content">
-          <%= f.text_area :comment, class:"item-field", id:"comment", placeholder:"商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)", maxlength:"250" %>
+          <%= f.text_area :explanation, class:"item-field", id:"explanation", placeholder:"商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)", maxlength:"250" %>
         </div>
         <%= f.submit "商品情報を登録する" ,class:"posts-new-send" %>
       <%end%>
