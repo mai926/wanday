@@ -1,0 +1,14 @@
+.item-new-content {
+  margin-bottom: 20px;
+}
+
+.item-field {
+  display: block;
+  border-radius: 4px;
+  border: solid 1px #aa998a;
+  height: 50px;
+  line-height: 50px;
+  width: 50%;
+  margin: auto;
+  padding-left: 15px;
+}
