@@ -2,7 +2,7 @@
   <%= render 'shared/header' %>
   <section>
     <div class="posts-new-contents">
-      <h1 class="form-title">商品情報を登録する</h1>
+      <h1 class="form-title">商品情報を編集する</h1>
 
       <%= form_with local: true do |f| %>
       <%# render "devise/shared/error_messages", model: f.object %>
@@ -26,7 +26,7 @@
         <div class="item-new-content">
           <%= f.text_area :comment, class:"item-field", id:"comment", placeholder:"商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)", maxlength:"250" %>
         </div>
-        <%= f.submit "商品情報を登録する" ,class:"posts-new-send" %>
+        <%= f.submit "商品情報を編集する" ,class:"posts-new-send" %>
       <%end%>
     </div>
   </section>
