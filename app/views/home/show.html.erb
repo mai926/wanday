@@ -45,8 +45,8 @@
           <% else %>
             <%= link_to "Follow", relationships_path(user_id: @user.id), method: :post, class: "follow-button"%>
           <% end %>
-          <p>フォロー 10</p>
-          <p>フォロワー 30</p>
+          <p>フォロー <%= @user.followings.count %></p>
+          <p>フォロワー <%= @user.followers.count %></p>
         </div>
       </div>
 
