@@ -4,16 +4,16 @@
     <div class="posts-new-contents">
       <h1 class="form-title">商品情報を編集する</h1>
 
-      <%= form_with local: true do |f| %>
-      <%# render "devise/shared/error_messages", model: f.object %>
+      <%= form_with model: @item, local: true do |f| %>
+      <%= render "devise/shared/error_messages", model: f.object %>
       <div class="img-field" id="image-list">
 
-        <div id="image-list"></div>
+        <%# <div id="image-list"></div> %>
             <%# image_tag image, class: 'new-images' %>
 
       <label class="form-image">
         <i class="fas fa-images fa-2x "></i>
-        <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden"%>
+        <%= f.file_field :images, id:"item-image" ,name: 'item[images][]' ,class: "hidden"%>
       </label>
 
       </div>
