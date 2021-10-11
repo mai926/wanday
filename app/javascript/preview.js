@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ImageList.appendChild(imageElement);
 
       inputHTML.addEventListener("change", (e) => {
-        console.log("hoge");
+        // console.log("hoge");
         file = e.target.files[0];
 
         blob = window.URL.createObjectURL(file);
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ここにfor文で繰り返し処理を書いてみる
     document.getElementById("posts-image").addEventListener("change", function (e) {
       const file = e.target.files[0];
-      console.log(e.target.files);
+      // console.log(e.target.files);
       let blob = window.URL.createObjectURL(file);
 
       createImageHTML(blob);
