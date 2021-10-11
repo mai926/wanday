@@ -1,0 +1,19 @@
+.review-new-contents {
+  width: 100%;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.review-star-icon {
+  display: flex;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.review-star-info {
+  color: #aa998a;
+  text-align: center;
+  margin-bottom: 30px;
+}
