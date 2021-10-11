@@ -3,7 +3,7 @@
   <section class="index-main-contents">
     <%# 商品名 %>
     <section class="main-left">
-      <h1 class="item-review-title">商品名</h1>
+      <h1 class="item-review-title"><%= @item.name %></h1>
       <div class="star-icon">
         <i class="fas fa-star s-color"></i>
         <i class="fas fa-star s-color"></i>
@@ -15,9 +15,9 @@
 
       <%# 商品詳細情報 %>
       <div class="item-detail">
-        <div class="item-detail-image"></div>
+        <%= image_tag @item.images[0], class: "item-detail-image" %>
         <div class="item-datail-main">
-          <p>商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)</p>
+          <p><%= @item.explanation %></p>
         </div>
       </div>
 
