@@ -11,20 +11,22 @@
         <% @items.each do |item|%>
           <%= link_to item_path(item) do %>
             <li class="item-list">
-              <%= image_tag item.images[0], class: "item-image" %>
-                <div class="item-contents">
-                  <div class="item-title"><%= item.name %></div>
-                  <div class="item-evaluation">
-                    <div class="star-icon">
-                      <i class="fas fa-star s-color"></i>
-                      <i class="fas fa-star s-color"></i>
-                      <i class="fas fa-star s-color"></i>
-                      <i class="fas fa-star-half-alt s-color"></i>
-                      <i class="far fa-star s-color"></i>
-                    </div>
-                    <div class="item-date"><p>レビュー12件</p><p><%= item.updated_at.to_s(:datetime) %></p></div>
+              <div class="item-image">
+                <%= image_tag item.images[0] %>
+              </div>
+              <div class="item-contents">
+                <div class="item-title"><%= item.name %></div>
+                <div class="item-evaluation">
+                  <div class="star-icon">
+                    <i class="fas fa-star s-color"></i>
+                    <i class="fas fa-star s-color"></i>
+                    <i class="fas fa-star s-color"></i>
+                    <i class="fas fa-star-half-alt s-color"></i>
+                    <i class="far fa-star s-color"></i>
                   </div>
+                  <div class="item-date"><p>レビュー12件</p><p><%= item.updated_at.to_s(:datetime) %></p></div>
                 </div>
+              </div>
             </li>
           <% end %>
         <% end %>

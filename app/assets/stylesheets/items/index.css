@@ -46,6 +46,12 @@
   border-radius: 4px;
 }
 
+.item-image > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
 .item-contents {
   height: 100%;
   width: 100%;
