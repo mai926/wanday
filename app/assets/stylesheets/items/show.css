@@ -45,6 +45,11 @@
   margin: 0 0 20px 10px;
 }
 
+.review-add-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* レビュー一覧 */
 .item-reviews {
   width: 100%;

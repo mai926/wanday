@@ -24,6 +24,9 @@
         <%= link_to "商品情報編集", edit_item_path(@item), class: "item-edit-buttton" %>
         <%= link_to "商品情報削除", item_path(@item), class: "item-edit-buttton", method: :delete %>
       </div>
+      <div class="review-add-button">
+        <%= link_to "レビュー投稿", new_item_item_review_path(@item), class: "item-edit-buttton" %>
+      </div>
 
 
       <%# レビュー一覧 %>
