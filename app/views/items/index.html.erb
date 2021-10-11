@@ -1,26 +1,31 @@
 <main class="posts-index">
   <%= render 'shared/header' %>
   <section class="index-main-contents">
-    <%# レビュー一覧 %>
     <section class="main-left">
       <h1 class="item-review-title">Item Review</h1>
+      
+      <%# レビュー一覧 %>
       <ul class="item-lists">
-        <li class="item-list">
-          <div class="item-image"></div>
-          <div class="item-contents">
-            <div class="item-title">ここに商品名が入る</div>
-            <div class="item-evaluation">
-              <div class="star-icon">
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star-half-alt s-color"></i>
-                <i class="far fa-star s-color"></i>
-              </div>
-              <div class="item-date"><p>レビュー12件</p><p>2020/10/10</p></div>
-            </div>
-          </div>
-        </li>
+        <% @items.each do |item|%>
+          <%= link_to item_path(item) do %>
+            <li class="item-list">
+              <%= image_tag item.images[0], class: "item-image" %>
+                <div class="item-contents">
+                  <div class="item-title"><%= item.name %></div>
+                  <div class="item-evaluation">
+                    <div class="star-icon">
+                      <i class="fas fa-star s-color"></i>
+                      <i class="fas fa-star s-color"></i>
+                      <i class="fas fa-star s-color"></i>
+                      <i class="fas fa-star-half-alt s-color"></i>
+                      <i class="far fa-star s-color"></i>
+                    </div>
+                    <div class="item-date"><p>レビュー12件</p><p><%= item.updated_at.to_s(:datetime) %></p></div>
+                  </div>
+                </div>
+            </li>
+          <% end %>
+        <% end %>
       </ul>
     </section>
 

@@ -13,7 +13,6 @@
 /* 商品リスト */
 .item-lists {
   width: 100%;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -30,7 +29,7 @@
 .item-image {
   background-color: cadetblue;
   height: 110px;
-  width: 120px;
+  width: 110px;
   border-radius: 4px;
 }
 

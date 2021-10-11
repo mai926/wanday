@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   before_action :select_item, only: [:edit, :update]
 
+  def index
+    @items = Item.order(created_at: :desc)
+  end
+
   def new
     @item = Item.new
   end
