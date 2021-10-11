@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def create 
+  def create
     @item = Item.new(item_params)
     if @item.save
       redirect_to items_path
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      return redirect_to item_path(@item)
+      redirect_to item_path(@item)
     else
       render 'edit'
     end
@@ -28,19 +28,19 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      return redirect_to items_path
+      redirect_to items_path
     else
       render 'show'
     end
   end
 
   private
+
   def item_params
-    params.require(:item).permit(:name,:explanation,images:[]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :explanation, images: []).merge(user_id: current_user.id)
   end
 
   def select_item
     @item = Item.find(params[:id])
   end
-
 end
