@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_10_11_065245) do
   create_table "item_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "comment", null: false
-    t.float "rate", null: false
+    t.float "rate"
     t.bigint "user_id"
     t.bigint "item_id"
     t.datetime "created_at", precision: 6, null: false

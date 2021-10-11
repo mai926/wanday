@@ -3,9 +3,8 @@
   <section>
     <div class="review-new-contents">
       <h1 class="form-title">商品のレビューを投稿する</h1>
-
-      <%= form_with local: true do |f| %>
-      <%# render "devise/shared/error_messages", model: f.object %>
+      <%= form_with(model: [@item, @review], local: true) do |f| %>   
+      <%= render "devise/shared/error_messages", model: f.object %>
         <div class="review-star-icon">
           <i class="fas fa-star s-color fa-3x"></i>
           <i class="fas fa-star s-color fa-3x"></i>
@@ -20,7 +19,7 @@
           <%= f.text_field :title, class:"item-field", id:"title", placeholder:"レビュータイトル", maxlength:"100" %>
         </div>
         <div class="item-new-content">
-          <%= f.text_area :content, class:"item-field", id:"content", placeholder:"レビュー詳細（250字以内）", maxlength:"250" %>
+          <%= f.text_area :comment, class:"item-field", id:"content", placeholder:"レビュー詳細（250字以内）", maxlength:"250" %>
         </div>
         <%= f.submit "投稿する" ,class:"posts-new-send" %>
       <%end%>
