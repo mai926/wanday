@@ -4,6 +4,8 @@
     <section class="main-left">
       <h1 class="item-review-title">Item Review</h1>
       
+      <%= link_to "商品情報登録", new_item_path, class: "item-register-buttton" %>
+
       <%# レビュー一覧 %>
       <ul class="item-lists">
         <% @items.each do |item|%>

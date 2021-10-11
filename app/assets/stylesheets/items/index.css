@@ -10,6 +10,19 @@
   line-height: 110px;
 }
 
+.item-register-buttton {
+  background-color: #9ec3bc;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  width: 150px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 50px;
+}
+
 /* 商品リスト */
 .item-lists {
   width: 100%;
