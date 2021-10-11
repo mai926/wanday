@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :select_item, only: [:edit, :update, :show]
+  before_action :select_item, only: [:edit, :update, :show, :destroy]
 
   def index
     @items = Item.order(created_at: :desc)
@@ -23,6 +23,14 @@ class ItemsController < ApplicationController
       return redirect_to item_path(@item)
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @item.destroy
+      return redirect_to items_path
+    else
+      render 'show'
     end
   end
 

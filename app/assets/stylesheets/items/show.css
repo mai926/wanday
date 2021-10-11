@@ -6,12 +6,11 @@
 .item-detail {
   flex-wrap: nowrap;
   height: 470px;
-  margin: 20px 0 50px 0;
+  margin-top: 20px;
   padding: 20px;
   width: 100%;
   max-width: 100%;
   display: flex;
-  border-bottom: solid 1px #eadfca;
 }
 
 .item-detail-image {
@@ -25,6 +24,25 @@
   width: 60%;
   height: 100%;
   padding: 20px;
+}
+
+.item-button-lists {
+  border-bottom: solid 1px #eadfca;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.item-edit-buttton {
+  background-color: #9ec3bc;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 13px;
+  display: block;
+  margin: 0 0 20px 10px;
 }
 
 /* レビュー一覧 */
