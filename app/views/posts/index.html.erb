@@ -1,25 +1,34 @@
+<%console%>
 <main class="posts-index">
   <%= render 'shared/header' %>
   <section class="index-main-contents">
     <%# 投稿一覧 %>
     <section class="main-left">
-      <div class="post-title">
-        <%= image_tag "profile-user.png" ,class: "title-icon"%>
-        <div class="title-content">
-          <p class="title-content-nickname">投稿者ニックネーム</p>
-          <p class="title-content-id">投稿者アカウントID</p>
-        </div>
-      </div>
-      <div class="post-pic">ここに画像</div>
-        <dl class="post-icon-lists">
-          <dt><i class="far fa-comment fa-lg"></i></dt>
-          <dd>コメント3件<dd>
-          <dt><i class="far fa-heart fa-lg"></i></dt>
-          <dd>いいね3件<dd>
-        </dl>
-      <div class="post-caption">
-        <p>ここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプションここに投稿画像のキャプション</p>
-      </div>
+      <ul class="follow-posts">
+        <% @follows.each do |follow|%>
+          <li class="follow-post">
+            <div class="post-title">
+              <%= image_tag follow.account.images[0] ,class: "title-icon"%>
+              <div class="title-content">
+                <p class="title-content-nickname"><%= follow.account.nickname %></p>
+                <p class="title-content-id"><%= follow.account.account_id %></p>
+              </div>
+            </div>
+            <div class="post-pic">
+              <%# image_tag follow.posts.images[0] ,class: "title-icon"%>
+            </div>
+              <dl class="post-icon-lists">
+                <dt><i class="far fa-comment fa-lg"></i></dt>
+                <dd>コメント3件<dd>
+                <dt><i class="far fa-heart fa-lg"></i></dt>
+                <dd>いいね3件<dd>
+              </dl>
+            <div class="post-caption">
+              <p><%# follow.posts.caption %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </section>
 
     <%# ユーザー情報 %>

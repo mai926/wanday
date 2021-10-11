@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   before_action :redirect_to_show, only: [:edit, :update, :destroy]
 
   def index
+    # @posts = current_user.following_ids.push(current_user.id)
+    @follows = current_user.followings.order("created_at DESC")
   end
 
   def new
