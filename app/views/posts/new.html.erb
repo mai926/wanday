@@ -6,18 +6,16 @@
 
       <%= form_with model: @post, local: true do |f| %>
       <%= render "devise/shared/error_messages", model: f.object %>
+      <%# プレビュー出力欄 %>
       <div class="img-field" id="image-list">
-        <%# <div id="image-list"></div> %>
-          <% @post.images.each do |image| %>
-            <%= image_tag image, class: 'new-images' %>
-          <% end %>
-
-    <label class="form-image">
-      <i class="fas fa-images fa-2x "></i>
-      <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
-    </label>
-
-
+        <div id="image-list"></div>
+        <% @post.images.each do |image| %>
+          <%= image_tag image, class: 'new-images' %>
+        <% end %>
+        <label class="form-image">
+          <i class="fas fa-images fa-2x "></i>
+          <%= f.file_field :images, id:"posts-image" ,name: 'post[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
+        </label>
       </div>
       <p class="img-explanation">
         クリックして写真をアップロード
