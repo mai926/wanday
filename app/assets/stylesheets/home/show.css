@@ -92,6 +92,10 @@
   height: 100%;
 }
 
+.mypage-icon-list > a {
+  display: contents;
+}
+
 .icon-select {
   width: 50%;
   margin: auto;
@@ -100,13 +104,22 @@
   align-items: center;
 }
 
-.icon-select > p {
+.far {
+  color: #aa998a;
+}
+
+.choice-icon {
+  color: #9ec3bc;
+}
+
+.unchoice-icon {
   color: #aa998a;
   font-size: 13px;
 }
 
-.far {
-  color: #aa998a;
+.choice-icon-info {
+  color: #9ec3bc;
+  font-size: 13px;
 }
 
 /* 画像一覧 */

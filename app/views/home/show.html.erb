@@ -1,5 +1,4 @@
 <main class="mypage">
-<%# console%>
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
     <nav>
@@ -53,9 +52,9 @@
     <%# いいね・一覧画面切り替え %>
     <div class="mypage-icon-lists">
       <ul class="mypage-icon-list">
-        <li class="icon-select"><i class="fas fa-image fa-2x"></i><p>投稿一覧</p></li>
+        <li class="icon-select"><i class="fas fa-image fa-2x choice-icon"></i><p class="choice-icon-info">投稿一覧</p></li>
         <%= link_to home_likes_path(@user) do %>
-          <li class="icon-select"><i class="far fa-heart fa-2x"></i></li>
+          <li class="icon-select"><i class="far fa-heart fa-2x"></i><p class="unchoice-icon">いいね一覧</p></li>
         <%end%>
       </ul>
     </div>
