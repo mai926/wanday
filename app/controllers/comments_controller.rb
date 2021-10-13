@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+  
   def create
     @comment = Comment.new(comments_params)
     ActionCable.server.broadcast 'comments_channel', { comment: @comment, account: @comment.account } if @comment.save

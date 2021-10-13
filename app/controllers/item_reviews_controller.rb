@@ -1,4 +1,6 @@
 class ItemReviewsController < ApplicationController 
+  before_action :authenticate_user!, only: [:new, :create]
+  
   def new
     @review = ItemReview.new
     @item = Item.find(params[:item_id])
