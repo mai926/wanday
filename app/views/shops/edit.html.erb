@@ -3,28 +3,7 @@
   <section>
     <div class="posts-new-contents">
       <h1 class="form-title">お店情報を編集する</h1>
-
-      <%= form_with model: @shop, local: true do |f| %>
-      <%= render "devise/shared/error_messages", model: f.object %>
-      <%# プレビュー出力欄 %>
-      <div class="img-field" id="image-list">
-        <div id="image-list"></div>
-        <label class="form-image">
-          <i class="fas fa-images fa-2x "></i>
-          <%= f.file_field :images, id:"posts-image" ,name: 'shop[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
-        </label>
-      </div>
-      <p class="img-explanation">
-        クリックして写真をアップロード
-      </p>
-        <div class="posts-new-content">
-          <%= f.text_field :name, class:"caption-field", id:"name", placeholder:"お店の名前", maxlength:"250" %>
-        </div>
-        <div class="posts-new-content">
-          <%= f.text_area :explanation, class:"caption-field", id:"explanation", placeholder:"お店情報（住所、営業時間、電話番号、サイトURLなど）", maxlength:"250" %>
-        </div>
-        <%= f.submit "更新する" ,class:"posts-new-send" %>
-      <%end%>
+      <%= render partial: 'shops/form', locals: { shop: @shop } %>
     </div>
   </section>
   <%= render 'shared/footer' %>
