@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   def index
     # @posts = current_user.following_ids.push(current_user.id)
     @follows = current_user.followings.order('created_at DESC')
+    # return redirect_to home_path(current_user) if current_user.id != @user.user_id
+
   end
 
   def new

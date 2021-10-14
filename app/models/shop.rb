@@ -1,6 +1,6 @@
 class Shop < ApplicationRecord
   belongs_to :user
-  # has_many :shop_reviews
+  has_many :shop_reviews, dependent: :destroy
   has_many_attached :images
 
   validates :images, presence: true
