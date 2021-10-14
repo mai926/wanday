@@ -6,7 +6,10 @@
     <i class="far fa-envelope fa-lg user-icon"></i>
     <i class="far fa-bell fa-lg user-icon"></i> %>
     <%= link_to items_path do %>
-      <i class="fas fa-clipboard-list fa-lg user-icon"></i>
+      <i class="fas fa-gifts fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to shops_path do %>
+      <i class="fas fa-store fa-lg user-icon"></i>
     <% end %>
     <%= link_to new_post_path do %><i class="far fa-images fa-lg user-icon"></i><% end %>
       <%= link_to image_tag(current_user.account.images[0], class: "header-user-icon"), home_path(current_user) if current_user.account.images.attached?%>
