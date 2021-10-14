@@ -1,6 +1,6 @@
 class ShopReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  
+
   def new
     @review = ShopReview.new
     @shop = Shop.find(params[:shop_id])
@@ -12,11 +12,12 @@ class ShopReviewsController < ApplicationController
     if @review.save
       redirect_to shop_path(@shop)
     else
-      render "new"
+      render 'new'
     end
-  end 
+  end
 
   private
+
   def review_params
     params.require(:shop_review).permit(:title, :comment, :rate).merge(user_id: current_user.id, shop_id: params[:shop_id])
   end

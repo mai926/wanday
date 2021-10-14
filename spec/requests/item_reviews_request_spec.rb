@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "ItemReviews", type: :request do
-
+RSpec.describe 'ItemReviews', type: :request do
 end

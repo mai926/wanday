@@ -1,6 +1,6 @@
-class ItemReviewsController < ApplicationController 
+class ItemReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  
+
   def new
     @review = ItemReview.new
     @item = Item.find(params[:item_id])
@@ -12,11 +12,12 @@ class ItemReviewsController < ApplicationController
     if @review.save
       redirect_to item_path(@item)
     else
-      render "new"
+      render 'new'
     end
-  end 
+  end
 
   private
+
   def review_params
     params.require(:item_review).permit(:title, :comment, :rate).merge(user_id: current_user.id, item_id: params[:item_id])
   end
