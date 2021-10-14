@@ -1,6 +1,10 @@
 <section class="main-right">
   <%# ログインユーザープロフィール %>
-  <%= image_tag current_user.account.images[0] ,class: "index-user-icon"%>
+  <% if current_user.account.images.length == 0%>
+    <%= link_to image_tag('profile-user.png', class: "index-user-icon"), home_path(current_user) %>
+  <% else %>
+    <%= link_to image_tag(current_user.account.images[0], class: "index-user-icon"), home_path(current_user) %>
+  <% end %>
   <div class="index-user-show">
     <p class="user-show-nickname"><%= current_user.account.nickname %></p>
     <p class="user-show-id"><%= current_user.account.account_id %></p>
