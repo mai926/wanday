@@ -23,5 +23,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :item_reviews, only: [:new, :create, :destroy]
   end
-  resources :shops
+  resources :shops do
+    resources :shop_reviews, only: [:new, :create, :destroy]
+  end
 end
