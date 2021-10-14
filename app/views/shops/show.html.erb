@@ -1,0 +1,62 @@
+<main class="posts-index">
+  <%= render 'shared/header' %>
+  <section class="index-main-contents">
+    <%# お店名 %>
+    <section class="main-left">
+      <h1 class="item-review-title"><%= @shop.name %></h1>
+      <div class="star-icon">
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star s-color"></i>
+        <i class="fas fa-star-half-alt s-color"></i>
+        <i class="far fa-star s-color"></i>
+        <p>（10）</P>
+      </div>
+
+      <%# お店詳細情報 %>
+      <div class="item-detail">
+        <%= image_tag @shop.images[0], class: "item-detail-image" %>
+        <div class="item-datail-main">
+          <p><%= @shop.explanation %></p>
+        </div>
+      </div>
+      <div class="item-button-lists">
+        <%= link_to "お店情報編集", edit_shop_path(@shop), class: "item-edit-buttton" %>
+        <%= link_to "お店情報削除", shop_path(@shop), class: "item-edit-buttton", method: :delete %>
+      </div>
+      <div class="review-add-button">
+        <%# link_to "レビュー投稿", new_shop_shop_review_path(@shop), class: "item-edit-buttton" %>
+      </div>
+
+
+      <%# レビュー一覧 %>
+      <ul class="item-reviews">
+        <li class="item-review">
+          <div class="item-review-top">
+            <div class="item-review-icon"></div>
+            <div class="item-review-info">
+              <div class="item-reviwer-name">レビュワー名</div>
+              <div class="star-icon item-review-bottom">
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star s-color"></i>
+                <i class="fas fa-star-half-alt s-color"></i>
+                <i class="far fa-star s-color"></i>
+              </div>
+            </div>
+          </div>
+          <div class="item-review-conrtent">
+            <p>レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容</p>
+          </div>
+          <div class="item-review-data">
+            <p>投稿日時</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <%# ユーザー情報 %>
+    <%= render 'shared/userpro'%>
+  </section>
+  <%= render 'shared/footer' %>
+</main>
