@@ -4,11 +4,8 @@ class PostsController < ApplicationController
   before_action :redirect_to_show, only: [:edit, :update, :destroy]
 
   def index
-    # @user = User.find(params[:id])
-    # @posts = current_user.following_ids.push(current_user.id)
-    @follows = current_user.followings.order('created_at DESC')
+    @posts = Post.where(user_id: [*current_user.following_ids]).order('created_at DESC')
     # return redirect_to home_path(current_user) if current_user.id != @user.user_id
-
   end
 
   def new
@@ -22,9 +19,6 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def edit
   end
 
   def update
