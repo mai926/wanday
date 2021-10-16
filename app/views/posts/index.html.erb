@@ -8,7 +8,7 @@
         <% @follows.each do |follow|%>
           <li class="follow-post">
             <div class="post-title">
-              <%= image_tag follow.account.images[0] ,class: "title-icon"%>
+              <%= link_to image_tag(follow.account.images[0], class: "title-icon"), home_path(follow)%>
               <div class="title-content">
                 <p class="title-content-nickname"><%= follow.account.nickname %></p>
                 <p class="title-content-id"><%= follow.account.account_id %></p>
