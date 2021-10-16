@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @review = @item.item_reviews
+  end
+
   def destroy
     if @item.destroy
       redirect_to items_path
