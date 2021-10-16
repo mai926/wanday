@@ -51,6 +51,10 @@
   margin-bottom: 10px;
 }
 
+.follow-post {
+  border-bottom: solid 1px #eadfca;
+}
+
 /* アイコン部分 */
 .post-icon-lists {
   align-content: center;

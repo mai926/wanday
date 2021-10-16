@@ -1,21 +1,20 @@
-<%#console%>
 <main class="posts-index">
   <%= render 'shared/header' %>
   <section class="index-main-contents">
     <%# 投稿一覧 %>
     <section class="main-left">
       <ul class="follow-posts">
-        <% @follows.each do |follow|%>
+        <% @posts.each do |post|%>
           <li class="follow-post">
             <div class="post-title">
-              <%= link_to image_tag(follow.account.images[0], class: "title-icon"), home_path(follow)%>
+              <%= link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.id)%>
               <div class="title-content">
-                <p class="title-content-nickname"><%= follow.account.nickname %></p>
-                <p class="title-content-id"><%= follow.account.account_id %></p>
+                <p class="title-content-nickname"><%= post.account.nickname %></p>
+                <p class="title-content-id"><%= post.account.account_id %></p>
               </div>
             </div>
             <div class="post-pic">
-              <%# image_tag follow.posts.images[0] ,class: "title-icon"%>
+              <%= image_tag post.images[0] ,class: "post-pic"%>
             </div>
               <dl class="post-icon-lists">
                 <dt><i class="far fa-comment fa-lg"></i></dt>
@@ -24,7 +23,7 @@
                 <dd>いいね3件<dd>
               </dl>
             <div class="post-caption">
-              <p><%# follow.posts.caption %></p>
+              <p><%= post.caption %></p>
             </div>
           </li>
         <% end %>
@@ -34,4 +33,5 @@
     <%# ユーザー情報 %>
     <%= render 'shared/userpro'%>
   </section>
+  <%= render 'shared/footer' %>
 </main>
