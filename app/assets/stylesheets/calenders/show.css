@@ -1,0 +1,19 @@
+.event-info {
+  margin-bottom: 50px;
+}
+
+.event-info > p {
+  color: #aa998a;
+  font-size: 20px;
+  border-bottom: solid 1px #eadfca;
+  margin-bottom: 20px;
+}
+
+.event-info > dl > dt {
+  color: #aa998a;
+  margin-bottom: 10px;
+}
+
+.event-info > dl > dd {
+  margin-bottom: 20px;
+}

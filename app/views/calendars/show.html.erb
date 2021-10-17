@@ -2,37 +2,28 @@
   <%= render 'shared/header' %>
   <section class="index-main-contents">
     <section class="main-left">
-    <h1 class="item-review-title">Calendar</h1>
-    <%# カレンダー表示部分 %>
-    <div class="calender-main">
-    <%= month_calendar events: @calendars do |date, calendars| %>
-      <%= date.day %>
+    <h1 class="item-review-title">Event</h1>
 
-      <% calendars.each do |calendar| %>
-        <div>
-          <%= link_to calendar.event, calendar %>
-        </div>
-      <% end %>
-    <% end %>
+    <%# 予定詳細情報表示部分 %>
+    <div class="event-info">
+      <p>イベント詳細</p>
+      <dl>
+        <dt>タイトル</dt>
+        <dd><%=@calendar.event %></dd>
+        <dt>メモ</dt>
+        <dd><%=@calendar.text %></dd>
+        <dt>日程</dt>
+        <dd><%= @calendar.start_time.strftime("%m/%d") %></dd>
+      </dl>
     </div>
-    
-    <%# 予定一覧 %>
-    <p class="schedule event-detail">今後の予定一覧</p>
-    <table class="table event-list">
-      <tbody>
-        <% @calendars.last(5).each do |calendar| %>
-          <tr>
-            <td>・<%= calendar.start_time.strftime("%m/%d") %>&nbsp;</td>
-            <td><%= link_to calendar.event , calendar %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= link_to "カレンダーに戻る", calendars_path,class:"calender-regist-button"%>
 
-    <%# 予定登録フォーム %>
+
+    <%# 予定編集フォーム %>
     <div class="event-form">
-    <p>予定を登録</p>
+    <p>予定を編集</p>
       <%= form_with(model: @calendar, local: true) do |f| %>
+      <%= render "devise/shared/error_messages", model: f.object %>
 
         <div class="title">
           <div class="calender-form-tag">タイトル</div>
@@ -51,7 +42,7 @@
         </div>
 
       <div class="submit">
-          <%= f.submit "登録する",class:"calender-regist-button"%>
+          <%= f.submit "更新する",class:"calender-regist-button"%>
       </div>
       <% end %>
     </div>
