@@ -27,6 +27,10 @@ class ShopsController < ApplicationController
     end
   end
 
+  def show
+    @review = @shop.shop_reviews
+  end
+
   def destroy
     if @shop.destroy
       redirect_to shops_path

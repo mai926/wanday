@@ -31,27 +31,32 @@
 
       <%# レビュー一覧 %>
       <ul class="item-reviews">
-        <li class="item-review">
-          <div class="item-review-top">
-            <div class="item-review-icon"></div>
-            <div class="item-review-info">
-              <div class="item-reviwer-name">レビュワー名</div>
-              <div class="star-icon item-review-bottom">
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star s-color"></i>
-                <i class="fas fa-star-half-alt s-color"></i>
-                <i class="far fa-star s-color"></i>
+        <% @review.each do |review| %>
+          <li class="item-review">
+            <div class="item-review-top">
+              <%= link_to image_tag(review.account.images[0], class: "item-review-icon"), home_path(review.account.id) if review.account.images.attached?%>
+              <% if review.account.images.length == 0%>
+                <%= link_to image_tag('profile-user.png', class: "item-review-icon"), home_path(review.account.id) %>
+              <% end %>
+              <div class="item-review-info">
+                <div class="item-reviwer-name"><%= review.account.nickname %></div>
+                <div class="star-icon item-review-bottom">
+                  <i class="fas fa-star s-color"></i>
+                  <i class="fas fa-star s-color"></i>
+                  <i class="fas fa-star s-color"></i>
+                  <i class="fas fa-star-half-alt s-color"></i>
+                  <i class="far fa-star s-color"></i>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="item-review-conrtent">
-            <p>レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容レビュー内容</p>
-          </div>
-          <div class="item-review-data">
-            <p>投稿日時</p>
-          </div>
-        </li>
+            <div class="item-review-conrtent">
+              <p><%= review.comment %></p>
+            </div>
+            <div class="item-review-data">
+              <p><%= review.updated_at.to_s(:datetime) %></p>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </section>
 
