@@ -90,10 +90,18 @@
 }
 
 .item-review-bottom {
-  height: 3vh;
-  width: 100%;
   display: flex;
   align-items: center;
+}
+
+.item-review-top-icon {
+  display: flex;
+  align-items: center;
+}
+
+.item-review-bottom > img {
+  height: 3vh;
+  filter: invert(72%) sepia(26%) saturate(6428%) hue-rotate(1deg) brightness(105%) contrast(102%);
 }
 
 .item-review-conrtent {

@@ -1,16 +1,13 @@
+<% console%>
 <main class="posts-index">
   <%= render 'shared/header' %>
   <section class="index-main-contents">
     <%# 商品名 %>
     <section class="main-left">
       <h1 class="item-review-title"><%= @item.name %></h1>
-      <div class="star-icon">
-        <i class="fas fa-star s-color"></i>
-        <i class="fas fa-star s-color"></i>
-        <i class="fas fa-star s-color"></i>
-        <i class="fas fa-star-half-alt s-color"></i>
-        <i class="far fa-star s-color"></i>
-        <p>（10）</P>
+      <div class="item-review-top-icon">
+        <div class="item-review-bottom" data-score="<%= @average_review %>"></div>
+        <p>(<%= @review.count %>)</p>
       </div>
 
       <%# 商品詳細情報 %>
@@ -40,13 +37,7 @@
               <% end %>
               <div class="item-review-info">
                 <div class="item-reviwer-name"><%= review.account.nickname %></div>
-                <div class="star-icon item-review-bottom">
-                  <i class="fas fa-star s-color"></i>
-                  <i class="fas fa-star s-color"></i>
-                  <i class="fas fa-star s-color"></i>
-                  <i class="fas fa-star-half-alt s-color"></i>
-                  <i class="far fa-star s-color"></i>
-                </div>
+                <div class="item-review-bottom" data-score="<%= review.rate %>"></div>
               </div>
             </div>
             <div class="item-review-conrtent">
@@ -58,6 +49,15 @@
           </li>
         <% end %>
       </ul>
+      <script>
+        $('.item-review-bottom').raty({
+            readOnly: true,
+            score: function() {
+              return $(this).attr('data-score');
+            },
+            path: '/assets/'
+        });
+      </script>
     </section>
 
     <%# ユーザー情報 %>

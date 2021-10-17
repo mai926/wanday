@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order(created_at: :desc)
+    # @review = @items.item_reviews
+    # @average_review =  @review.average(:rate)
   end
 
   def new
@@ -29,6 +31,7 @@ class ItemsController < ApplicationController
 
   def show
     @review = @item.item_reviews
+    @average_review =  @review.average(:rate)
   end
 
   def destroy
