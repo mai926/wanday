@@ -4,6 +4,4 @@ class Calendar < ApplicationRecord
   validates :event, presence: true
   validates :text, presence: true
   validates :start_time, presence: true
-
-
 end

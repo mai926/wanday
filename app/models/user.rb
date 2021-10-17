@@ -13,7 +13,6 @@ class User < ApplicationRecord
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze }
   validates :name, presence: true
-  
 
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower

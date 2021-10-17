@@ -1,5 +1,5 @@
 class CalendarsController < ApplicationController
-  before_action :select_calendar, only: [:show, :edit, :update,:destroy]
+  before_action :select_calendar, only: [:show, :edit, :update, :destroy]
 
   def index
     @calendars = Calendar.where(user_id: [*current_user])
@@ -8,9 +8,7 @@ class CalendarsController < ApplicationController
 
   def create
     @calendar = Calendar.new(calendar_parameter)
-    if @calendar.save
-      redirect_to calendars_path
-    end
+    redirect_to calendars_path if @calendar.save
   end
 
   def update
@@ -23,10 +21,11 @@ class CalendarsController < ApplicationController
 
   def destroy
     @calendar.destroy
-    redirect_to calendars_path, notice:"削除しました"
+    redirect_to calendars_path
   end
 
   private
+
   def calendar_parameter
     params.require(:calendar).permit(:event, :text, :start_time).merge(user_id: current_user.id)
   end
