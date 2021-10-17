@@ -5,13 +5,20 @@
       <h1 class="form-title">商品のレビューを投稿する</h1>
       <%= form_with(model: [@item, @review], local: true) do |f| %>   
       <%= render "devise/shared/error_messages", model: f.object %>
-        <div class="review-star-icon">
-          <i class="fas fa-star s-color fa-3x"></i>
-          <i class="fas fa-star s-color fa-3x"></i>
-          <i class="fas fa-star s-color fa-3x"></i>
-          <i class="fas fa-star-half-alt s-color fa-3x"></i>
-          <i class="far fa-star s-color fa-3x"></i>
+        <div class="review-star-icon" id="evaluate_stars">
+          <%= f.hidden_field :rate, class:"item-field" %>
         </div>
+      <script>
+        $('#evaluate_stars').raty({
+          size     : 20,
+          half: true,
+          starOn: "<%= asset_path('star.png') %>",
+          starOff: "<%= asset_path('star-empty.png') %>",
+          starHalf: "<%= asset_path('star-half-empty.png') %>",
+          scoreName: 'item_review[rate]' //登録するモデル名とカラム名を記述
+        });
+      </script>
+
         <div class="review-star-info">
           <p>星の数で評価をしましょう</p>
         </div>
@@ -23,6 +30,7 @@
         </div>
         <%= f.submit "投稿する" ,class:"posts-new-send" %>
       <%end%>
+
     </div>
   </section>
   <%= render 'shared/footer' %>
