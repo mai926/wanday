@@ -5,9 +5,6 @@ class CalendarsController < ApplicationController
     @calendars = Calendar.where(user_id: [*current_user])
     @calendar = Calendar.new
   end
-  
-  def show
-  end
 
   def create
     @calendar = Calendar.new(calendar_parameter)
@@ -26,11 +23,10 @@ class CalendarsController < ApplicationController
 
   def destroy
     @calendar.destroy
-    redirect_to calendar_path, notice:"削除しました"
+    redirect_to calendars_path, notice:"削除しました"
   end
 
   private
-
   def calendar_parameter
     params.require(:calendar).permit(:event, :text, :start_time).merge(user_id: current_user.id)
   end

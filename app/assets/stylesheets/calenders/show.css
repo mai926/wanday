@@ -17,3 +17,20 @@
 .event-info > dl > dd {
   margin-bottom: 20px;
 }
+
+.event-link {
+  display: flex;
+}
+
+.calender-show-button {
+  background-color: #9ec3bc;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  width: 150px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 15px;
+  display: block;
+  margin: 0 20px 100px 0;
+}

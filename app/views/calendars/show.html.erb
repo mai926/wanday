@@ -16,8 +16,11 @@
         <dd><%= @calendar.start_time.strftime("%m/%d") %></dd>
       </dl>
     </div>
-    <%= link_to "カレンダーに戻る", calendars_path,class:"calender-regist-button"%>
 
+    <div class="event-link">
+      <%= link_to "イベントを削除する", calendar_path(@calendar), class:"calender-show-button", method: :delete%>
+      <%= link_to "カレンダーに戻る", calendars_path, class:"calender-show-button"%>
+    </div>
 
     <%# 予定編集フォーム %>
     <div class="event-form">
