@@ -1,6 +1,5 @@
 class CalendarsController < ApplicationController
   def index
-    # @calendars = Calendar.find(user_id: [*current_user])
     @calendars = Calendar.where(user_id: [*current_user])
     @calendar = Calendar.new
   end

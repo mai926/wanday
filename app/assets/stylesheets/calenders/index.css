@@ -1,0 +1,85 @@
+/* スケジュール一覧部分 */
+.event-detail {
+  color: #aa998a;
+  font-size: 20px;
+  border-bottom: solid 1px #eadfca;
+  margin-bottom: 20px;
+}
+
+.event-list {
+  margin: 20px 0 50px 0;
+}
+
+td {
+  height: 30px;
+  line-height: 30px;
+}
+
+/* スケジュール入力欄 */
+.event-form {
+  margin-bottom: 50px;
+}
+
+.event-form > p {
+  color: #aa998a;
+  font-size: 20px;
+  border-bottom: solid 1px #eadfca;
+  margin-bottom: 20px;
+}
+
+.calender-field {
+  display: block;
+  border-radius: 4px;
+  border: solid 1px #aa998a;
+  height: 40px;
+  line-height: 40px;
+  width: 50%;
+  padding-left: 15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.calender-form-tag {
+  color: #aa998a;
+}
+
+.calender-regist-button {
+  background-color: #9ec3bc;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  width: 150px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 100px;
+}
+
+/* カレンダー部分 */
+.calender-main {
+  margin-bottom: 50px;
+}
+
+.calender-data {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.calender-data-link {
+  height: 25px;
+  line-height: 25px;
+  width: 60px;
+  border-radius: 16px;
+  border: solid 1px;
+  color: #9ec3bc;
+}
+
+.calendar-title {
+  color: #aa998a;
+  margin: 0 20px;
+  font-weight: bold;
+}

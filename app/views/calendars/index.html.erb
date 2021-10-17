@@ -1,0 +1,65 @@
+<main class="toppage">
+  <%= render 'shared/header' %>
+  <section class="index-main-contents">
+    <section class="main-left">
+    <h1 class="item-review-title">Calendar</h1>
+    <%# カレンダー表示部分 %>
+    <div class="calender-main">
+    <%= month_calendar events: @calendars do |date, calendars| %>
+      <%= date.day %>
+
+      <% calendars.each do |calendar| %>
+        <div>
+          <%= link_to calendar.event, calendar %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+    
+    <%# 予定一覧 %>
+    <p class="schedule event-detail">今後の予定一覧</p>
+    <table class="table event-list">
+      <tbody>
+        <% @calendars.last(5).each do |calendar| %>
+          <tr>
+            <td>・<%= calendar.start_time.strftime("%m/%d") %>&nbsp;</td>
+            <td><%= link_to calendar.event , calendar %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%# 予定登録フォーム %>
+    <div class="event-form">
+    <p>予定を登録</p>
+      <%= form_with(model: @calendar, local: true) do |f| %>
+
+        <div class="title">
+          <div class="calender-form-tag">タイトル</div>
+          <%= f.text_field :event , class:"calender-field", placeholder:"タイトル"%>
+        </div>
+
+
+        <div class="content">
+          <div class="calender-form-tag">内容</div>
+          <%= f.text_area :text, class:"calender-field", placeholder:"詳細" %>
+        </div>
+
+          <div class="time">
+          <div class="calender-form-tag">時間</div>
+          <%= f.datetime_field :start_time,class:"calender-field" %>
+        </div>
+
+      <div class="submit">
+          <%= f.submit "登録する",class:"calender-regist-button"%>
+      </div>
+      <% end %>
+    </div>
+
+
+  </section>
+   <%# ユーザー情報 %>
+    <%= render 'shared/userpro'%>
+</section>
+  <%= render 'shared/footer' %>
+</main>
