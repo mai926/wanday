@@ -5,7 +5,7 @@
     <h1 class="item-review-title">Calendar</h1>
     <%# カレンダー表示部分 %>
     <div class="calender-main">
-    <%= month_calendar events: @calendars do |date, calendars| %>
+      <%= month_calendar events: @calendars do |date, calendars| %>
       <%= date.day %>
 
       <% calendars.each do |calendar| %>
