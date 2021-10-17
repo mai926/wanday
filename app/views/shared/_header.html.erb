@@ -1,7 +1,9 @@
 <header class='top-page-header1'>
   <p class="header-title1">wanday!</p>
   <nav>
-    <%= link_to posts_path do %><i class="fas fa-home fa-lg user-icon"></i><% end %>
+    <%= link_to posts_path do %>
+      <i class="fas fa-home fa-lg user-icon"></i>
+    <% end %>
     <%# <i class="fas fa-search fa-lg user-icon"></i>
     <i class="far fa-envelope fa-lg user-icon"></i>
     <i class="far fa-bell fa-lg user-icon"></i> %>
@@ -14,10 +16,12 @@
     <%= link_to calendars_path do %>
       <i class="far fa-calendar-alt user-icon fa-lg "></i>
     <% end %>
-    <%= link_to new_post_path do %><i class="far fa-images fa-lg user-icon"></i><% end %>
-      <%= link_to image_tag(current_user.account.images[0], class: "header-user-icon"), home_path(current_user) if current_user.account.images.attached?%>
-      <% if current_user.account.images.length == 0%>
-        <%= link_to image_tag('profile-user.png', class: "header-user-icon"), home_path(current_user) %>
-      <% end %>
+    <%= link_to new_post_path do %>
+      <i class="far fa-images fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to image_tag(current_user.account.images[0], class: "header-user-icon"), home_path(current_user) if current_user.account.images.attached?%>
+    <% if current_user.account.images.length == 0%>
+      <%= link_to image_tag('profile-user.png', class: "header-user-icon"), home_path(current_user) %>
+    <% end %>
   </nav>
 </header>
