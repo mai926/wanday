@@ -36,7 +36,9 @@ class User < ApplicationRecord
   end
 
   def follow(user_id)
+    unless self != user_id
     relationships.create(followed_id: user_id)
+    end
   end
 
   def unfollow(user_id)
