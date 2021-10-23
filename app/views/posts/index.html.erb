@@ -11,14 +11,13 @@
               <% if post.account.images.length == 0%>
                 <%= link_to image_tag('profile-user.png', class: "title-icon"), home_path(post.user_id) %>
               <% end %>
-              <%# link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.user_id)%>
               <div class="title-content">
                 <p class="title-content-nickname"><%= post.account.nickname %></p>
                 <p class="title-content-id"><%= post.account.account_id %></p>
               </div>
             </div>
             <div class="post-pic">
-              <%= link_to image_tag(post.images[0] ,class: "post-pic"), "#"%>
+              <%= link_to image_tag(post.images[0] ,class: "post-pic"), post_path(post)%>
             </div>
               <dl class="post-icon-lists">
                 <dt><i class="far fa-comment fa-lg"></i></dt>

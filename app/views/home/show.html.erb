@@ -5,9 +5,11 @@
       <%= link_to posts_path do %>
         <i class="fas fa-home fa-lg user-icon"></i>
       <% end %>
-      <%# <i class="fas fa-search fa-lg user-icon"></i>
-      <i class="far fa-envelope fa-lg user-icon"></i>
-      <i class="far fa-bell fa-lg user-icon"></i> %>
+      <%= link_to search_posts_path do %>
+        <i class="fas fa-search fa-lg user-icon"></i>
+      <% end %>
+      <%# <i class="far fa-envelope fa-lg user-icon"></i> %>
+      <%# <i class="far fa-bell fa-lg user-icon"></i> %>
       <%= link_to items_path do %>
         <i class="fas fa-gifts fa-lg user-icon"></i>
       <% end %>
@@ -27,6 +29,7 @@
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
         <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
+        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", "#"%></li>
         <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
       </ul>
     </nav>
