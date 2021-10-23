@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :home, only: [:index, :show]
   get 'home/likes/:id', to: 'home#like_list', as: 'home_likes'
   get 'home/follower/:id', to: 'home#follower', as: 'home_follower'
+  get 'home/following/:id', to: 'home#following', as: 'home_following'
+
   resources :posts do 
     resources :comments, only: :create 
     resources :likes, only: [:create, :destroy]
