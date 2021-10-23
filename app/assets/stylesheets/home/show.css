@@ -72,10 +72,11 @@
   margin-bottom: 50px;
 }
 
-.mypage-user-follow > p {
+.user-follow-count {
   font-size: 12px;
   margin-bottom: 10px;
   text-align: center;
+  display: block;
 }
 
 /* いいね・一覧画面切り替え */

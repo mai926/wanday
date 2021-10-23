@@ -1,4 +1,3 @@
-<% console%>
 <main class="mypage">
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
@@ -35,7 +34,7 @@
 
   <section>
     <div class="mypage-contents">
-    <%# ユーザー情報 %>
+      <%# ユーザー情報 %>
       <div class="mypage-top">
         <%= image_tag @user.account.images[0] ,class: "mypage-user-icon" if @user.account.images.attached?%>
         <% if @user.account.images.length == 0%>
@@ -56,22 +55,22 @@
           <% else %>
             <%= link_to "Follow", relationships_path(user_id: @user.id), method: :post, class: "follow-button"%>
           <% end %>
-          <p>フォロー <%= @user.followings.count %></p>
-          <p>フォロワー <%= @user.followers.count %></p>
+          <%= link_to "フォロー #{@user.followings.count}", "#", class: "user-follow-count"%>
+          <%= link_to "フォロワー #{@user.followers.count}", home_follower_path(@user), class: "user-follow-count"%>
         </div>
       </div>
 
-    <%# いいね・一覧画面切り替え %>
-    <div class="mypage-icon-lists">
-      <ul class="mypage-icon-list">
-        <li class="icon-select"><i class="fas fa-image fa-2x choice-icon"></i><p class="choice-icon-info">投稿一覧</p></li>
-        <%= link_to home_likes_path(@user) do %>
-          <li class="icon-select"><i class="far fa-heart fa-2x"></i><p class="unchoice-icon">いいね一覧</p></li>
-        <%end%>
-      </ul>
-    </div>
+      <%# いいね・一覧画面切り替え %>
+      <div class="mypage-icon-lists">
+        <ul class="mypage-icon-list">
+          <li class="icon-select"><i class="fas fa-image fa-2x choice-icon"></i><p class="choice-icon-info">投稿一覧</p></li>
+          <%= link_to home_likes_path(@user) do %>
+            <li class="icon-select"><i class="far fa-heart fa-2x"></i><p class="unchoice-icon">いいね一覧</p></li>
+          <%end%>
+        </ul>
+      </div>
 
-    <%# 画像一覧 %>
+      <%# 画像一覧 %>
       <div class="mypage-middle">
         <ul class="img-lists">
           <% @user.posts.each do |post|%>
@@ -83,42 +82,7 @@
           <% end %>
         </ul>
       </div>
-
-`    </div>
-
-<table>
-    <caption>フォロー中</caption>
-    <thead>
-        <tr>
-            <th>ユーザー名</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @following_users.each do |following_user| %>
-        <tr>
-            <td><%= following_user.name %></td>
-            <td><%= link_to 'フォロー外す', relationships_path(user_id: @user.id), method: :delete %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table><br><br>
-
-<table>
-    <caption>フォロワー</caption>
-    <thead>
-        <tr>
-            <th>フォロワー名</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @follower_users.each do |follower_user| %>
-        <tr>
-            <td><%= follower_user.name %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+    </div>
   </section>
   <%= render 'shared/footer' %>
 </main>
