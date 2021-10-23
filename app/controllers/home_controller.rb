@@ -22,7 +22,8 @@ class HomeController < ApplicationController
   end
 
   private
-    def user_select
-      @user = User.find(params[:id])
-    end
+
+  def user_select
+    @user = User.find(params[:id])
+  end
 end

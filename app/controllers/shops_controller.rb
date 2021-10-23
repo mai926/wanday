@@ -29,7 +29,7 @@ class ShopsController < ApplicationController
 
   def show
     @review = @shop.shop_reviews
-    @average_review =  @review.average(:rate)
+    @average_review = @review.average(:rate)
   end
 
   def destroy

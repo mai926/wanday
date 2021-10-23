@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
   def show
     @review = @item.item_reviews
-    @average_review =  @review.average(:rate)
+    @average_review = @review.average(:rate)
   end
 
   def destroy
