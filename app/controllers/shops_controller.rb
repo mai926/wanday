@@ -40,6 +40,15 @@ class ShopsController < ApplicationController
     end
   end
 
+  def search
+    if params[:q]&.dig(:name)
+      squished_keywords = params[:q][:name].squish
+      params[:q][:name_cont_any] = squished_keywords.split(' ')
+    end
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result
+  end
+
   private
 
   def shop_params

@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   end
   resources :shops do
     resources :shop_reviews, only: [:new, :create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :calendars
 end
