@@ -1,0 +1,62 @@
+<main class="posts-index">
+  <%= render 'shared/header' %>
+  <section class="index-main-contents">
+    <%# 投稿一覧 %>
+    <section class="main-left">
+      <h1 class="item-review-title">Search</h1>
+
+      <%= search_form_for @q, url: search_posts_path do |f| %>
+        <div class="search-field">
+          <%= f.label :caption, 'キーワード' %>
+          <%= f.text_field :caption, placeholder: 'キーワード検索', class:"search-small-field", value: params[:q]&.dig(:caption)%>
+        </div>
+        <div class="search-field">
+          <%= f.label :account_nickname_cont, 'ユーザー名' %>
+          <%= f.text_field :account_nickname_cont, placeholder: 'ユーザー検索', class:"search-small-field" %>
+        </div>
+        <div class="search-field">
+          <%= f.submit '検索', class:"search-button" %>
+        </div>
+      <% end %>
+
+
+      <ul class="follow-posts">   
+        <% @posts.each do |post|%>
+          <li class="follow-post">
+            <div class="post-title">
+              <%= link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.user_id) if post.account.images.attached?%>
+              <% if post.account.images.length == 0%>
+                <%= link_to image_tag('profile-user.png', class: "title-icon"), home_path(post.user_id) %>
+              <% end %>
+              <%# link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.user_id)%>
+              <div class="title-content">
+                <p class="title-content-nickname"><%= post.account.nickname %></p>
+                <p class="title-content-id"><%= post.account.account_id %></p>
+              </div>
+            </div>
+            <div class="post-pic">
+              <%= link_to image_tag(post.images[0] ,class: "post-pic"), "#"%>
+            </div>
+              <dl class="post-icon-lists">
+                <dt><i class="far fa-comment fa-lg"></i></dt>
+                <dd>コメント3件<dd>
+                <dt><i class="far fa-heart fa-lg"></i></dt> 
+                <dd>いいね3件<dd>
+              </dl>
+            <div class="post-caption">
+              <p><%= post.caption %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+
+
+
+    </section>
+
+    <%# ユーザー情報 %>
+    <%= render 'shared/userpro'%>
+  </section>
+  <%= render 'shared/footer' %>
+</main>

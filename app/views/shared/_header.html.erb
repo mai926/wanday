@@ -4,9 +4,11 @@
     <%= link_to posts_path do %>
       <i class="fas fa-home fa-lg user-icon"></i>
     <% end %>
-    <%# <i class="fas fa-search fa-lg user-icon"></i>
-    <i class="far fa-envelope fa-lg user-icon"></i>
-    <i class="far fa-bell fa-lg user-icon"></i> %>
+    <%= link_to search_posts_path do %>
+      <i class="fas fa-search fa-lg user-icon"></i>
+    <% end %>
+    <%# <i class="far fa-envelope fa-lg user-icon"></i> %>
+    <%# <i class="far fa-bell fa-lg user-icon"></i> %>
     <%= link_to items_path do %>
       <i class="fas fa-gifts fa-lg user-icon"></i>
     <% end %>
