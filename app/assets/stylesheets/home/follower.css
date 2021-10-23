@@ -1,0 +1,39 @@
+.follow-main {
+  padding: 50px 250px 50px 250px;
+}
+
+.follow-title {
+  font-size: 25px;
+  color: #aa998a;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ユーザー一覧 */
+.follow-list {
+  height: 80px;
+  border-bottom: solid 1px #eadfca;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.follow-user-icon {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+
+.follow-account-detail {
+  padding: 0 0 0 20px;
+}
+
+.follow-nickname {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.follow-id {
+  font-size: 13px;
+  color: #aa998a;
+}
