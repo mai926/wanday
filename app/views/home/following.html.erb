@@ -1,34 +1,6 @@
 <div class="mypage-contents">
   <%= render 'shared/header' %>
-  <%# ユーザー情報 %>
-    <div class="mypage-top">
-      <%= image_tag @user.account.images[0] ,class: "mypage-user-icon" if @user.account.images.attached?%>
-      <% if @user.account.images.length == 0%>
-        <%= image_tag "profile-user.png" ,class: "mypage-user-icon" %>
-      <% end %>
-      <div class="mypage-user-detail">
-        <p class="mypage-nickname"><%=  @user.account.nickname%></p>
-        <p class="mypage-account-id"><%=  @user.account.account_id%></p>
-        <p class="mypage-account-detail">
-        <%=  @user.account.introduction %>
-        </p>
-      </div>
-
-      <%# フォローボタン %>
-      <div class="mypage-user-follow">
-        <% if current_user.following?(@user) %>
-          <%= link_to "Unfollow", relationships_path(user_id: @user.id), method: :delete,class: "unfollow-button"%>
-        <% else %>
-          <%= link_to "Follow", relationships_path(user_id: @user.id), method: :post, class: "follow-button"%>
-        <% end %>
-        <p>フォロー <%= @user.followings.count %></p>
-        <p>フォロワー <%= @user.followers.count %></p>
-      </div>
-    </div>
-
-  <%# いいね・一覧画面切り替え %>
-  <div class="mypage-icon-lists">
-  </div>
+  <%= render partial: 'user_detail', locals: { user: @user } %>
 
   <%# フォロー中一覧 %>
   <section>
