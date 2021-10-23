@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   def search
     if params[:q]&.dig(:caption)
       squished_keywords = params[:q][:caption].squish
-      params[:q][:caption_cont_any] = squished_keywords.split(" ")
+      params[:q][:caption_cont_any] = squished_keywords.split(' ')
     end
     @q = Post.ransack(params[:q])
     @posts = @q.result
