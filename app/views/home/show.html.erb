@@ -55,7 +55,7 @@
           <% else %>
             <%= link_to "Follow", relationships_path(user_id: @user.id), method: :post, class: "follow-button"%>
           <% end %>
-          <%= link_to "フォロー #{@user.followings.count}", "#", class: "user-follow-count"%>
+          <%= link_to "フォロー #{@user.followings.count}", home_following_path(@user), class: "user-follow-count"%>
           <%= link_to "フォロワー #{@user.followers.count}", home_follower_path(@user), class: "user-follow-count"%>
         </div>
       </div>
