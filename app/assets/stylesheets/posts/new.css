@@ -46,7 +46,8 @@
 }
 
 .form-image {
-  margin: auto;
+  display: block;
+  text-align: center;
 }
 
 .fa-images {
