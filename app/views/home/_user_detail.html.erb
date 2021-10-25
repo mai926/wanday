@@ -21,5 +21,8 @@
     <% end %>
     <%= link_to "フォロー #{user.followings.count}", home_following_path(user), class: "user-follow-count"%>
     <%= link_to "フォロワー #{user.followers.count}", home_follower_path(user), class: "user-follow-count"%>
+    <%= link_to "#" do %>
+      <i class="fas fa-paw fa-lg pet-icon"></i>
+    <% end %>
   </div>
 </div>
