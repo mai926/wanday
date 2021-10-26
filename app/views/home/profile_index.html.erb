@@ -28,8 +28,8 @@
       <% end %>
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
-        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
-        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", home_profile_new_path(@account)%></li>
+        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account) %></li>
+        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", home_profile_new_path(@account) %></li>
         <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
       </ul>
     </nav>
@@ -42,24 +42,18 @@
       <%# いいね・一覧画面切り替え %>
       <div class="mypage-icon-lists">
         <ul class="mypage-icon-list">
-          <li class="icon-select"><i class="fas fa-image fa-2x choice-icon"></i><p class="choice-icon-info">投稿一覧</p></li>
+          <%= link_to home_path(@user) do %>
+            <li class="icon-select"><i class="far fa-image fa-2x"></i><p class="unchoice-icon">投稿一覧</p></li>
+          <% end %>
           <%= link_to home_likes_path(@user) do %>
             <li class="icon-select"><i class="far fa-heart fa-2x"></i><p class="unchoice-icon">いいね一覧</p></li>
           <%end%>
         </ul>
       </div>
 
-      <%# 画像一覧 %>
+      <%# ペットプロフィール %>
       <div class="mypage-middle">
-        <ul class="img-lists">
-          <% @user.posts.each do |post|%>
-            <li>
-              <%= link_to post_path(post) do %>
-                <%= image_tag post.images[0], class: "mypage-img" %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+        ペットpロフィールがここに出る
       </div>
     </div>
   </section>
