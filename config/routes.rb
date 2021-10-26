@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'home/likes/:id', to: 'home#like_list', as: 'home_likes'
   get 'home/follower/:id', to: 'home#follower', as: 'home_follower'
   get 'home/following/:id', to: 'home#following', as: 'home_following'
+  get 'home/profile/:id', to: 'home#profile_index', as: 'home_profile_index'
+  get 'home/profile/new/:id', to: 'home#profile_new', as: 'home_profile_new'
+  post 'home/profile/create/:id', to: 'home#profile_create', as: 'home_profile_create'
 
   resources :posts do 
     resources :comments, only: :create 
