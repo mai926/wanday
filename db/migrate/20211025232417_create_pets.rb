@@ -3,6 +3,8 @@ class CreatePets < ActiveRecord::Migration[6.0]
     create_table :pets do |t|
       t.string :name
       t.string :dog_breed
+      t.string :favorite
+      t.string :character
       t.date :birthday
       t.references :user
       t.timestamps
