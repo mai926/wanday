@@ -29,7 +29,8 @@
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
         <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account) %></li>
-        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", home_profile_new_path(@account) %></li>
+        <li class="pull-down-edit-list"><%= link_to "ペット情報登録", home_profile_new_path(@account) %></li>
+        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", "#" %></li>
         <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
       </ul>
     </nav>

@@ -1,0 +1,47 @@
+<main class="user-edit">
+  <section>
+    <div class="user-edit-contents">
+      <h1 class="form-title">ペット情報編集</h1>
+
+      <%= form_with model: @pet, url: home_profile_update_path, local: true do |f| %>
+      <%# render "devise/shared/error_messages", model: f.object %>
+        <div class="new-content">
+          <%= f.label :name,'名前' %>
+          <%= f.text_field :name, class:"small-field", placeholder:"例）ポチ", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :dog_breed,'犬種' %>
+          <%= f.text_field :dog_breed, class:"small-field", placeholder:"例）柴犬", maxlength:"40", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :birthday,'誕生日' %>
+          <%= f.date_select(:birthday,
+            class:'input-birth-wrap', 
+            id:"birthday",
+            use_month_numbers: true,
+            prompt:'--',
+            start_year: 1950,
+            end_year: (Time.now.year - 5),
+            date_separator: '/') %>
+        </div>
+        <div class="new-content">
+          <%= f.label :favorite,'好きなもの' %>
+          <%= f.text_field :favorite, class:"small-field", placeholder:"例）お昼寝", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :character,'性格' %>
+          <%= f.text_field :character, class:"small-field", placeholder:"例）いたずら好き", autofocus: true  %>
+        </div>
+        <div class="new-content">
+          <%= f.label :images,'プロフィール画像' %>
+          <%= f.file_field :images %>
+        </div>
+        <div class="remove-img">
+          <p><%= f.check_box :remove_images %>画像を削除する</p>
+        </div>
+        <%= f.submit "更新" ,class:"send" %>
+      <%end%>
+    </div>
+  </section>
+  <%= render 'shared/footer' %>
+</main>

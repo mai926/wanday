@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :user_select, except: [:index]
-  before_action :move_to_home_show, only: [:profile_new, :profile_create]
+  before_action :pet_select, only: [:show, :profile_edit, :profile_update]
+  before_action :move_to_home_show, only: [:profile_new, :profile_create, :profile_edit, :profile_update]
   def show
     @account = Account.find(params[:id])
     @likes = @user.likes
@@ -31,7 +32,6 @@ class HomeController < ApplicationController
 
   def profile_create
     @pet = Pet.new(pet_params)
-    # binding.pry
     if @pet.save
       redirect_to home_profile_index_path(current_user)
     else
@@ -39,10 +39,22 @@ class HomeController < ApplicationController
     end
   end
 
+  def profile_update
+    if @pet.update(pet_params)
+      redirect_to home_profile_index_path(current_user)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def user_select
     @user = User.find(params[:id])
+  end
+
+  def pet_select
+    @pet = Pet.find(params[:id])
   end
 
   def pet_params

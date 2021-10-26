@@ -13,18 +13,20 @@
   </div>
 
   <%# ペットプロフィール %>
-  <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
-  <div class="index-pet-show">
-    <p class="pet-name">ペットの名前</p>
-    <dl class="pet-lists">
-      <dt>誕生日</dt>
-      <dd>2021年12月12日<dd>
-      <dt>種類</dt>
-      <dd>チワックス<dd>
-      <dt>好きなもの</dt>
-      <dd>お散歩<dd>
-      <dt>性格</dt>
-      <dd>おちゃめ<dd>
-    </dl>
-  </div>
+  <% if current_user.pets[0] != nil%>
+    <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
+    <div class="index-pet-show">
+      <p class="pet-name">ペットの名前</p>
+      <dl class="pet-lists">
+        <dt>誕生日</dt>
+        <dd>2021年12月12日<dd>
+        <dt>種類</dt>
+        <dd>チワックス<dd>
+        <dt>好きなもの</dt>
+        <dd>お散歩<dd>
+        <dt>性格</dt>
+        <dd>おちゃめ<dd>
+      </dl>
+    </div>
+  <% end %>
 </section>

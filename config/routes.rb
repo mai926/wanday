@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'home/profile/:id', to: 'home#profile_index', as: 'home_profile_index'
   get 'home/profile/new/:id', to: 'home#profile_new', as: 'home_profile_new'
   post 'home/profile/create/:id', to: 'home#profile_create', as: 'home_profile_create'
+  get 'home/profile/edit/:id', to: 'home#profile_edit', as: 'home_profile_edit'
+  patch 'home/profile/update/:id', to: 'home#profile_update', as: 'home_profile_update'
 
   resources :posts do 
     resources :comments, only: :create 
