@@ -51,10 +51,13 @@
       <script>
         $('.item-review-bottom').raty({
             readOnly: true,
+            half: true,
+            starOn: "<%= asset_path('star.png') %>",
+            starOff: "<%= asset_path('star-empty.png') %>",
+            starHalf: "<%= asset_path('star-half-empty.png') %>",
             score: function() {
               return $(this).attr('data-score');
             },
-            path: '/assets/'
         });
       </script>
     </section>
