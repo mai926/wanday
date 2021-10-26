@@ -70,6 +70,7 @@
 }
 
 .posts-new-contents {
+  min-height: calc(100vh - 26vh);
   width: 100%;
   padding-top: 50px;
 }
