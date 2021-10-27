@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :select_item, only: [:edit, :update, :show, :destroy]
-
+  before_action :pet_select, only: [:index, :show, :search]
   def index
     @items = Item.order(created_at: :desc)
     # @review = @items.item_reviews
@@ -55,6 +55,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :explanation, images: []).merge(user_id: current_user.id)
+  end
+
+  def pet_select
+    @pet = current_user.pet
   end
 
   def select_item

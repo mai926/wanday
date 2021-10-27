@@ -1,7 +1,7 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :select_shop, only: [:edit, :update, :show, :destroy]
-
+  before_action :pet_select, only: [:index, :show, :search]
   def index
     @shops = Shop.order(created_at: :desc)
   end
@@ -53,6 +53,10 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop).permit(:name, :explanation, images: []).merge(user_id: current_user.id)
+  end
+
+  def pet_select
+    @pet = current_user.pet
   end
 
   def select_shop

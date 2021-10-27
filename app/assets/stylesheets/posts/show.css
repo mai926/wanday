@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.mypage-contents {
+  min-height: calc(100vh - 26vh);
+}
+
 .show-img {
   height: 200px;
   width: auto;

@@ -1,0 +1,28 @@
+.profile-middle {
+  display: flex;
+  padding: 50px 200px;
+  width: 100vw;
+}
+
+/* ペットプロフィール画像 */
+.profile-img {
+  width: 40%;
+  text-align: center;
+  height: auto;
+  min-height: 250px;
+}
+
+/* ペット情報 */
+.profile-main {
+  width: 60%;
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.profile-lists > dd {
+  margin-bottom: 10px;
+}
