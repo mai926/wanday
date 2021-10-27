@@ -1,5 +1,6 @@
 class Account < ApplicationRecord
   belongs_to :user, optional: true
+  belongs_to :pet
   has_many :comments, dependent: :destroy
   has_many :posts
   has_many_attached :images
