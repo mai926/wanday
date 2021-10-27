@@ -13,19 +13,24 @@
   </div>
 
   <%# ペットプロフィール %>
-  <% if current_user.pets[0] != nil%>
-    <%= image_tag "profile-user.png" ,class: "index-pet-icon"%>
+  <% if current_user.pet != nil%>
+    <% if pet.image.present?%>
+      <%= image_tag pet.image,class: "index-pet-icon" if pet.image.attached?%>
+    <% else %>
+      <%= image_tag "profile-user.png" ,class: "index-pet-icon" %>
+   <% end %>
+    
     <div class="index-pet-show">
-      <p class="pet-name">ペットの名前</p>
+      <p class="pet-name"><%= pet.name%></p>
       <dl class="pet-lists">
         <dt>誕生日</dt>
-        <dd>2021年12月12日<dd>
+        <dd><%= pet.birthday%><dd>
         <dt>種類</dt>
-        <dd>チワックス<dd>
+        <dd><%= pet.dog_breed%><dd>
         <dt>好きなもの</dt>
-        <dd>お散歩<dd>
+        <dd><%= pet.favorite%><dd>
         <dt>性格</dt>
-        <dd>おちゃめ<dd>
+        <dd><%= pet.character%><dd>
       </dl>
     </div>
   <% end %>

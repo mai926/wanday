@@ -63,7 +63,7 @@
     </section>
 
     <%# ユーザー情報 %>
-    <%= render 'shared/userpro'%>
+    <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
   </section>
   <%= render 'shared/footer' %>
 </main>

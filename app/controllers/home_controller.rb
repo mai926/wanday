@@ -24,6 +24,7 @@ class HomeController < ApplicationController
 
   def profile_index
     @account = Account.find(params[:id])
+    @pet = @user.pet
   end
 
   def profile_new
@@ -35,7 +36,7 @@ class HomeController < ApplicationController
     if @pet.save
       redirect_to home_profile_index_path(current_user)
     else
-      render 'new'
+      render 'profile_new'
     end
   end
 
@@ -54,16 +55,15 @@ class HomeController < ApplicationController
   end
 
   def pet_select
-    @pet = Pet.find(params[:id])
+    @pet = current_user.pet
+    # @pet = Pet.find(params[:id])
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :dog_breed, :birthday, :favorite, :character, images: []).merge(user_id: current_user.id)
+    params.require(:pet).permit(:name, :dog_breed, :birthday, :favorite, :character, :image).merge(user_id: current_user.id)
   end
 
   def move_to_home_show
-    if current_user.id != @user.id
-      redirect_to home_path(current_user)
-    end
+    redirect_to home_path(current_user) if current_user.id != @user.id
   end
 end

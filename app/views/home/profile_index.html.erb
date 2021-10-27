@@ -30,7 +30,7 @@
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
         <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account) %></li>
         <li class="pull-down-edit-list"><%= link_to "ペット情報登録", home_profile_new_path(@account) %></li>
-        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", "#" %></li>
+        <li class="pull-down-edit-list"><%= link_to "ペット情報編集", home_profile_edit_path(@user.pet.id) %></li>
         <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
       </ul>
     </nav>
@@ -53,8 +53,23 @@
       </div>
 
       <%# ペットプロフィール %>
-      <div class="mypage-middle">
-        ペットpロフィールがここに出る
+      <div class="profile-middle">
+        <div class="profile-img">
+          <%= image_tag @pet.image, class: "profile-img" if @pet.image.attached?%>
+        </div>
+        <div class="profile-main">
+          <p class="profile-name"><%= @pet.name%></p>
+            <dl class="profile-lists">
+              <dt>誕生日</dt>
+              <dd><%= @pet.birthday%><dd>
+              <dt>種類</dt>
+              <dd><%= @pet.dog_breed%><dd>
+              <dt>好きなもの</dt>
+              <dd><%= @pet.favorite%><dd>
+              <dt>性格</dt>
+              <dd><%= @pet.character%><dd>
+            </dl>
+        </div>
       </div>
     </div>
   </section>
