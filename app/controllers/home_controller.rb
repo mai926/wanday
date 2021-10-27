@@ -64,8 +64,6 @@ class HomeController < ApplicationController
   end
 
   def move_to_home_show
-    if current_user.id != @user.id
-      redirect_to home_path(current_user)
-    end
+    redirect_to home_path(current_user) if current_user.id != @user.id
   end
 end
