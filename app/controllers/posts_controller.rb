@@ -36,7 +36,11 @@ class PostsController < ApplicationController
   def show
     @comments = @post.comments.includes(:account)
     @comment = Comment.new
-    @account = Account.find(params[:id])
+    @account = @post.account
+    # @user = User.find(params[:id])
+    # @account = @user.account
+
+    # @account = Account.find(params[:id])
   end
 
   def destroy
