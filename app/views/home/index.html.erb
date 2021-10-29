@@ -11,17 +11,15 @@
     </div>
     <div class="registrations-button">
       <%= link_to "メールアドレスで登録", new_user_registration_path, class: "email-button" %>
-      <%= link_to "#" do%>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do%>
         <p class="google-button"><i class="fab fa-google regist-icon"></i>Googleアカウントで登録</p>
       <% end %>
-      <%= link_to "#" do%>
+      <%= link_to user_facebook_omniauth_authorize_path, method: :post do%>
         <p class="facebook-button"><i class="fab fa-facebook-square regist-icon"></i>Facebookアカウントで登録</p>
       <% end %>
     </div>
     <div class="right-text">
       <p><%= link_to "ログイン", new_user_session_path, class: "login-text" %>のかたはこちら</p>
-      <p><%= link_to '（仮）実装挙動確認ログアウトボタン', destroy_user_session_path, method: :delete %></p>
-
     </div>
     <footer>
       <p class="footer-title">wanday!</p>
