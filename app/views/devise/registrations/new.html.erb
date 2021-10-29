@@ -15,10 +15,20 @@
           <%= f.label :email,'メールアドレス' %><br />
           <%= f.email_field :email, class:"small-field", id:"email", placeholder:"PC・携帯どちらでも可" %>
         </div>
-        <div class="new-content">
-          <%= f.label :password,'パスワード' %><br />
-          <%= f.password_field :password, class:"small-field", id:"password", placeholder:"6文字以上の半角英数字" %>
-        </div>
+
+        <%if @sns_id.present? %>
+          <%= hidden_field_tag :sns_auth, true %>
+        <% else %>
+          <div class="new-content">
+            <%= f.label :password,'パスワード' %><br />
+            <% @minimum_password_length %>
+            <%= f.password_field :password, class:"small-field", id:"password", placeholder:"6文字以上の半角英数字" %>
+          </div>
+          <div class="new-content">
+            <%= f.label :password_confirmation,'確認用パスワード' %><br />
+            <%= f.password_field :password_confirmation, class:"small-field", id:"password", placeholder:"6文字以上の半角英数字" %>
+          </div>
+        <% end %>
         <%= f.submit "次へ" ,class:"send" %>
       <%end%>
     </div>
