@@ -11,8 +11,12 @@
     </div>
     <div class="registrations-button">
       <%= link_to "メールアドレスで登録", new_user_registration_path, class: "email-button" %>
-      <%= link_to "Googleアカウントで登録", "#", class: "google-button" %>
-      <%= link_to "Facebookアカウントで登録", "#", class: "facebook-button" %>
+      <%= link_to "#" do%>
+        <p class="google-button"><i class="fab fa-google regist-icon"></i>Googleアカウントで登録</p>
+      <% end %>
+      <%= link_to "#" do%>
+        <p class="facebook-button"><i class="fab fa-facebook-square regist-icon"></i>Facebookアカウントで登録</p>
+      <% end %>
     </div>
     <div class="right-text">
       <p><%= link_to "ログイン", new_user_session_path, class: "login-text" %>のかたはこちら</p>
