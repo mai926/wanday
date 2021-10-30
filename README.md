@@ -193,7 +193,7 @@ belongs_to :followed, class_name: "User"
 
 - belongs_to :user
 
-+## rooms テーブル <!-- DM機能 -->
+## rooms テーブル <!-- DM機能 -->
 
 | Column | Type       | Options                       |
 | ------ | ---------- | ----------------------------- |
