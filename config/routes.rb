@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations'
   }  
   devise_scope :user do
     get 'account', to: 'users/registrations#new_account'
@@ -46,4 +45,6 @@ Rails.application.routes.draw do
     end
   end
   resources :calendars
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
 end
