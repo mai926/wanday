@@ -21,6 +21,9 @@
     <%= link_to new_post_path do %>
       <i class="far fa-images fa-lg user-icon"></i>
     <% end %>
+    <%= link_to home_follower_path(current_user) do %>
+      <i class="far fa-envelope fa-lg user-icon"></i>
+    <% end %>
     <%= link_to image_tag(current_user.account.images[0], class: "header-user-icon"), home_path(current_user) if current_user.account.images.attached?%>
     <% if current_user.account.images.length == 0%>
       <%= link_to image_tag('profile-user.png', class: "header-user-icon"), home_path(current_user) %>
