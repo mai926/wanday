@@ -1,0 +1,60 @@
+<main class="posts-index">
+  <%= render 'shared/header' %>
+
+  <%# メンバーリスト %>
+  <section class="message-member-list">
+    <% @entries.each do |e| %>
+      <div class="user-name">
+        <strong>
+          <%=link_to image_tag(e.account.images[0] ,class: "room-user-icon"), home_path(e.user.id) if e.account.images.attached?%>
+          <% if e.account.images.length == 0%>
+            <%=link_to image_tag("profile-user.png", class: "room-user-icon"), home_path(e.user.id) %>
+          <% end %>
+          <%= link_to home_path(e.user.id) do%>
+            <%= e.account.nickname %>さん
+          <% end %>
+        </strong>
+      </div>
+    <% end %>
+  </section>
+  <section>
+    <%= link_to "一覧に戻る", "#", class:"back-link" %>
+  </section>
+
+  <%# メッセージ一覧 %>
+  <section class="messages">
+    <div class="message">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <div class="message-box">
+            <div class="message-icon">
+              <%=link_to image_tag(m.account.images[0] ,class: "room-user-icon"), home_path(m.user.id) if m.account.images.attached?%>
+              <% if m.account.images.length == 0%>
+                <%=link_to image_tag("profile-user.png", class: "room-user-icon"), home_path(m.user.id) %>
+              <% end %>
+            </div>
+            <div class="message-texts">
+              <p class="message-text"><%= m.message %></p>
+              <p class="message-data"><%= m.created_at.strftime("%Y-%m-%d %H:%M")%></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </section>
+
+  <%# メッセージ送信フォーム %>
+  <section class="posts">
+    <%= form_with model: @message, local: true do |f| %>
+      <div class="item-new-content">
+        <%= f.text_field :message, placeholder: "メッセージを入力して下さい" , size: 70, class:"caption-field" %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+      </div>
+    <%= f.submit "メッセージを送信する" ,class:"posts-new-send" %>
+    <% end %>
+  </section>
+
+
+
+
+  <%= render 'shared/footer' %>
+</main>
