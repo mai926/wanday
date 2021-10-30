@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :item_reviews
   has_many :calendar, dependent: :destroy
   has_many :sns_credentials
-
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+  
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze }
   validates :name, presence: true
 
