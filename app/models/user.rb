@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
-  
+
   has_one :account, dependent: :destroy
   has_one :pet, dependent: :destroy
   has_many :posts, dependent: :destroy
@@ -52,8 +52,8 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
-        name: auth.info.name,
-        email: auth.info.email
+      name: auth.info.name,
+      email: auth.info.email
     )
     if user.persisted?
       sns.user = user
