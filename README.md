@@ -193,6 +193,42 @@ belongs_to :followed, class_name: "User"
 
 - belongs_to :user
 
++## rooms テーブル <!-- DM機能 -->
+
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| user   | references | null: false,foreign_key: true |
+
+### Association
+
+- has_many :entries
+- has_many :messages
+
+## entries テーブル <!-- DM機能 -->
+
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| user   | references | null: false,foreign_key: true |
+| room   | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## massages テーブル <!-- DM機能 -->
+
+| Column  | Type       | Options                       |
+| ------- | ---------- | ----------------------------- |
+| message | text       | null: false                   |
+| user    | references | null: false,foreign_key: true |
+| room    | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
 <!--
 DM機能
 掲示板機能 -->
