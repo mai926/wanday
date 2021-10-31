@@ -1,6 +1,7 @@
 .follow-main {
   padding: 50px 250px 50px 250px;
   border-top: solid 1px #eadfca;
+  min-height: 35vh;
 }
 
 .follow-title {
