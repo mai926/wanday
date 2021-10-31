@@ -18,7 +18,7 @@
     <% end %>
   </section>
   <section>
-    <%= link_to "一覧に戻る", "#", class:"back-link" %>
+    <%= link_to "一覧に戻る", home_following_path(current_user), class:"back-link" %>
   </section>
 
   <%# メッセージ一覧 %>
@@ -52,6 +52,6 @@
     <%= f.submit "メッセージを送信する" ,class:"posts-new-send" %>
     <% end %>
   </section>
-  
+
   <%= render 'shared/footer' %>
 </main>

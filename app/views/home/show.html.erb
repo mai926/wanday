@@ -1,34 +1,37 @@
+<% console%>
 <main class="mypage">
   <header class='top-page-header1'>
     <p class="header-title1">wanday!</p>
     <nav>
-      <%= link_to posts_path do %>
-        <i class="fas fa-home fa-lg user-icon"></i>
-      <% end %>
-      <%= link_to search_posts_path do %>
-        <i class="fas fa-search fa-lg user-icon"></i>
-      <% end %>
-      <%# <i class="far fa-envelope fa-lg user-icon"></i> %>
-      <%# <i class="far fa-bell fa-lg user-icon"></i> %>
-      <%= link_to items_path do %>
-        <i class="fas fa-gifts fa-lg user-icon"></i>
-      <% end %>
-      <%= link_to shops_path do %>
-        <i class="fas fa-store fa-lg user-icon"></i>
-      <% end %>
-      <%= link_to calendars_path do %>
-        <i class="far fa-calendar-alt user-icon fa-lg "></i>
-      <% end %>
-      <%= link_to new_post_path do %>
-        <i class="far fa-images fa-lg user-icon"></i>
-      <% end %>
+    <%= link_to posts_path do %>
+      <i class="fas fa-home fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to search_posts_path do %>
+      <i class="fas fa-search fa-lg user-icon"></i>
+    <% end %>
+    <%# <i class="far fa-envelope fa-lg user-icon"></i> %>
+    <%# <i class="far fa-bell fa-lg user-icon"></i> %>
+    <%= link_to items_path do %>
+      <i class="fas fa-gifts fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to shops_path do %>
+      <i class="fas fa-store fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to calendars_path do %>
+      <i class="far fa-calendar-alt user-icon fa-lg "></i>
+    <% end %>
+    <%= link_to new_post_path do %>
+      <i class="far fa-images fa-lg user-icon"></i>
+    <% end %>
+    <%= link_to home_following_path(current_user) do %>
+      <i class="far fa-envelope fa-lg user-icon"></i>
+    <% end %>
       <%= image_tag current_user.account.images[0], class: "header-user-icon", id: "edit-lists" if current_user.account.images.attached?%>
       <% if current_user.account.images.length == 0%>
         <%= image_tag "profile-user.png" ,class:"header-user-icon" ,id: "edit-lists" %>
       <% end %>
       <ul class="edit-lists hidden" id="edit-pull-down">
         <li class="pull-down-edit-list"><%= link_to "ユーザー情報編集", edit_user_registration_path(@user) %></li>
-        <li class="pull-down-edit-list"><%= link_to "アカウント情報編集", edit_account_path(@account)%></li>
         <li class="pull-down-edit-list"><%= link_to "ペット情報登録", home_profile_new_path(@account)%></li>
         <li class="pull-down-edit-list"><%= link_to "ペット情報編集", home_profile_edit_path(@account) %></li>
         <li class="pull-down-edit-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete%></li>
@@ -62,22 +65,6 @@
           <% end %>
         </ul>
       </div>
-
-  <% unless @user.id == current_user.id %>
-    <% if (current_user.following? @user) && (@user.following? current_user)  %>
-    <% if @isRoom == true %>
-      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
-    <% else %>
-      <%= form_for @room do |f| %>
-        <%= fields_for @entry do |e| %>
-          <%= e.hidden_field :user_id, value: @user.id %>
-        <% end %>
-        <%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
-      <% end %>
-    <% end %>
-    <% end %>
-  <% end %>
-      
     </div>
   </section>
   <%= render 'shared/footer' %>
