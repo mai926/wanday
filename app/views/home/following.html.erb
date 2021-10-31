@@ -1,3 +1,4 @@
+<% console %>
 <div class="mypage-contents">
   <%= render 'shared/header' %>
   <%= render partial: 'user_detail', locals: { user: @user } %>
@@ -19,7 +20,27 @@
                   <p class="follow-id"><%= following_user.account.account_id %></p>
                 <% end %>
               </div>
+              <div class="message-button">
+                <% unless following_user.id == current_user.id %>
+                  <% if (current_user.following? following_user) && (following_user.following? current_user)  %>
+                    <% if @isRoom == true %>
+                      <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="message-start-button">チャットへ</a>
+                    <% else %>
+                      <%= form_with model: @room, url: rooms_path, local: true do |f| %>
+                        <%= fields_for @entry do |e| %>                    
+                          <%= e.hidden_field :user_id, value: following_user.id %>
+                        <% end %>
+                        <%= f.submit "チャットを始める", class:"message-start-button"%>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
             </li>
+
+      
+
+
           <% end %>
         </ul>
     </div>
