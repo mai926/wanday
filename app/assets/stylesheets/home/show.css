@@ -3,6 +3,37 @@
   width: 100%;
 }
 
+/* ヘッダーハンバーガーメニュー */
+body {
+  overflow-x: hidden;
+}
+
+.nav-sp {
+  box-sizing: border-box;
+  position: absolute;
+  top: 5vh;
+  right: -300px;
+  width: 220px;
+  height: 100%;
+  padding: 60px 10px 0;
+  text-align: left;
+  transition: right 0.5s;
+}
+
+.nav-sp a {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  color: #aa998a;
+  line-height: 60px;
+  text-align: center;
+  border-bottom: solid 1px #eadfca;
+}
+
+.nav-sp.open {
+  right: 0;
+}
+
 /* ユーザー情報 */
 .mypage-top {
   height: 40vh;
