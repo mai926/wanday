@@ -11,8 +11,6 @@ $(function () {
     } else {
       // ナビゲーションを表示
       $(".nav-sp").addClass("open");
-      // ハンバーガーメニューを✖印に変更
-      $(this).addClass("open");
     }
   });
 });
