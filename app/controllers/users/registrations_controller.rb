@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  prepend_before_action :check_captcha, only: [:create_account]
+  # prepend_before_action :check_captcha, only: [:create_account]
   before_action :user_select, only: [:edit, :update, :edit_account, :update_account]
   before_action :account_select, only: [:edit_account, :update_account]
   before_action :move_to_show, only: [:edit, :update, :edit_account, :update_account]
@@ -66,11 +66,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:account).permit(:nickname, :account_id, :birthday, :introduction, :images)
   end
 
-  def check_captcha
-    @account = Account.new(account_params)
-    @account.validate # Look for any other validation errors besides reCAPTCHA
-    respond_with_navigational(@account) { render :new_account } unless verify_recaptcha(model: @account)
-  end
+  # def check_captcha
+  #   @account = Account.new(account_params)
+  #   @account.validate # Look for any other validation errors besides reCAPTCHA
+  #   respond_with_navigational(@account) { render :new_account } unless verify_recaptcha(model: @account)
+  # end
 
   protected
 

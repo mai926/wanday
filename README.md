@@ -228,7 +228,3 @@ belongs_to :followed, class_name: "User"
 
 - belongs_to :user
 - belongs_to :room
-
-<!--
-DM機能
-掲示板機能 -->
