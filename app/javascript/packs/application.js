@@ -8,6 +8,8 @@ require("@rails/ujs").start();
 require("@rails/activestorage").start();
 require("channels");
 window.$ = window.jQuery = require("jquery");
+// require("jquery");
+require("../edit_menu");
 require("../icon_hover");
 require("../preview");
 require("../jquery.raty");
