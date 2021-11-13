@@ -1,5 +1,6 @@
 class CalendarsController < ApplicationController
-  before_action :select_calendar, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :select_calendar, except: [:index, :create]
   before_action :pet_select, only: [:show]
 
   def index
