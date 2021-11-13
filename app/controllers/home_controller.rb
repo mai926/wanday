@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   before_action :pet_select, only: [:profile_edit, :profile_update]
   before_action :move_to_home_show, only: [:profile_new, :profile_create, :profile_edit, :profile_update]
 
+  def index
+    redirect_to posts_path if user_signed_in?
+  end
+
   def show
     @account = Account.find(params[:id])
     @likes = @user.likes
