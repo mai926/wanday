@@ -1,5 +1,5 @@
 class ShopReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:index, :search, :show]
 
   def new
     @review = ShopReview.new
