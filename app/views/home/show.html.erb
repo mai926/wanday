@@ -60,11 +60,13 @@
       <div class="mypage-middle">
         <ul class="img-lists">
           <% @user.posts.each do |post|%>
-            <li>
-              <%= link_to post_path(post) do %>
-                <%= image_tag post.images[0], class: "mypage-img" %>
-              <% end %>
-            </li>
+            <% post.images.each do |image|%>
+              <li>
+                <%= link_to post_path(post) do %>
+                  <%= image_tag image, class: "mypage-img" %>
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </div>
