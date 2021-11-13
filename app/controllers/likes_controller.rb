@@ -1,13 +1,17 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :post_select!, only: [:create, :destroy]
 
   def create
-    @post = Post.find(params[:post_id])
     @like = Like.create(user_id: current_user.id, post_id: params[:post_id])
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
     @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id]).destroy
+  end
+
+  private
+  def post_select
+    @post = Post.find(params[:post_id])
   end
 end
