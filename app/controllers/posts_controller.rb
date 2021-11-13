@@ -1,15 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :search]
   before_action :select_post, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_show, only: [:edit, :update, :destroy]
   before_action :pet_select, only: [:search]
 
   def index
     @posts = Post.where(user_id: [*current_user.following_ids]).order('created_at DESC')
-    # return redirect_to home_path(current_user) if current_user.id != @user.user_id
-    # @like = Like.create(user_id: current_user.id, post_id: params[:post_id])
     @pet = current_user.pet
-    # @like = Like.find_by(user_id: current_user.id, post_id: @posts.ids).destroy
   end
 
   def new
@@ -37,10 +34,6 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:account)
     @comment = Comment.new
     @account = @post.account
-    # @user = User.find(params[:id])
-    # @account = @user.account
-
-    # @account = Account.find(params[:id])
   end
 
   def destroy
