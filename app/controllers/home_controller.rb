@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, only: [:profile_edit, :profile_new]
   before_action :user_select, except: [:index]
   before_action :pet_select, only: [:profile_edit, :profile_update]
   before_action :move_to_home_show, only: [:profile_new, :profile_create, :profile_edit, :profile_update]
