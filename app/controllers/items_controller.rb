@@ -1,11 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :select_item, only: [:edit, :update, :show, :destroy]
   before_action :pet_select, only: [:index, :show, :search]
   def index
     @items = Item.order(created_at: :desc)
-    # @review = @items.item_reviews
-    # @average_review =  @review.average(:rate)
   end
 
   def new
