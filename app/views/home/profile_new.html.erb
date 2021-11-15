@@ -20,7 +20,7 @@
             id:"birthday",
             use_month_numbers: true,
             prompt:'--',
-            start_year: 1950,
+            start_year: 1980,
             end_year: (Time.now.year - 5),
             date_separator: '/') %>
         </div>
@@ -38,9 +38,6 @@
         </div>
         <div class="img-field" id="image-list">
           <div id="image-list"></div>
-        </div>
-        <div class="remove-img">
-          <p><%= f.check_box :remove_image %>画像を削除する</p>
         </div>
         <%= f.submit "登録" ,class:"send" %>
       <%end%>

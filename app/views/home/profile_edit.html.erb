@@ -4,7 +4,8 @@
       <h1 class="form-title">ペット情報編集</h1>
 
       <%= form_with model: @pet, url: home_profile_update_path, local: true do |f| %>
-      <%# render "devise/shared/error_messages", model: f.object %>
+      <%= render "devise/shared/error_messages", model: f.object %>
+
         <div class="new-content">
           <%= f.label :name,'名前' %>
           <%= f.text_field :name, class:"small-field", placeholder:"例）ポチ", maxlength:"40", autofocus: true  %>
@@ -34,10 +35,10 @@
         </div>
         <div class="new-content">
           <%= f.label :images,'プロフィール画像' %>
-          <%= f.file_field :images %>
+          <%= f.file_field :images, id:"posts-image" %>
         </div>
-        <div class="remove-img">
-          <p><%= f.check_box :remove_images %>画像を削除する</p>
+        <div class="img-field" id="image-list">
+          <div id="image-list"></div>
         </div>
         <%= f.submit "更新" ,class:"send" %>
       <%end%>
