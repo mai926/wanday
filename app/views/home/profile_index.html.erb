@@ -54,9 +54,7 @@
 
       <%# ペットプロフィール %>
       <div class="profile-middle">
-        <div class="profile-img">
-          <%= image_tag @pet.image, class: "profile-img" if @pet.image.attached?%>
-        </div>
+        <%= image_tag @pet.image, class: "profile-img" if @pet.image.attached?%>
         <div class="profile-main">
           <p class="profile-name"><%= @pet.name%></p>
             <dl class="profile-lists">
