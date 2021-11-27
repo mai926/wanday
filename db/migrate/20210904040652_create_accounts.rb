@@ -8,5 +8,6 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.references :user
       t.timestamps
     end
+    add_index :accounts, :nickname
   end
 end
