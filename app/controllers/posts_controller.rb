@@ -10,13 +10,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = PostsTagForm.new
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      render 'create'
+    @post = PostsTagForm.new(post_params)
+    if @post.valid?
+      @post.save
+      redirect_to home_path(current_user)
     else
       render 'new'
     end
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:caption, images: []).merge(user_id: current_user.id)
+    params.require(:posts_tag_form).permit(:caption, :tag_name, images: []).merge(user_id: current_user.id)
   end
 
   def select_post
