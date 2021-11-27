@@ -15,8 +15,9 @@ class PostsController < ApplicationController
 
   def create
     @post = PostsTagForm.new(post_params)
+    tag_list = params[:posts_tag_form][:tag_name].split(' ')
     if @post.valid?
-      @post.save
+      @post.save(tag_list)
       redirect_to home_path(current_user)
     else
       render 'new'
