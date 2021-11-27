@@ -8,7 +8,7 @@ class PostsTagForm
 
   def save(tag_list)
     post = Post.new(caption: caption, user_id: user_id, images: images)
-    if self.tag_name.present?
+    if tag_name.present?
       tag_list.each do |tag_name|
         tag = Tag.where(name: tag_name).first_or_initialize
         post.tags << tag

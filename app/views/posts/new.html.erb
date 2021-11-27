@@ -26,7 +26,7 @@
           <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く（任意）", maxlength:"250" %>
         </div>
          <div class="posts-new-content">
-          <%= f.text_area :tag_name, class:"caption-field", id:"tag", placeholder:"タグ名（任意）", maxlength:"250" %>
+          <%= f.text_area :tag_name, class:"caption-field", id:"tag", placeholder:"タグ名（任意）※タグを複数選択する際は半角スペースで区切って投稿してください", maxlength:"250" %>
         </div>
         <%= f.submit "投稿する" ,class:"posts-new-send" %>
       <%end%>

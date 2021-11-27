@@ -24,7 +24,7 @@
       </div>
       <div class="show-caption-field">
         <% @post.tags.each do |tag| %>
-          <%= "#" + tag.name %>
+          <%= "#" + tag&.name %>
         <% end %>
       </div>
 
