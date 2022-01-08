@@ -30,7 +30,7 @@
 
 
       <div class="show-sub-contents">
-        <%# いいね機能練習 %>
+        <%# いいね機能 %>
         <div class='show-sub-content' id='post_<%= @post.id %>'>
           <% if current_user.liked?(@post.id) %>
             <%= link_to post_like_path(@post), method: :delete, remote: true do %>
