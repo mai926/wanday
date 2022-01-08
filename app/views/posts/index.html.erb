@@ -19,12 +19,14 @@
             <div class="post-pic">
               <%= link_to image_tag(post.images[0] ,class: "post-pic"), post_path(post)%>
             </div>
+            <%= link_to post_path(post) do%>
               <dl class="post-icon-lists">
                 <dt><i class="far fa-comment fa-lg"></i></dt>
                 <dd>コメント<%= post.comments.count %>件<dd>
                 <dt><i class="far fa-heart fa-lg"></i></dt> 
                 <dd>いいね<%= post.likes.count %>件<dd>
               </dl>
+            <% end %>
             <div class="post-caption">
               <p><%= post.caption %></p>
             </div>
