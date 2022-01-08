@@ -21,7 +21,7 @@
 
 
       <ul class="follow-posts">   
-        <% @posts.each do |post|%>
+        <% @posts.includes(:account).each do |post|%>
           <li class="follow-post">
             <div class="post-title">
               <%= link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.user_id) if post.account.images.attached?%>
