@@ -29,7 +29,6 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-      
       <ul class="follow-posts">   
         <% @posts.includes(:account).each do |post|%>
           <li class="follow-post">
@@ -44,7 +43,7 @@
               </div>
             </div>
             <div class="post-pic">
-              <%= link_to image_tag(post.images[0] ,class: "post-pic"), post_path(post)%>
+              <%= link_to image_tag(post.images[0].variant(gravity: :center, resize:"800x500^",crop:"800x500+0+0").processed  ,class: "post-pic"), post_path(post)%>
             </div>
               <dl class="post-icon-lists">
                 <dt><i class="far fa-comment fa-lg"></i></dt>
