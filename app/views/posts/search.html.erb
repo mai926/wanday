@@ -4,7 +4,6 @@
     <%# 投稿一覧 %>
     <section class="main-left">
       <h1 class="item-review-title">Search</h1>
-
       <%= search_form_for @q, url: search_posts_path do |f| %>
         <div class="search-field">
           <%= f.label :caption, 'キーワード' %>
@@ -19,7 +18,18 @@
         </div>
       <% end %>
 
-
+      <h2 class="item-review-title">話題の投稿</h2>
+      <div class="post-rank swiper mySwiper">
+        <div class="swiper-wrapper">
+          <% @post_ranks.each do |rank|%>
+            <%= link_to image_tag(rank.images[0].variant(gravity: :center, resize:"400x300^",crop:"400x300+0+0").processed , class: "rank-pic", alt: "話題の投稿"), post_path(rank), class: "swiper-slide"%>
+          <% end %>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      
       <ul class="follow-posts">   
         <% @posts.includes(:account).each do |post|%>
           <li class="follow-post">
@@ -48,14 +58,31 @@
           </li>
         <% end %>
       </ul>
-
-
-
-
+     
+      <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+      <script>
+        let mySwiper = new Swiper ('.swiper', {
+          autoplay: {
+            delay: 4000, 
+          },
+          loop: true,  //ループ可能（ループモードを有効に）
+          slidesPerView:2,  //スライドを2つ（分）表示
+          centeredSlides : true,  //アクティブなスライドを中央に表示
+          effect: 'coverflow',  //スライドのエフェクトを coverflow に
+          pagination: {  //ページネーションを表示
+            el: '.swiper-pagination',
+            clickable: true,  //アイコンをクリックすると対応するスライドに移動
+          },
+          navigation: {  //ナビゲーションボタンを表示
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      </script>
     </section>
 
     <%# ユーザー情報 %>
-  <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
+    <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
   </section>
   <%= render 'shared/footer' %>
 </main>
