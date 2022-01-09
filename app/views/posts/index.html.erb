@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="post-pic">
-              <%= link_to image_tag(post.images[0] ,class: "post-pic"), post_path(post)%>
+              <%= link_to image_tag(post.images[0].variant(gravity: :center, resize:"1000x600^",crop:"1000x600+0+0").processed  ,class: "post-pic"), post_path(post)%>
             </div>
             <%= link_to post_path(post) do%>
               <dl class="post-icon-lists">
