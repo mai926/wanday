@@ -47,6 +47,7 @@ class PostsController < ApplicationController
   end
 
   def search
+    @post_ranks = Post.includes(:liked_users).limit(5).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
     if params[:q]&.dig(:caption)
       squished_keywords = params[:q][:caption].squish
       params[:q][:caption_cont_any] = squished_keywords.split(' ')
