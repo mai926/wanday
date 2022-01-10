@@ -1,5 +1,4 @@
 class PostsTagForm
-
   include ActiveModel::Model
   attr_accessor :images, :caption, :user_id, :tag_name
 
@@ -13,7 +12,7 @@ class PostsTagForm
         tag = Tag.where(name: tag_name).first_or_initialize
         post.tags << tag
       end
-    end    
+    end
     post.save
   end
 end
