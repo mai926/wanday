@@ -3,36 +3,7 @@
   <section class="index-main-contents">
     <%# 投稿一覧 %>
     <section class="main-left">
-      <ul class="follow-posts">
-        <% @posts.includes(:account).each do |post|%>
-          <li class="follow-post">
-            <div class="post-title">
-              <%= link_to image_tag(post.account.images[0], class: "title-icon"), home_path(post.user_id) if post.account.images.attached?%>
-              <% if post.account.images.length == 0%>
-                <%= link_to image_tag('profile-user.png', class: "title-icon"), home_path(post.user_id) %>
-              <% end %>
-              <div class="title-content">
-                <p class="title-content__nickname"><%= post.account.nickname %></p>
-                <p class="title-content__id"><%= post.account.account_id %></p>
-              </div>
-            </div>
-            <div class="post-pic">
-              <%= link_to image_tag(post.images[0].variant(gravity: :center, resize:"1000x600^",crop:"1000x600+0+0").processed  ,class: "post-pic"), post_path(post)%>
-            </div>
-            <%= link_to post_path(post) do%>
-              <dl class="post-icon-lists">
-                <dt><i class="far fa-comment fa-lg"></i></dt>
-                <dd>コメント<%= post.comments.count %>件<dd>
-                <dt><i class="far fa-heart fa-lg"></i></dt> 
-                <dd>いいね<%= post.likes.count %>件<dd>
-              </dl>
-            <% end %>
-            <div class="post-caption">
-              <p><%= post.caption %></p>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+      <%= render partial: 'post-list', locals: { post: @posts }  %> 
       <%= paginate @posts %>
     </section>
 
