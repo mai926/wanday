@@ -87,49 +87,29 @@
 
 .index-user-icon {
   border-radius: 50%;
-  flex: none;
   height: 230px;
   width: 230px;
-  max-width: 100%;
   display: block;
   margin: auto;
 }
 
 .index-user-show,
 .index-pet-show {
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
   margin: 20px 0 100px 0;
+  text-align: center;
 }
 
 .user-show-nickname,
 .pet-name {
   font-size: 17px;
-  font-weight: 400;
-  height: auto;
   line-height: 1.4;
-  text-align: center;
-  width: auto;
-  max-width: 100%;
-  justify-content: center;
 }
 
 .user-show-id,
 .user-show-birthday {
   color: #aa998a;
   font-size: 12px;
-  font-weight: 400;
-  height: auto;
   line-height: 1.4;
-  text-align: center;
-  width: auto;
-  max-width: 100%;
-  justify-content: center;
 }
 
 .user-show-birthday {
@@ -137,31 +117,21 @@
 }
 
 .user-show-info {
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   padding-top: 20px;
-  width: 100%;
-  max-width: 100%;
   font-size: 13px;
-  text-align: center;
 }
 
 /* ペットプロフィール */
 .index-pet-icon {
   border-radius: 50%;
-  flex: none;
   height: 190px;
   width: 190px;
-  max-width: 100%;
   display: block;
   margin: auto;
 }
 
 .pet-lists {
   margin: 20px 0;
-  text-align: center;
 }
 
 .pet-lists > dt {
