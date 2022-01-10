@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :pet_select, only: [:search]
 
   def index
-    @posts = Post.where(user_id: [current_user.id, *current_user.following_ids]).order('created_at DESC')
+    @posts = Post.where(user_id: [current_user.id, *current_user.following_ids]).page(params[:page]).per(10).order('created_at DESC')
     @pet = current_user.pet
   end
 
