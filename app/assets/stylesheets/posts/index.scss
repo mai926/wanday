@@ -29,15 +29,13 @@
 
 .title-content {
   padding-left: 20px;
-}
-
-.title-content-nickname {
-  font-size: 20px;
-}
-
-.title-content-id {
-  font-size: 14px;
-  color: #aa998a;
+  &__nickname {
+    font-size: 20px;
+  }
+  &__id {
+    font-size: 14px;
+    color: #aa998a;
+  }
 }
 
 /* 投稿画像 */
@@ -59,24 +57,24 @@
   padding: 0px 30px 0px 30px;
 }
 
-.post-icon-lists > dt {
-  margin-left: 20px;
-  color: #aa998a;
-}
-
-.post-icon-lists > dd {
-  font-size: 12px;
-  color: #aa998a;
+.post-icon-lists {
+  dt {
+    margin-left: 20px;
+    color: #aa998a;
+  }
+  dd {
+    font-size: 12px;
+    color: #aa998a;
+  }
 }
 
 /* 投稿キャプション */
 .post-caption {
   padding: 50px;
-}
-
-.post-caption > p {
-  font: 400 15px "Noto Sans JP";
-  text-align: center;
+  p {
+    font: 400 15px "Noto Sans JP";
+    text-align: center;
+  }
 }
 
 /* ログインユーザー情報 */
@@ -87,90 +85,59 @@
 
 .index-user-icon {
   border-radius: 50%;
-  flex: none;
   height: 230px;
   width: 230px;
-  max-width: 100%;
   display: block;
   margin: auto;
 }
 
 .index-user-show,
 .index-pet-show {
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
   margin: 20px 0 100px 0;
+  text-align: center;
+  &__nickname {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  &__id,
+  &__birthday {
+    color: #aa998a;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  &__info {
+    padding-top: 20px;
+    font-size: 13px;
+  }
 }
 
-.user-show-nickname,
 .pet-name {
   font-size: 17px;
-  font-weight: 400;
-  height: auto;
   line-height: 1.4;
-  text-align: center;
-  width: auto;
-  max-width: 100%;
-  justify-content: center;
-}
-
-.user-show-id,
-.user-show-birthday {
-  color: #aa998a;
-  font-size: 12px;
-  font-weight: 400;
-  height: auto;
-  line-height: 1.4;
-  text-align: center;
-  width: auto;
-  max-width: 100%;
-  justify-content: center;
 }
 
 .user-show-birthday {
   margin-top: 10px;
 }
 
-.user-show-info {
-  align-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  padding-top: 20px;
-  width: 100%;
-  max-width: 100%;
-  font-size: 13px;
-  text-align: center;
-}
-
 /* ペットプロフィール */
 .index-pet-icon {
   border-radius: 50%;
-  flex: none;
   height: 190px;
   width: 190px;
-  max-width: 100%;
   display: block;
   margin: auto;
 }
 
 .pet-lists {
   margin: 20px 0;
-  text-align: center;
-}
-
-.pet-lists > dt {
-  font-size: 13px;
-}
-
-.pet-lists > dd {
-  font-size: 13px;
-  margin-bottom: 10px;
+  dt {
+    font-size: 13px;
+  }
+  dd {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 /* ページネーション */
