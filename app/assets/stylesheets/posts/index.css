@@ -201,3 +201,9 @@
   font-size: 13px;
   margin-bottom: 10px;
 }
+
+/* ページネーション */
+.pagination {
+  text-align: center;
+  margin-top: 10px;
+}
