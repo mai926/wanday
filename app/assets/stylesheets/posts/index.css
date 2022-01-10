@@ -15,7 +15,6 @@
 /* 投稿title */
 .post-title {
   height: 12vh;
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -29,11 +28,6 @@
 }
 
 .title-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding-left: 20px;
 }
 
@@ -58,15 +52,11 @@
 
 /* アイコン部分 */
 .post-icon-lists {
-  align-content: center;
   align-items: center;
   display: flex;
-  flex-wrap: nowrap;
   height: 37px;
   justify-content: flex-end;
   padding: 0px 30px 0px 30px;
-  width: 100%;
-  max-width: 100%;
 }
 
 .post-icon-lists > dt {
@@ -81,37 +71,18 @@
 
 /* 投稿キャプション */
 .post-caption {
-  align-content: center;
-  align-items: center;
-  background: #ffffff;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 100%;
   padding: 50px;
 }
 
 .post-caption > p {
   font: 400 15px "Noto Sans JP";
-  line-height: 1.4;
-  padding: 0px 0px 1px 0px;
   text-align: center;
-  width: auto;
-  max-width: 100%;
-  justify-content: center;
 }
 
 /* ログインユーザー情報 */
 .main-right {
-  align-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   padding: 50px 40px 0px 40px;
   width: calc(100% - 75%);
-  max-width: 100%;
 }
 
 .index-user-icon {
