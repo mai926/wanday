@@ -64,17 +64,6 @@
   font-weight: bold;
 }
 
-.form-title {
-  color: #aa998a;
-  font: 700 28px/1.4 "Noto Sans JP";
-  height: auto;
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
 .new-content > select {
   width: 26%;
   height: 50px;
