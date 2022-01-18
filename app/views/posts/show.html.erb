@@ -16,7 +16,7 @@
         <% end %>
       </div>
       <div class="show-contents__data">
-        <%=link_to "#{@account.nickname}/#{@account.account_id}", home_path%>
+        <%=link_to "#{@account.nickname}/#{@account.account_id}", home_path(@account)%>
         <%= @post.updated_at.to_s(:datetime) %>
       </div>
       <div class="show-contents__field">
