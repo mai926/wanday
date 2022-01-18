@@ -1,0 +1,142 @@
+.mypage-contents {
+  min-height: calc(100vh - 26vh);
+}
+
+.fas-color {
+  color: #aa998a;
+}
+
+.show-contents {
+  padding: 20px 100px 0 100px;
+  &__lists {
+    width: 200px;
+    position: relative;
+    &__pull-down {
+      padding: 15px 20px;
+      border: 1px solid #aa998a;
+      color: #aa998a;
+      position: absolute;
+      left: 20px;
+    }
+  }
+  .show-img-field {
+    display: flex;
+    justify-content: center;
+    .show-img {
+      height: 200px;
+      margin: 0 5px;
+    }
+  }
+  &__data {
+    font-size: 10px;
+    color: #aa998a;
+    text-align: end;
+    margin-top: 10px;
+  }
+  &__field {
+    text-align: center;
+    padding: 0 100px;
+    margin-top: 40px;
+    &__tag {
+      color: #9ec3bc;
+      text-align: center;
+      padding: 0 100px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.show-sub-contents {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  &__icon {
+    width: 10%;
+    color: #aa998a;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.comment-box {
+  width: 40vw;
+  height: 200px;
+  margin: auto;
+  padding: 20px;
+  #comments {
+    max-height: 100%;
+    overflow-y: auto;
+    .comment {
+      display: flex;
+      margin-bottom: 30px;
+      &__user {
+        color: #aa998a;
+        margin-right: 10px;
+      }
+      p {
+        width: 40vw;
+      }
+    }
+  }
+}
+
+.comment-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #comment_form {
+    width: 50%;
+  }
+  .comment-text {
+    border-radius: 4px;
+    width: 100%;
+    border: solid 1px #aa998a;
+    margin-bottom: 10px;
+  }
+  .comment-btn {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #9ec3bc;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    border-radius: 4px;
+    display: block;
+    margin: auto;
+  }
+}
+
+.pet-icon {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  color: #aa998a;
+}
+
+#grayDisplay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#grayDisplay img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+}
