@@ -34,7 +34,9 @@
         </div>
         <div class="img-field" id="image-list">
           <div id="image-list"></div>
-                <% if @account.images.attached? %>
+        </div>
+        <%# account画像削除 %>
+        <% if @account.images.attached? %>
           <p>現在の画像を削除する際はチェックをつけてください</p>
           <% @account.images.each do |image| %>
             <%= f.check_box :image_ids, { multiple: true }, image.id, false %>
@@ -43,9 +45,7 @@
             </label>
           <% end %>
         <% end %>
-
-        </div>
-        <%= f.submit "次へ" ,class:"send" %>
+        <%= f.submit "保存" ,class:"send" %>
       <%end%>
     </div>
   </section>
