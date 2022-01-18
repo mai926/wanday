@@ -1,36 +1,27 @@
-<main class="posts-new">
-  <%= render 'shared/header' %>
-  <section>
-    <div class="posts-new-contents">
-      <h1 class="form-title">写真を投稿する</h1>
+<%= render 'shared/header' %>
+<section class="posts-new-contents">
+  <h1 class="form-title">写真を投稿する</h1>
 
-      <%= form_with model: @post, url: posts_path, method: :post, local: true do |f| %>
-      <%= render "devise/shared/error_messages", model: f.object %>
-      <%# プレビュー出力欄 %>
-      <div class="img-field" id="image-list">
-        <div id="image-list"></div>
-        
-        <%# @post.images.each do |image| %>
-          <%# image_tag image, class: 'new-images' %>
-        <%# end %>
-
-      </div>
-      <label class="form-image">
-        <i class="fas fa-images fa-2x "></i>
-        <%= f.file_field :images, id:"posts-image" ,name: 'posts_tag_form[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
-      </label>
-      <p class="img-explanation">
-        アイコンをクリックして写真をアップロード【必須】（4枚まで）
-      </p>
-        <div class="posts-new-content">
-          <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く（任意）", maxlength:"250" %>
-        </div>
-         <div class="posts-new-content">
-          <%= f.text_area :tag_name, class:"caption-field", id:"tag", placeholder:"タグ名（任意）※タグを複数選択する際は半角スペースで区切って投稿してください", maxlength:"250" %>
-        </div>
-        <%= f.submit "投稿する" ,class:"posts-new-send" %>
-      <%end%>
+  <%= form_with model: @post, url: posts_path, method: :post, local: true do |f| %>
+  <%= render "devise/shared/error_messages", model: f.object %>
+  <%# プレビュー出力欄 %>
+    <div class="img-field" id="image-list">
+      <div id="image-list"></div>
     </div>
-  </section>
-  <%= render 'shared/footer' %>
-</main>
+    <label class="form-image">
+      <i class="fas fa-images fa-2x "></i>
+      <%= f.file_field :images, id:"posts-image" ,name: 'posts_tag_form[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
+    </label>
+    <p class="img-explanation">
+      アイコンをクリックして写真をアップロード【必須】（4枚まで）
+    </p>
+    <div class="posts-new-content">
+      <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く（任意）", maxlength:"250" %>
+    </div>
+    <div class="posts-new-content">
+      <%= f.text_area :tag_name, class:"caption-field", id:"tag", placeholder:"タグ名（任意）※タグを複数選択する際は半角スペースで区切って投稿してください", maxlength:"250" %>
+    </div>
+    <%= f.submit "投稿する" ,class:"posts-new-send" %>
+  <%end%>
+</section>
+<%= render 'shared/footer' %>
