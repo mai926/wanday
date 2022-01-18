@@ -4,9 +4,9 @@
     <div class="show-contents">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <i class="fas fa-edit" id="lists"></i>
-        <ul class="show-lists hidden" id="pull-down">
-          <li><%= link_to '編集する', edit_post_path(@post), method: :get,class: "pull-down-list" %></li>
-          <li><%= link_to '削除する', post_path(@post), method: :delete,class: "pull-down-list" %></li>
+        <ul class="show-contents__lists hidden" id="pull-down">
+          <li><%= link_to '編集する', edit_post_path(@post), method: :get,class: "show-contents__lists__pull-down" %></li>
+          <li><%= link_to '削除する', post_path(@post), method: :delete,class: "show-lists__pull-down" %></li>
         </ul>
       <% end %>
 
@@ -15,14 +15,14 @@
           <%= image_tag image, class: 'show-img' %>
         <% end %>
       </div>
-      <div class="show-data">
+      <div class="show-contents__data">
         <%=link_to "#{@account.nickname}/#{@account.account_id}", home_path%>
         <%= @post.updated_at.to_s(:datetime) %>
       </div>
-      <div class="show-caption-field">
+      <div class="show-contents__field">
         <p><%= @post.caption %></p>
       </div>
-      <div class="show-caption-field">
+      <div class="show-contents__field__tag">
         <% @post.tags.each do |tag| %>
           <%= "#" + tag&.name %>
         <% end %>
@@ -32,7 +32,7 @@
 
       <div class="show-sub-contents">
         <%# いいね機能 %>
-        <div class='show-sub-content' id='post_<%= @post.id %>'>
+        <div class='show-sub-contents__icon' id='post_<%= @post.id %>'>
           <% if current_user.liked?(@post.id) %>
             <%= link_to post_like_path(@post), method: :delete, remote: true do %>
               <i class="fas fa-heart fas-color"></i>
@@ -45,7 +45,7 @@
           <p>いいね<span class="good-count"><%= @post.likes.count %></span>件</p>
         </div>
         
-        <div class="show-sub-content">
+        <div class="show-sub-contents__icon">
           <i class="far fa-comment"></i>
           <p>コメント<%= @post.comments.count %>件</p>
         </div>
@@ -57,7 +57,7 @@
         <div id="comments">
           <% @post.comments.each do |comment| %>
             <div class="comment">
-              <%=link_to "#{comment.account.nickname}", home_path(comment.account), class:"user-info" %>
+              <%=link_to "#{comment.account.nickname}", home_path(comment.account), class:"comment__user" %>
               <p><%= comment.comment%></p>
             </div>
           <% end %>
