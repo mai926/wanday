@@ -35,7 +35,17 @@
         <div class="img-field" id="image-list">
           <div id="image-list"></div>
         </div>
-        <%= f.submit "次へ" ,class:"send" %>
+        <%# account画像削除 %>
+        <% if @account.images.attached? %>
+          <p>現在の画像を削除する際はチェックをつけてください</p>
+          <% @account.images.each do |image| %>
+            <%= f.check_box :image_ids, { multiple: true }, image.id, false %>
+            <label for="account_image_ids_<%= image.id %>" > 
+              <%= image_tag image.variant(gravity: :center, resize:"300x300^",crop:"300x300+0+0").processed %>
+            </label>
+          <% end %>
+        <% end %>
+        <%= f.submit "保存" ,class:"send" %>
       <%end%>
     </div>
   </section>

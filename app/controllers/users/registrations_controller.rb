@@ -53,6 +53,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update_account
+    if params[:account][:image_ids]
+      params[:account][:image_ids].each do |image_id|
+        image = @account.images.find(image_id)
+        image.purge
+      end
+    end
+
     if @account.update(account_params)
       redirect_to home_path(@user)
     else
