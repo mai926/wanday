@@ -17,4 +17,27 @@ class PostsTagForm
     end
     post.save
   end
+
+  def update(params, post)
+    tag_name = params.delete(:tag_name)
+    tag = Tag.where(name: tag_name).first_or_initialize if tag_name.present?
+    ActiveRecord::Base.transaction do
+      tag.save if tag_name.present?
+      post.update!(params)
+      post.post_tag_relations.destroy_all
+      post.tags << tag if tag_name.present?
+      return true
+    end
+    rescue => e
+
+      tag.errors.messages[:tag_name] = tag.errors.messages.delete(:name) if tag&.errors&.messages&.present?
+      post&.errors&.messages&.each do |key, message|
+        self.errors.add(key, message.first)
+      end
+      tag&.errors&.messages&.each do |key, message|
+        self.errors.add(key, message.first)
+      end
+      return false
+  end
+
 end
