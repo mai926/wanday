@@ -1,21 +1,19 @@
 <%= form_with model: @item, local: true do |f| %>
   <%= render "devise/shared/error_messages", model: f.object %>
   <div class="img-field" id="image-list">
-  <div id="image-list"></div>
-  <label class="form-image">
-    <i class="fas fa-images fa-2x "></i>
-    <%= f.file_field :images, id:"posts-image" ,name: 'item[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
-  </label>
-
+    <label class="form-image">
+      <i class="fas fa-images fa-2x "></i>
+      <%= f.file_field :images, id:"posts-image" ,name: 'item[images][]' ,class: "hidden",multiple: true, data: {index: 0}%>
+    </label>
   </div>
   <p class="img-explanation">
     クリックして商品写真をアップロード
   </p>
-    <div class="item-new-content">
-      <%= f.text_field :name, class:"item-field", id:"name", placeholder:"商品名", maxlength:"100" %>
-    </div>
-    <div class="item-new-content">
-      <%= f.text_area :explanation, class:"item-field", id:"explanation", placeholder:"商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)", maxlength:"250" %>
-    </div>
-    <%= f.submit "商品情報を登録する" ,class:"posts-new-send" %>
-  <%end%>
+  <div class="item-new-content">
+    <%= f.text_field :name, class:"item-field", id:"name", placeholder:"商品名", maxlength:"100" %>
+  </div>
+  <div class="item-new-content">
+    <%= f.text_area :explanation, class:"item-field", id:"explanation", placeholder:"商品概要(発売日、メーカー、サイズ、材質、量、原材料、原産国など)", maxlength:"250" %>
+  </div>
+  <%= f.submit "商品情報を登録する" ,class:"posts-new-send" %>
+<%end%>
