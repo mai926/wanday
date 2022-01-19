@@ -14,16 +14,17 @@
     <p class="img-explanation">
       アイコンをクリックして写真をアップロード【必須】（4枚まで）
     </p>
-
-    <% if @post.images.attached? %>
-      <p>削除する画像にチェックをつけてください</p>
-      <% @post.images.each do |image| %>
-        <%= f.check_box :image_ids, { multiple: true }, image.id, false %>
-        <label for="posts_tag_form_image_ids_<%= image.id %>" > 
-          <%= image_tag image, class: 'edit-images' %>
-        </label>
+    <div class="img-delete-list">
+      <% if @post.images.attached? %>
+        <p>削除する画像にチェックをつけてください</p>
+        <% @post.images.each do |image| %>
+          <%= f.check_box :image_ids, { multiple: true }, image.id, false %>
+          <label for="posts_tag_form_image_ids_<%= image.id %>" > 
+            <%= image_tag image, class: 'edit-images' %>
+          </label>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
 
     <div class="posts-new-content">
       <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く（任意）", maxlength:"250" %>
