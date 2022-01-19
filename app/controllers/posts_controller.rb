@@ -31,6 +31,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    if params[:posts_tag_form][:image_ids]
+      params[:posts_tag_form][:image_ids].each do |image_id|
+        image = @post.images.find(image_id)
+        image.purge
+      end
+    end
     if @post_form.update(post_params, @post)
       redirect_to post_path(@post.id)
     else
