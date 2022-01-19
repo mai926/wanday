@@ -17,6 +17,14 @@
       color: #aa998a;
       position: absolute;
       left: 20px;
+      &__delete {
+        top: 50px;
+        padding: 15px 20px;
+        border: 1px solid #aa998a;
+        color: #aa998a;
+        position: absolute;
+        left: 20px;
+      }
     }
   }
   .show-img-field {
