@@ -1,38 +1,31 @@
-<main class="posts-index">
-  <%= render 'shared/header' %>
-  <section class="index-main-contents">
-    <section class="main-left">
-      <h1 class="item-review-title">Shop Review</h1>
-      
-      <div class="shop-contents-link">
-        <%= link_to "お店情報登録", new_shop_path, class: "item-register-buttton" %>
-        <%= link_to "お店を検索する", search_shops_path, class: "shop-search-buttton" %>
-      </div> 
+<%= render 'shared/header' %>
+<main class="index-main-contents">
+  <section class="main-left">
+    <h1 class="item-review-title">Shop Review</h1>
+    
+    <div class="shop-contents-link">
+      <%= link_to "お店情報登録", new_shop_path, class: "item-register-buttton" %>
+      <%= link_to "お店を検索する", search_shops_path, class: "item-register-buttton" %>
+    </div> 
 
-
-      <%# レビュー一覧 %>
-      <ul class="item-lists">
-        <% @shops.each do |shop|%>
-          <%= link_to shop_path(shop) do %>
-            <li class="item-list">
-              <div class="item-image">
-                <%= image_tag shop.images[0] %>
+    <%# レビュー一覧 %>
+    <ul class="item-lists">
+      <% @shops.each do |shop|%>
+        <%= link_to shop_path(shop) do %>
+          <li class="item-list">
+            <%= image_tag shop.images[0].variant(gravity: :center, resize:"90x110^",crop:"90x110+0+0").processed  %>
+            <div class="item-list__contents">
+              <div class="item-list__title"><%= shop.name %></div>
+                <div class="item-list__date"><p><%= shop.updated_at.to_s(:datetime) %></p></div>
               </div>
-              <div class="item-contents">
-                <div class="item-title"><%= shop.name %></div>
-                <div class="item-evaluation">
-                  <div class="item-date"><p><%= shop.updated_at.to_s(:datetime) %></p></div>
-                </div>
-              </div>
-            </li>
-          <% end %>
+            </div>
+          </li>
         <% end %>
-      </ul>
-    </section>
-
-    <%# ユーザー情報 %>
-  <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
-
+      <% end %>
+    </ul>
   </section>
-  <%= render 'shared/footer' %>
+
+  <%# ユーザー情報 %>
+  <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
 </main>
+<%= render 'shared/footer' %>
