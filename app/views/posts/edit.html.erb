@@ -2,7 +2,7 @@
 <section class="posts-new-contents">
   <h1 class="form-title">写真を編集する</h1>
 
-  <%= form_with model: @post_form, url: post_path, local: true do |f| %>
+  <%= form_with model: @post_form, url: post_path, method: :patch, local: true do |f| %>
   <%= render "devise/shared/error_messages", model: f.object %>
   <div class="img-field" id="image-list">
       <% @post.images.each do |image| %>
