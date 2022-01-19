@@ -5,9 +5,6 @@
   <%= form_with model: @post_form, url: post_path, method: :patch, local: true do |f| %>
   <%= render "devise/shared/error_messages", model: f.object %>
   <div class="img-field" id="image-list">
-      <% @post.images.each do |image| %>
-        <%= image_tag image, class: 'edit-images' %>
-      <% end %>
 
     <label class="form-image">
       <i class="fas fa-images fa-2x "></i>
@@ -17,6 +14,17 @@
     <p class="img-explanation">
       アイコンをクリックして写真をアップロード【必須】（4枚まで）
     </p>
+
+    <% if @post.images.attached? %>
+      <p>削除する画像にチェックをつけてください</p>
+      <% @post.images.each do |image| %>
+        <%= f.check_box :image_ids, { multiple: true }, image.id, false %>
+        <label for="posts_tag_form_image_ids_<%= image.id %>" > 
+          <%= image_tag image, class: 'edit-images' %>
+        </label>
+      <% end %>
+    <% end %>
+
     <div class="posts-new-content">
       <%= f.text_area :caption, class:"caption-field", id:"caption", placeholder:"キャプションを書く（任意）", maxlength:"250" %>
     </div>
