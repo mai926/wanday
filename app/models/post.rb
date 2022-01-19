@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
 
   has_many_attached :images
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :followings, class_name: 'User', foreign_key: 'user_id'
   # タグ付機能
   has_many :post_tag_relations, dependent: :destroy
