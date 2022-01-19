@@ -1,10 +1,6 @@
-<%# <main class="posts-new"> %>
-  <%= render 'shared/header' %>
-  <section>
-    <div class="posts-new-contents">
-      <h1 class="form-title">商品情報を登録する</h1>
-      <%= render partial: 'items/form', locals: { item: @item } %>
-    </div>
-  </section>
-  <%= render 'shared/footer' %>
-<%# </main> %>
+<%= render 'shared/header' %>
+<main class="posts-new-contents">
+  <h1 class="form-title">商品情報を登録する</h1>
+  <%= render partial: 'items/form', locals: { item: @item } %>
+</main>
+<%= render 'shared/footer' %>

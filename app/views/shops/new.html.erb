@@ -1,10 +1,6 @@
-<main class="posts-new">
-  <%= render 'shared/header' %>
-  <section>
-    <div class="posts-new-contents">
-      <h1 class="form-title">お店情報を投稿する</h1>
-      <%= render partial: 'shops/form', locals: { shop: @shop } %>
-    </div>
-  </section>
-  <%= render 'shared/footer' %>
+<%= render 'shared/header' %>
+<main class="posts-new-contents">
+  <h1 class="form-title">お店情報を投稿する</h1>
+  <%= render partial: 'shops/form', locals: { shop: @shop } %>
 </main>
+<%= render 'shared/footer' %>
