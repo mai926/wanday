@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :search]
   before_action :select_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post_form, only: [:edit, :update]
   before_action :redirect_to_show, only: [:edit, :update, :destroy]
   before_action :pet_select, only: [:search]
-  before_action :set_post_form, only: [:edit, :update]
 
   def index
     @posts = Post.where(user_id: [current_user.id,
@@ -31,8 +31,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post_form.update(post_params)
-      render 'show'
+    if @post_form.update(post_params, @post)
+      return redirect_to post_path(@post.id)
     else
       render 'edit'
     end
