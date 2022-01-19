@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :search]
   before_action :select_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post_form, only: [:edit, :update]
   before_action :redirect_to_show, only: [:edit, :update, :destroy]
   before_action :pet_select, only: [:search]
 
@@ -25,9 +26,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post_form.tag_name = @post.tags.first&.name
+  end
+
   def update
-    if @post.update(post_params)
-      render 'update'
+    if @post_form.update(post_params, @post)
+      redirect_to post_path(@post.id)
     else
       render 'edit'
     end
@@ -73,5 +78,10 @@ class PostsController < ApplicationController
 
   def redirect_to_show
     return redirect_to root_path if current_user.id != @post.user.id
+  end
+
+  def set_post_form
+    post_attributes = @post.attributes
+    @post_form = PostsTagForm.new(post_attributes)
   end
 end
