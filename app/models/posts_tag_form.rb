@@ -28,16 +28,14 @@ class PostsTagForm
       post.tags << tag if tag_name.present?
       return true
     end
-    rescue => e
-
-      tag.errors.messages[:tag_name] = tag.errors.messages.delete(:name) if tag&.errors&.messages&.present?
-      post&.errors&.messages&.each do |key, message|
-        self.errors.add(key, message.first)
-      end
-      tag&.errors&.messages&.each do |key, message|
-        self.errors.add(key, message.first)
-      end
-      return false
+  rescue StandardError => e
+    tag.errors.messages[:tag_name] = tag.errors.messages.delete(:name) if tag&.errors&.messages&.present?
+    post&.errors&.messages&.each do |key, message|
+      errors.add(key, message.first)
+    end
+    tag&.errors&.messages&.each do |key, message|
+      errors.add(key, message.first)
+    end
+    false
   end
-
 end

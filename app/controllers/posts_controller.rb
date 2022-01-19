@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     if @post_form.update(post_params, @post)
-      return redirect_to post_path(@post.id)
+      redirect_to post_path(@post.id)
     else
       render 'edit'
     end
