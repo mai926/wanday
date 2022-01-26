@@ -10,7 +10,7 @@
 
     <%# お店詳細情報 %>
     <div class="item-detail">
-      <%= image_tag @shop.images[0], class: "item-detail__image" %>
+      <%= image_tag @shop.images[0].variant(gravity: :center, resize:"320x430^",crop:"320x430+0+0").processed, class: "item-detail__image" %>
       <div class="item-detail__main">
         <p><%= @shop.explanation %></p>
       </div>
