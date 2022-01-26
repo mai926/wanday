@@ -1,0 +1,98 @@
+.star-icon {
+  display: flex;
+}
+
+/* 商品詳細情報 */
+.item-detail {
+  height: 470px;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  &__image {
+    border-radius: 4px;
+    height: 430px;
+    width: 320px;
+    max-width: 100%;
+  }
+  &__main {
+    word-break: break-all;
+    width: calc(100% - 320px);
+    height: 100%;
+    padding: 20px;
+  }
+}
+
+.item-button-lists {
+  border-bottom: solid 1px #eadfca;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.item-edit-buttton {
+  background-color: #9ec3bc;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 13px;
+  margin: 0 0 20px 10px;
+}
+
+.review-add-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* レビュー一覧 */
+.item-reviews {
+  .item-review {
+    word-break: break-all;
+    border-bottom: solid 1px #eadfca;
+    padding: 20px 0;
+    &__top {
+      padding: 0 20px;
+      display: flex;
+      &__info {
+        padding-left: 20px;
+        &__name {
+          width: 100%;
+          word-break: break-all;
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+        }
+      }
+    }
+    &__icon {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+    }
+    &__content {
+      padding: 30px 0;
+      p {
+        font-size: 15px;
+      }
+    }
+    &__data {
+      font-size: 10px;
+      color: #eadfca;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.item-review-bottom {
+  display: flex;
+  align-items: center;
+  img {
+    height: 3vh;
+    filter: invert(72%) sepia(26%) saturate(6428%) hue-rotate(1deg) brightness(105%) contrast(102%);
+  }
+}
+
+.item-review-top-icon {
+  display: flex;
+}

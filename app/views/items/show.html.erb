@@ -1,69 +1,66 @@
-<main class="posts-index">
-  <%= render 'shared/header' %>
-  <section class="index-main-contents">
-    <%# 商品名 %>
-    <section class="main-left">
-      <h1 class="item-review-title"><%= @item.name %></h1>
-      <div class="item-review-top-icon">
-        <div class="item-review-bottom" data-score="<%= @average_review %>"></div>
-        <p>(<%= @review.count %>)</p>
-      </div>
+<%= render 'shared/header' %>
+<main class="index-main-contents">
+  <%# 商品名 %>
+  <section class="main-left">
+    <h1 class="item-review-title"><%= @item.name %></h1>
+    <div class="item-review-top-icon">
+      <div class="item-review-bottom" data-score="<%= @average_review %>"></div>
+      <p>(<%= @review.count %>)</p>
+    </div>
 
-      <%# 商品詳細情報 %>
-      <div class="item-detail">
-        <%= image_tag @item.images[0], class: "item-detail-image" %>
-        <div class="item-datail-main">
-          <p><%= @item.explanation %></p>
-        </div>
+    <%# 商品詳細情報 %>
+    <div class="item-detail">
+      <%= image_tag @item.images[0].variant(gravity: :center, resize:"320x430^",crop:"320x430+0+0").processed, class: "item-detail__image" %>
+      <div class="item-detail__main">
+        <p><%= @item.explanation %></p>
       </div>
-      <div class="item-button-lists">
-        <%= link_to "商品情報編集", edit_item_path(@item), class: "item-edit-buttton" %>
-        <%= link_to "商品情報削除", item_path(@item), class: "item-edit-buttton", method: :delete %>
-      </div>
-      <div class="review-add-button">
-        <%= link_to "レビュー投稿", new_item_item_review_path(@item), class: "item-edit-buttton" %>
-      </div>
+    </div>
+    <div class="item-button-lists">
+      <%= link_to "商品情報編集", edit_item_path(@item), class: "item-edit-buttton" %>
+      <%= link_to "商品情報削除", item_path(@item), class: "item-edit-buttton", method: :delete %>
+    </div>
+    <div class="review-add-button">
+      <%= link_to "レビュー投稿", new_item_item_review_path(@item), class: "item-edit-buttton" %>
+    </div>
 
-
-      <%# レビュー一覧 %>
-      <ul class="item-reviews">
-        <% @review.each do |review| %>
-          <li class="item-review">
-            <div class="item-review-top">
-              <%= link_to image_tag(review.account.images[0], class: "item-review-icon"), home_path(review.account.id) if review.account.images.attached?%>
-              <% if review.account.images.length == 0%>
-                <%= link_to image_tag('profile-user.png', class: "item-review-icon"), home_path(review.account.id) %>
-              <% end %>
-              <div class="item-review-info">
-                <div class="item-reviwer-name"><%= review.account.nickname %></div>
-                <div class="item-review-bottom" data-score="<%= review.rate %>"></div>
-              </div>
+    <%# レビュー一覧 %>
+    <ul class="item-reviews">
+      <% @review.each do |review| %>
+        <li class="item-review">
+          <div class="item-review__top">
+            <%= link_to image_tag(review.account.images[0], class: "item-review__icon"), home_path(review.account.id) if review.account.images.attached?%>
+            <% if review.account.images.length == 0%>
+              <%= link_to image_tag('profile-user.png', class: "item-review__icon"), home_path(review.account.id) %>
+            <% end %>
+            <div class="item-review__top__info">
+              <div class="item-review__top__info__name"><%= review.account.nickname %></div>
+              <div class="item-review-bottom" data-score="<%= review.rate %>"></div>
             </div>
-            <div class="item-review-conrtent">
-              <p><%= review.comment %></p>
-            </div>
-            <div class="item-review-data">
-              <p><%= review.updated_at.to_s(:datetime) %></p>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-      <script>
-        $('.item-review-bottom').raty({
-            readOnly: true,
-            half: true,
-            starOn: "<%= asset_path('star.png') %>",
-            starOff: "<%= asset_path('star-empty.png') %>",
-            starHalf: "<%= asset_path('star-half-empty.png') %>",
-            score: function() {
-              return $(this).attr('data-score');
-            },
-        });
-      </script>
-    </section>
-
-    <%# ユーザー情報 %>
-    <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
+          </div>
+          <div class="item-review__content">
+            <p><%= review.comment %></p>
+          </div>
+          <div class="item-review__data">
+            <p><%= review.updated_at.to_s(:datetime) %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <script>
+      $('.item-review-bottom').raty({
+          readOnly: true,
+          half: true,
+          starOn: "<%= asset_path('star.png') %>",
+          starOff: "<%= asset_path('star-empty.png') %>",
+          starHalf: "<%= asset_path('star-half-empty.png') %>",
+          score: function() {
+            return $(this).attr('data-score');
+          },
+      });
+    </script>
   </section>
-  <%= render 'shared/footer' %>
+
+  <%# ユーザー情報 %>
+  <%= render partial: 'shared/userpro', locals: { pet: @pet } %>
 </main>
+<%= render 'shared/footer' %>
